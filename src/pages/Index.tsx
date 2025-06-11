@@ -11,6 +11,7 @@ import CallToAction from '@/components/CallToAction';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BackgroundAnimations from '@/components/BackgroundAnimations';
+import MarqueeText from '@/components/MarqueeText';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,13 +22,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-gradient-to-br from-gray-50 via-white to-green-50">
       <BackgroundAnimations />
       <Header />
       
       <main className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <HeroSection />
+        <MarqueeText />
         <MissionVision />
+        <MarqueeText />
         <ProblemStatement />
         <Solutions />
         <CallToAction />
