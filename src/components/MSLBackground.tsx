@@ -9,6 +9,11 @@ const MSLBackground = () => {
       <div className="msl-text">MSL</div>
       <div className="msl-text">MSL</div>
       <div className="msl-text">MSL</div>
+      <div className="msl-text">MSL</div>
+      <div className="msl-text">MSL</div>
+      <div className="msl-text">MSL</div>
+      <div className="msl-text">MSL</div>
+      <div className="msl-text">MSL</div>
     </div>
   );
 };
