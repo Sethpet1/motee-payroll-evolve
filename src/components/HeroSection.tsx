@@ -6,10 +6,18 @@ import { ArrowRight, Play } from 'lucide-react';
 const HeroSection = () => {
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Background Elements */}
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-motee-blue/5 via-motee-green/5 to-motee-orange/5"></div>
+      
+      {/* Animated floating orbs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-motee-blue/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-motee-green/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-motee-orange/8 rounded-full blur-3xl animate-bounce-gentle"></div>
+      
+      {/* Moving decorative shapes */}
+      <div className="absolute top-32 right-1/4 w-8 h-8 bg-motee-blue/20 rounded-full animate-float-side"></div>
+      <div className="absolute bottom-32 left-1/4 w-6 h-6 bg-motee-green/20 transform rotate-45 animate-rotate-float"></div>
+      <div className="absolute top-1/3 left-1/3 w-4 h-4 bg-motee-orange/20 rounded-full animate-bounce-gentle" style={{ animationDelay: '1s' }}></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -47,15 +55,15 @@ const HeroSection = () => {
             
             {/* Stats */}
             <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-gray-200">
-              <div className="text-center">
+              <div className="text-center animate-bounce-gentle" style={{ animationDelay: '0.5s' }}>
                 <div className="text-3xl font-bold text-motee-blue">99.9%</div>
                 <div className="text-sm text-motee-gray">Fraud Prevention</div>
               </div>
-              <div className="text-center">
+              <div className="text-center animate-bounce-gentle" style={{ animationDelay: '1s' }}>
                 <div className="text-3xl font-bold text-motee-green">500+</div>
                 <div className="text-sm text-motee-gray">Companies Trust Us</div>
               </div>
-              <div className="text-center">
+              <div className="text-center animate-bounce-gentle" style={{ animationDelay: '1.5s' }}>
                 <div className="text-3xl font-bold text-motee-orange">24/7</div>
                 <div className="text-sm text-motee-gray">Support</div>
               </div>
@@ -65,7 +73,7 @@ const HeroSection = () => {
           {/* Visual Element */}
           <div className="animate-slide-in-right">
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-gray-100 hover:shadow-3xl transition-all duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80" 
                   alt="MOTEE Solutions Dashboard" 
@@ -87,12 +95,15 @@ const HeroSection = () => {
                 </div>
               </div>
               
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-motee-orange rounded-2xl flex items-center justify-center animate-bounce delay-1000">
+              {/* Enhanced floating elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-motee-orange rounded-2xl flex items-center justify-center animate-bounce delay-1000 hover:animate-pulse">
                 <span className="text-2xl">🛡️</span>
               </div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-motee-green rounded-2xl flex items-center justify-center animate-bounce delay-500">
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-motee-green rounded-2xl flex items-center justify-center animate-bounce delay-500 hover:animate-pulse">
                 <span className="text-xl">✓</span>
+              </div>
+              <div className="absolute top-1/2 -right-8 w-12 h-12 bg-motee-blue rounded-full flex items-center justify-center animate-float-side">
+                <span className="text-sm">💎</span>
               </div>
             </div>
           </div>

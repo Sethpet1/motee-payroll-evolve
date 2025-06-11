@@ -10,6 +10,7 @@ import Solutions from '@/components/Solutions';
 import CallToAction from '@/components/CallToAction';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BackgroundAnimations from '@/components/BackgroundAnimations';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,7 +21,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen relative">
+      <BackgroundAnimations />
       <Header />
       
       <main className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>

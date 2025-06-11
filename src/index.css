@@ -115,4 +115,150 @@
   .gradient-bg {
     @apply bg-gradient-to-r from-motee-blue via-motee-green to-motee-orange;
   }
+
+  /* Floating Background Animations */
+  .floating-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .floating-shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 20s infinite linear;
+  }
+
+  .floating-shape:nth-child(1) {
+    left: 10%;
+    animation-delay: -2s;
+    animation-duration: 25s;
+  }
+
+  .floating-shape:nth-child(2) {
+    left: 20%;
+    animation-delay: -4s;
+    animation-duration: 18s;
+  }
+
+  .floating-shape:nth-child(3) {
+    left: 30%;
+    animation-delay: -6s;
+    animation-duration: 22s;
+  }
+
+  .floating-shape:nth-child(4) {
+    left: 40%;
+    animation-delay: -8s;
+    animation-duration: 26s;
+  }
+
+  .floating-shape:nth-child(5) {
+    left: 50%;
+    animation-delay: -10s;
+    animation-duration: 20s;
+  }
+
+  .floating-shape:nth-child(6) {
+    left: 60%;
+    animation-delay: -12s;
+    animation-duration: 24s;
+  }
+
+  .floating-shape:nth-child(7) {
+    left: 70%;
+    animation-delay: -14s;
+    animation-duration: 19s;
+  }
+
+  .floating-shape:nth-child(8) {
+    left: 80%;
+    animation-delay: -16s;
+    animation-duration: 23s;
+  }
+
+  .moving-gradient {
+    background: linear-gradient(-45deg, #1E40AF20, #05966920, #EA580C20, #1E40AF20);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.1;
+    }
+    90% {
+      opacity: 0.1;
+    }
+    100% {
+      transform: translateY(-100px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes floatSide {
+    0%, 100% {
+      transform: translateX(0px) translateY(0px);
+    }
+    33% {
+      transform: translateX(30px) translateY(-30px);
+    }
+    66% {
+      transform: translateX(-20px) translateY(20px);
+    }
+  }
+
+  @keyframes bounceGentle {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes rotateFloat {
+    0% {
+      transform: rotate(0deg) translateY(0px);
+    }
+    50% {
+      transform: rotate(180deg) translateY(-10px);
+    }
+    100% {
+      transform: rotate(360deg) translateY(0px);
+    }
+  }
+
+  .animate-float-side {
+    animation: floatSide 6s ease-in-out infinite;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 4s ease-in-out infinite;
+  }
+
+  .animate-rotate-float {
+    animation: rotateFloat 8s linear infinite;
+  }
 }
