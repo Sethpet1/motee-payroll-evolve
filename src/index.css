@@ -92,7 +92,10 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-gray-50 via-gray-100 to-green-50 text-foreground;
+    @apply bg-black text-white;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #003300 50%, #1a1a1a 75%, #000000 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
   }
 }
 
@@ -109,11 +112,79 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-motee-blue via-motee-green to-gray-900 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-motee-green via-orange-500 to-motee-green bg-clip-text text-transparent;
   }
   
   .gradient-bg {
-    @apply bg-gradient-to-r from-gray-900 via-motee-green to-motee-blue;
+    @apply bg-gradient-to-r from-black via-motee-green to-orange-500;
+  }
+
+  /* MSL Text Animation Background */
+  .msl-text-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -3;
+    overflow: hidden;
+  }
+
+  .msl-text {
+    position: absolute;
+    font-family: 'Arial Black', sans-serif;
+    font-weight: 900;
+    opacity: 0.03;
+    color: #059669;
+    text-shadow: 0 0 50px rgba(5, 150, 105, 0.3);
+    animation: mslFloat 25s infinite linear;
+    user-select: none;
+  }
+
+  .msl-text:nth-child(1) {
+    font-size: 150px;
+    left: -200px;
+    top: 10%;
+    animation-duration: 30s;
+    animation-delay: 0s;
+    color: #059669;
+  }
+
+  .msl-text:nth-child(2) {
+    font-size: 200px;
+    left: -300px;
+    top: 40%;
+    animation-duration: 35s;
+    animation-delay: -5s;
+    color: #f97316;
+  }
+
+  .msl-text:nth-child(3) {
+    font-size: 120px;
+    left: -150px;
+    top: 70%;
+    animation-duration: 28s;
+    animation-delay: -10s;
+    color: #10b981;
+  }
+
+  .msl-text:nth-child(4) {
+    font-size: 180px;
+    left: -250px;
+    top: 20%;
+    animation-duration: 32s;
+    animation-delay: -15s;
+    color: #ea580c;
+  }
+
+  .msl-text:nth-child(5) {
+    font-size: 140px;
+    left: -180px;
+    top: 60%;
+    animation-duration: 26s;
+    animation-delay: -20s;
+    color: #047857;
   }
 
   /* Enhanced Floating Background Animations */
@@ -130,7 +201,7 @@
 
   .floating-shape {
     position: absolute;
-    opacity: 0.15;
+    opacity: 0.2;
     animation: float 20s infinite linear;
   }
 
@@ -195,7 +266,7 @@
   }
 
   .moving-gradient {
-    background: linear-gradient(-45deg, #1E40AF20, #05966920, #11111120, #05966940);
+    background: linear-gradient(-45deg, #00000040, #05966920, #f9731640, #05966940);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
   }
@@ -220,9 +291,9 @@
   /* Animated Mesh Background */
   .mesh-background {
     background: linear-gradient(-45deg, 
-      rgba(30, 64, 175, 0.1), 
+      rgba(0, 0, 0, 0.9), 
       rgba(5, 150, 105, 0.1), 
-      rgba(17, 17, 17, 0.05), 
+      rgba(249, 115, 22, 0.05), 
       rgba(5, 150, 105, 0.15));
     background-size: 400% 400%;
     animation: meshMove 20s ease infinite;
@@ -241,9 +312,16 @@
 
   .particle {
     position: absolute;
-    background: radial-gradient(circle, rgba(5, 150, 105, 0.3) 0%, transparent 70%);
     border-radius: 50%;
     animation: particleFloat 15s infinite ease-in-out;
+  }
+
+  .particle:nth-child(odd) {
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.4) 0%, transparent 70%);
+  }
+
+  .particle:nth-child(even) {
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.3) 0%, transparent 70%);
   }
 
   .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; }
@@ -256,16 +334,33 @@
   .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: -14s; }
   .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: -16s; }
 
+  @keyframes mslFloat {
+    0% {
+      transform: translateX(-100%) translateY(0px) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.03;
+    }
+    90% {
+      opacity: 0.03;
+    }
+    100% {
+      transform: translateX(calc(100vw + 300px)) translateY(-50px) rotate(15deg);
+      opacity: 0;
+    }
+  }
+
   @keyframes float {
     0% {
       transform: translateY(100vh) rotate(0deg);
       opacity: 0;
     }
     10% {
-      opacity: 0.15;
+      opacity: 0.2;
     }
     90% {
-      opacity: 0.15;
+      opacity: 0.2;
     }
     100% {
       transform: translateY(-100px) rotate(360deg);
@@ -443,7 +538,7 @@
   /* Responsive Animations */
   @media (max-width: 768px) {
     .floating-shape {
-      opacity: 0.08;
+      opacity: 0.1;
     }
     
     .marquee-content {
@@ -453,6 +548,16 @@
     .particle {
       opacity: 0.5;
     }
+
+    .msl-text {
+      opacity: 0.02;
+    }
+
+    .msl-text:nth-child(1) { font-size: 80px; }
+    .msl-text:nth-child(2) { font-size: 100px; }
+    .msl-text:nth-child(3) { font-size: 60px; }
+    .msl-text:nth-child(4) { font-size: 90px; }
+    .msl-text:nth-child(5) { font-size: 70px; }
   }
 
   @media (max-width: 480px) {
@@ -465,5 +570,15 @@
     .animate-rotate-float {
       animation-duration: 8s;
     }
+
+    .msl-text {
+      opacity: 0.015;
+    }
+
+    .msl-text:nth-child(1) { font-size: 60px; }
+    .msl-text:nth-child(2) { font-size: 80px; }
+    .msl-text:nth-child(3) { font-size: 40px; }
+    .msl-text:nth-child(4) { font-size: 70px; }
+    .msl-text:nth-child(5) { font-size: 50px; }
   }
 }

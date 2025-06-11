@@ -12,6 +12,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BackgroundAnimations from '@/components/BackgroundAnimations';
 import MarqueeText from '@/components/MarqueeText';
+import MSLBackground from '@/components/MSLBackground';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,7 +23,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-gray-50 via-white to-green-50">
+    <div className="min-h-screen relative">
+      <MSLBackground />
       <BackgroundAnimations />
       <Header />
       
