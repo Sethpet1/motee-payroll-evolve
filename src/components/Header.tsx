@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
@@ -25,7 +24,7 @@ const Header = () => {
             <a href="#solutions" className="text-motee-gray hover:text-motee-blue transition-colors duration-200">Solutions</a>
             <a href="#contact" className="text-motee-gray hover:text-motee-blue transition-colors duration-200">Contact</a>
             <Button className="bg-motee-orange hover:bg-motee-orange-dark text-white animate-pulse-glow">
-              Get Started
+              Book a Demo
             </Button>
           </nav>
 
