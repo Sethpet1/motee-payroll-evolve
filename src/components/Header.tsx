@@ -14,6 +14,8 @@ import MSLBackground from '@/components/MSLBackground';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +24,18 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close mobile menu on outside click
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target as Node)) {
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [mobileMenuOpen]);
 
   const solutionsMenu = [
     { name: "HR Management", href: "/solutions/hr-management" },
@@ -149,12 +163,51 @@ const Header = () => {
 
             {/* Mobile Navigation */}
             <div className="lg:hidden">
-              <Button variant="ghost" size="icon" className="text-gray-700">
+              <Button variant="ghost" size="icon" className="text-gray-700" onClick={() => setMobileMenuOpen(true)}>
                 <Menu className="h-6 w-6" />
               </Button>
             </div>
           </div>
         </div>
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex justify-end">
+            <div ref={mobileMenuRef} className="w-72 max-w-full h-full bg-white shadow-xl p-6 flex flex-col space-y-2 animate-slide-left">
+              <button
+                className="self-end mb-4 text-gray-700 hover:text-motee-green text-2xl"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                ×
+              </button>
+              <Link to="/" className="py-2 text-lg font-semibold text-motee-green hover:text-motee-orange" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+              <div className="border-t border-gray-200 my-2"></div>
+              {/* Solutions Dropdown */}
+              <details className="group">
+                <summary className="py-2 text-lg font-semibold cursor-pointer text-gray-700 hover:text-motee-green flex items-center justify-between">Solutions <span className="ml-2">▼</span></summary>
+                <div className="pl-4 flex flex-col space-y-1 mt-1">
+                  {solutionsMenu.map((item) => (
+                    <Link key={item.name} to={item.href} className="py-1 text-gray-600 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>{item.name}</Link>
+                  ))}
+                </div>
+              </details>
+              {/* Who We Help Dropdown */}
+              <details className="group">
+                <summary className="py-2 text-lg font-semibold cursor-pointer text-gray-700 hover:text-motee-green flex items-center justify-between">Who We Help <span className="ml-2">▼</span></summary>
+                <div className="pl-4 flex flex-col space-y-1 mt-1">
+                  {whoWeHelpMenu.map((item) => (
+                    <Link key={item.name} to={item.href} className="py-1 text-gray-600 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>{item.name}</Link>
+                  ))}
+                </div>
+              </details>
+              <Link to="/why-msl" className="py-2 text-lg font-semibold text-gray-700 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>Why MSL</Link>
+              <Link to="/about-msl" className="py-2 text-lg font-semibold text-gray-700 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>About MSL</Link>
+              <Link to="/calculator" className="py-2 text-lg font-semibold text-gray-700 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>Calculator</Link>
+              <Link to="/pricing" className="py-2 text-lg font-semibold text-gray-700 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+              <Link to="/book-demo" className="py-2 text-lg font-semibold text-white bg-gradient-to-r from-motee-green to-motee-orange rounded-lg text-center mt-4" onClick={() => setMobileMenuOpen(false)}>Book a Demo</Link>
+            </div>
+          </div>
+        )}
       </header>
     </>
   );
