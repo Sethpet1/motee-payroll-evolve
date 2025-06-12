@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,20 +62,18 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				motee: {
-					blue: '#1E40AF',
-					'blue-light': '#3B82F6',
-					'blue-dark': '#1E3A8A',
-					green: '#059669',
-					'green-light': '#10B981',
-					'green-dark': '#047857',
-					orange: '#EA580C',
-					'orange-light': '#F97316',
-					'orange-dark': '#C2410C',
-					gray: '#6B7280',
-					'gray-light': '#9CA3AF',
-					'gray-dark': '#374151'
-				}
+				'motee-green': '#059669',
+				'motee-green-light': '#10B981',
+				'motee-green-dark': '#047857',
+				'motee-orange': '#EA580C',
+				'motee-orange-light': '#F97316',
+				'motee-orange-dark': '#C2410C',
+				'motee-blue': '#1E40AF',
+				'motee-blue-light': '#3B82F6',
+				'motee-blue-dark': '#1E3A8A',
+				'motee-gray': '#6B7280',
+				'motee-gray-light': '#9CA3AF',
+				'motee-gray-dark': '#374151'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -85,20 +82,12 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				},
 				'fade-in': {
 					'0%': {
@@ -147,6 +136,55 @@ export default {
 					'50%': {
 						boxShadow: '0 0 40px rgba(59, 130, 246, 0.8)'
 					}
+				},
+				'bounce-gentle': {
+					'0%, 100%': {
+						transform: 'translateY(-5%)',
+						animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+					},
+					'50%': {
+						transform: 'translateY(0)',
+						animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+					}
+				},
+				'float-side': {
+					'0%, 100%': {
+						transform: 'translateX(-10%)',
+						animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+					},
+					'50%': {
+						transform: 'translateX(10%)',
+						animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+					}
+				},
+				'rotate-float': {
+					'0%': {
+						transform: 'rotate(0deg) translateY(0)'
+					},
+					'50%': {
+						transform: 'rotate(180deg) translateY(-10px)'
+					},
+					'100%': {
+						transform: 'rotate(360deg) translateY(0)'
+					}
+				},
+				'pulse-slow': {
+					'0%, 100%': {
+						opacity: '0.5'
+					},
+					'50%': {
+						opacity: '1'
+					}
+				},
+				'slide-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
@@ -156,7 +194,15 @@ export default {
 				'slide-in-left': 'slide-in-left 0.8s ease-out',
 				'slide-in-right': 'slide-in-right 0.8s ease-out',
 				'scale-in': 'scale-in 0.6s ease-out',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'bounce-gentle': 'bounce-gentle 3s infinite',
+				'float-side': 'float-side 6s infinite',
+				'rotate-float': 'rotate-float 8s infinite linear',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+				'slide-up': 'slide-up 0.6s ease-out'
+			},
+			backgroundImage: {
+				'mesh-background': 'linear-gradient(to bottom right, rgba(5, 150, 105, 0.1), rgba(234, 88, 12, 0.1))'
 			}
 		}
 	},

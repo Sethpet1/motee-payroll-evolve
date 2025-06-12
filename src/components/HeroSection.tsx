@@ -32,7 +32,7 @@ const HeroSection = () => {
             
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               We don't just process payroll—we revolutionize it. With cutting-edge biometric security, 
-              anti-fraud protection, and human-centered design, MOTEE Solutions delivers integrity 
+              anti-fraud protection, and human-centered design. MOTEE Solutions delivers integrity 
               you can trust for Nigeria's most complex payroll challenges.
             </p>
             
