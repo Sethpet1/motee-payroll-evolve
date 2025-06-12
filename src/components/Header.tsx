@@ -51,7 +51,7 @@ const Header = () => {
               <a href="#contact" className="block px-3 py-2 text-motee-gray hover:text-motee-blue transition-colors duration-200">Contact</a>
               <div className="px-3 py-2">
                 <Button className="w-full bg-motee-orange hover:bg-motee-orange-dark text-white">
-                  Get Started
+                  Book a Demo
                 </Button>
               </div>
             </div>
