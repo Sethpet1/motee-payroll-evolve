@@ -42,12 +42,12 @@ const AboutMSL = () => {
             <div className="grid grid-cols-2 gap-4">
               {/* Insert two images here */}
               <img
-                src="/public/assets/images/man-7116367_1280.jpg"
+                src="/assets/images/man-7116367_1280.jpg"
                 alt="Office scene 1"
                 className="w-full h-full object-cover rounded-xl"
               />
               <img
-                src="/src/assets/Images/office-2.jpg"
+                src="/assets/Images/office-2.jpg"
                 alt="Office scene 2"
                 className="w-full h-full object-cover rounded-xl"
               />
