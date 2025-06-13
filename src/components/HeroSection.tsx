@@ -26,13 +26,13 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="mt-12 text-center lg:text-left">
-            <h1 className="text-2xl lg:text-4xl font-bold mb-6 animate-slide-up">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
               Revolutionizing <span className="text-motee-green">Payroll</span> Management in Nigeria
             </h1>
             <p className="text-xl text-gray-600 mb-8 animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
-              Eliminate fraud, reduce costs by 40%,<br/>
-              and regain employee trust with our<br/>
-              AI-powered payroll solution for Nigerian businesses.
+              Eliminate fraud, reduce costs by 40% and<br/>
+              regain employee trust with our AI-powered<br/>
+              payroll solution for Nigerian businesses.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: '0.4s' }}>
