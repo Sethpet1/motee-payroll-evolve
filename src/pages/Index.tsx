@@ -12,7 +12,8 @@ import Footer from '@/components/Footer';
 import MarqueeText from '@/components/MarqueeText';
 import MSLBackground from '@/components/MSLBackground';
 import AboutMSL from '@/components/AboutMSL';
-
+import EmployeeExperience from '@/components/EmployeeExperience';
+import Team from '@/components/Team';
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -50,9 +51,10 @@ const Index = () => {
         <MarqueeText />
         <AboutMSL />
         <MissionVision />
-        <MarqueeText />
-        <ProblemStatement />
-        <Solutions />
+        <Team />
+        {/* <ProblemStatement /> */}
+        {/* <Solutions /> */}
+        <EmployeeExperience />
         <CallToAction />
       </main>
       

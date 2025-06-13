@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,13 +8,13 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 45 20% 98%;
     --foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
+    --card: 45 20% 98%;
     --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 0 0% 100%;
+    --popover: 45 20% 98%;
     --popover-foreground: 222.2 84% 4.9%;
 
     --primary: 210 79% 39%;
@@ -36,10 +38,10 @@
 
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 45 20% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-primary-foreground: 45 20% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
@@ -85,9 +87,10 @@
   }
 
   html, body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #FFFDF6;
   }
 }
 
@@ -98,7 +101,8 @@
   }
 
   body {
-    @apply bg-white text-gray-900;
+    @apply text-gray-900;
+    background-color: #FFFDF6;
   }
 }
 
@@ -136,7 +140,7 @@
 
   .msl-text {
     position: absolute;
-    font-family: 'Arial Black', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 900;
     opacity: 0.03;
     color: #059669;

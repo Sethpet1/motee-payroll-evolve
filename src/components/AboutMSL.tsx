@@ -18,9 +18,9 @@ const AboutMSL = () => {
           </div>
           <div className="flex justify-center">
             {/* Insert picture of happy employees here */}
-            <div className="w-full max-w-md h-64 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
+            <div className="w-full max-w-lg h-80 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
               <img
-                src="/src/assets/Images/people-1979261_1280.jpg"
+                src="/src/assets/Images/3.jpg"
                 alt="Happy employees"
                 className="w-full h-full object-cover rounded-2xl"
               />
@@ -39,18 +39,15 @@ const AboutMSL = () => {
                 Boring payroll software means there are no surprises. It means your employees are paid accurately and on time, every time. It means <span className="font-semibold text-motee-green">compliance</span>, <span className="font-semibold text-motee-green">reliability</span>, and <span className="font-semibold text-motee-green">peace of mind</span>.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {/* Insert two images here */}
-              <img
-                src="/src/assets/Images/man-7116367_1280.jpg"
-                alt="Office scene 1"
-                className="w-full h-full object-cover rounded-xl"
-              />
-              <img
-                src="/src/assets/Images/office-2.jpg"
-                alt="Office scene 2"
-                className="w-full h-full object-cover rounded-xl"
-              />
+            <div className="flex justify-center">
+              {/* Insert image here */}
+              <div className="w-full max-w-lg h-80 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
+                <img
+                  src="/src/assets/Images/dd.jpg"
+                  alt="Office scene 1"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -74,9 +71,9 @@ const AboutMSL = () => {
           </div>
           <div className="flex justify-center">
             {/* Insert picture for switching payroll here */}
-            <div className="w-full max-w-md h-64 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
+            <div className="w-full max-w-lg h-80 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
               <img
-                src="/src/assets/Images/switching-payroll.jpg"
+                src="/src/assets/Images/pay.jpg"
                 alt="Switching payroll provider"
                 className="w-full h-full object-cover rounded-2xl"
               />

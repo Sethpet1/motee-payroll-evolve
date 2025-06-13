@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
+import BookDemoButton from "@/components/ui/BookDemoButton";
 import { ArrowRight, ChevronRight } from 'lucide-react';
 
 const keyBenefits = [
@@ -24,13 +25,14 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-slide-up">
+          <div className="mt-12 text-center lg:text-left">
+            <h1 className="text-2xl lg:text-4xl font-bold mb-6 animate-slide-up">
               Revolutionizing <span className="text-motee-green">Payroll</span> Management in Nigeria
             </h1>
-            <p className="text-xl text-gray-600 mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              Eliminate fraud, reduce costs by 40%, and regain employee trust with our 
-              AI-powered payroll solution designed for Nigerian businesses.
+            <p className="text-xl text-gray-600 mb-8 animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
+              Eliminate fraud, reduce costs by 40%,<br/>
+              and regain employee trust with our<br/>
+              AI-powered payroll solution for Nigerian businesses.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: '0.4s' }}>
@@ -81,13 +83,7 @@ const HeroSection = () => {
                   </div>
                 )}
               </div>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-2 border-motee-green text-motee-green hover:bg-motee-green hover:text-white px-8 py-6 text-lg font-semibold"
-              >
-                Book Demo
-              </Button>
+              <BookDemoButton />
             </div>
             
             <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-gray-200">
