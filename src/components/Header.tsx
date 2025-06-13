@@ -58,7 +58,7 @@ const Header = () => {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
       }`}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo and Brand */}
             <Link to="/" className="flex items-center space-x-3">
@@ -68,12 +68,12 @@ const Header = () => {
               <div className="flex flex-col">
                 <span className="text-2xl font-bold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent">
                   MOTEE Solutions
-                </span>
+            </span>
                 <span className="text-xs text-gray-500">Revolutionizing Payroll</span>
               </div>
-            </Link>
+          </Link>
 
-            {/* Desktop Navigation */}
+          {/* Desktop Navigation */}
             <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList className="flex items-center space-x-1">
                 <NavigationMenuItem>
@@ -89,7 +89,7 @@ const Header = () => {
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-motee-green"
                         >
                           <div className="text-sm font-medium leading-none">{item.name}</div>
-                        </Link>
+            </Link>
                       ))}
                     </div>
                   </NavigationMenuContent>
@@ -108,7 +108,7 @@ const Header = () => {
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-motee-green"
                         >
                           <div className="text-sm font-medium leading-none">{item.name}</div>
-                        </Link>
+            </Link>
                       ))}
                     </div>
                   </NavigationMenuContent>
@@ -120,7 +120,7 @@ const Header = () => {
                     className="h-12 px-4 flex items-center text-gray-700 hover:text-motee-green hover:bg-gray-50"
                   >
                     Why MSL
-                  </Link>
+            </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -162,8 +162,18 @@ const Header = () => {
             </NavigationMenu>
 
             {/* Mobile Navigation */}
-            <div className="lg:hidden">
-              <Button variant="ghost" size="icon" className="text-gray-700" onClick={() => setMobileMenuOpen(true)}>
+            <div className="lg:hidden z-[100]">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="text-gray-700 focus:outline-none focus:ring-2 focus:ring-motee-green"
+                aria-label="Open menu"
+                aria-controls="mobile-menu"
+                aria-expanded={mobileMenuOpen}
+                onClick={() => setMobileMenuOpen(true)}
+                tabIndex={0}
+                onTouchStart={() => setMobileMenuOpen(true)}
+              >
                 <Menu className="h-6 w-6" />
               </Button>
             </div>
@@ -171,12 +181,21 @@ const Header = () => {
         </div>
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex justify-end">
-            <div ref={mobileMenuRef} className="w-72 max-w-full h-full bg-white shadow-xl p-6 flex flex-col space-y-2 animate-slide-left">
+          <div className="fixed inset-0 z-[99] bg-black/70 backdrop-blur-sm flex justify-end">
+            <div 
+              ref={mobileMenuRef} 
+              id="mobile-menu"
+              role="dialog"
+              aria-modal="true"
+              tabIndex={-1}
+              className="w-72 max-w-full h-full bg-white shadow-xl p-6 flex flex-col space-y-2 animate-slide-left focus:outline-none"
+            >
               <button
-                className="self-end mb-4 text-gray-700 hover:text-motee-green text-2xl"
+                className="self-end mb-4 text-gray-700 hover:text-motee-green text-2xl focus:outline-none focus:ring-2 focus:ring-motee-green"
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close menu"
+                tabIndex={0}
+                onTouchStart={() => setMobileMenuOpen(false)}
               >
                 ×
               </button>
@@ -205,10 +224,10 @@ const Header = () => {
               <Link to="/calculator" className="py-2 text-lg font-semibold text-gray-700 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>Calculator</Link>
               <Link to="/pricing" className="py-2 text-lg font-semibold text-gray-700 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
               <Link to="/book-demo" className="py-2 text-lg font-semibold text-white bg-gradient-to-r from-motee-green to-motee-orange rounded-lg text-center mt-4" onClick={() => setMobileMenuOpen(false)}>Book a Demo</Link>
-            </div>
-          </div>
+        </div>
+      </div>
         )}
-      </header>
+    </header>
     </>
   );
 };

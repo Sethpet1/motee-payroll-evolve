@@ -3,13 +3,11 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Calculator from '@/components/Calculator';
 import MSLBackground from '@/components/MSLBackground';
-import BackgroundAnimations from '@/components/BackgroundAnimations';
 
 const CalculatorPage = () => {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-white">
       <MSLBackground />
-      <BackgroundAnimations />
       <Header />
       
       <main className="pt-20 pb-16">

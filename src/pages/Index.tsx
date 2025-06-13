@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,9 +9,9 @@ import Solutions from '@/components/Solutions';
 import CallToAction from '@/components/CallToAction';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import BackgroundAnimations from '@/components/BackgroundAnimations';
 import MarqueeText from '@/components/MarqueeText';
 import MSLBackground from '@/components/MSLBackground';
+import AboutMSL from '@/components/AboutMSL';
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,14 +41,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative bg-white">
       <MSLBackground />
-      <BackgroundAnimations />
       <Header />
       
       <main className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <HeroSection />
         <MarqueeText />
+        <AboutMSL />
         <MissionVision />
         <MarqueeText />
         <ProblemStatement />

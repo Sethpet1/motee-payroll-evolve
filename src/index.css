@@ -83,18 +83,22 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 @layer base {
   * {
     @apply border-border;
+    font-family: inherit;
   }
 
   body {
-    @apply bg-black text-white;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #003300 50%, #1a1a1a 75%, #000000 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 20s ease infinite;
+    @apply bg-white text-gray-900;
   }
 }
 
@@ -236,228 +240,15 @@
     animation-direction: reverse;
   }
 
-  /* Enhanced Floating Background Animations */
-  .floating-shapes {
-    @apply fixed inset-0 pointer-events-none -z-40 overflow-hidden;
-  }
-
-  .floating-shape {
-    @apply absolute opacity-20;
-    animation: float 15s infinite ease-in-out;
-  }
-
-  .floating-shape:nth-child(1) {
-    left: 10%;
-    animation-delay: -2s;
-    animation-duration: 25s;
-  }
-
-  .floating-shape:nth-child(2) {
-    left: 20%;
-    animation-delay: -4s;
-    animation-duration: 18s;
-  }
-
-  .floating-shape:nth-child(3) {
-    left: 30%;
-    animation-delay: -6s;
-    animation-duration: 22s;
-  }
-
-  .floating-shape:nth-child(4) {
-    left: 40%;
-    animation-delay: -8s;
-    animation-duration: 26s;
-  }
-
-  .floating-shape:nth-child(5) {
-    left: 50%;
-    animation-delay: -10s;
-    animation-duration: 20s;
-  }
-
-  .floating-shape:nth-child(6) {
-    left: 60%;
-    animation-delay: -12s;
-    animation-duration: 24s;
-  }
-
-  .floating-shape:nth-child(7) {
-    left: 70%;
-    animation-delay: -14s;
-    animation-duration: 19s;
-  }
-
-  .floating-shape:nth-child(8) {
-    left: 80%;
-    animation-delay: -16s;
-    animation-duration: 23s;
-  }
-
-  .floating-shape:nth-child(9) {
-    left: 5%;
-    animation-delay: -18s;
-    animation-duration: 28s;
-  }
-
-  .floating-shape:nth-child(10) {
-    left: 85%;
-    animation-delay: -20s;
-    animation-duration: 21s;
-  }
-  
-  .floating-shape:nth-child(11) {
-    left: 15%;
-    animation-delay: -3s;
-    animation-duration: 27s;
-  }
-
-  .floating-shape:nth-child(12) {
-    left: 25%;
-    animation-delay: -5s;
-    animation-duration: 19s;
-  }
-
-  .floating-shape:nth-child(13) {
-    left: 35%;
-    animation-delay: -7s;
-    animation-duration: 24s;
-  }
-
-  .floating-shape:nth-child(14) {
-    left: 45%;
-    animation-delay: -9s;
-    animation-duration: 22s;
-  }
-
-  .floating-shape:nth-child(15) {
-    left: 55%;
-    animation-delay: -11s;
-    animation-duration: 26s;
-  }
-
-  .floating-shape:nth-child(16) {
-    left: 65%;
-    animation-delay: -13s;
-    animation-duration: 20s;
-  }
-
-  .particles {
-    @apply fixed inset-0 pointer-events-none -z-30 overflow-hidden;
-  }
-
-  .particle {
-    @apply absolute rounded-full bg-motee-green opacity-20;
-    animation: particleFloat 20s infinite ease-in-out;
-  }
-
-  .particle:nth-child(odd) {
-    background: radial-gradient(circle, rgba(5, 150, 105, 0.4) 0%, transparent 70%);
-  }
-
-  .particle:nth-child(even) {
-    background: radial-gradient(circle, rgba(249, 115, 22, 0.3) 0%, transparent 70%);
-  }
-
-  .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; }
-  .particle:nth-child(2) { width: 6px; height: 6px; left: 20%; animation-delay: -2s; }
-  .particle:nth-child(3) { width: 3px; height: 3px; left: 30%; animation-delay: -4s; }
-  .particle:nth-child(4) { width: 5px; height: 5px; left: 40%; animation-delay: -6s; }
-  .particle:nth-child(5) { width: 4px; height: 4px; left: 50%; animation-delay: -8s; }
-  .particle:nth-child(6) { width: 7px; height: 7px; left: 60%; animation-delay: -10s; }
-  .particle:nth-child(7) { width: 3px; height: 3px; left: 70%; animation-delay: -12s; }
-  .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: -14s; }
-  .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: -16s; }
-  .particle:nth-child(10) { width: 6px; height: 6px; left: 5%; animation-delay: -1s; }
-  .particle:nth-child(11) { width: 5px; height: 5px; left: 15%; animation-delay: -3s; }
-  .particle:nth-child(12) { width: 7px; height: 7px; left: 25%; animation-delay: -5s; }
-  .particle:nth-child(13) { width: 4px; height: 4px; left: 35%; animation-delay: -7s; }
-  .particle:nth-child(14) { width: 6px; height: 6px; left: 45%; animation-delay: -9s; }
-  .particle:nth-child(15) { width: 3px; height: 3px; left: 55%; animation-delay: -11s; }
-
+  /* Essential Animations */
   @keyframes mslFloat {
-    0% {
-      transform: translateX(-100%) translateY(0px) rotate(0deg);
-      opacity: 0;
-    }
-    10% {
-      opacity: 0.03;
-    }
-    90% {
-      opacity: 0.03;
-    }
-    100% {
-      transform: translateX(calc(100vw + 300px)) translateY(-50px) rotate(15deg);
-      opacity: 0;
-    }
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
   }
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(5deg); }
-  }
-
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  @keyframes meshMove {
-    0% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.1) rotate(1deg); }
-    100% { transform: scale(1) rotate(0deg); }
-  }
-
-  @keyframes particleFloat {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    25% { transform: translateY(-20px) translateX(10px); }
-    50% { transform: translateY(0) translateX(20px); }
-    75% { transform: translateY(20px) translateX(10px); }
-  }
-
-  @keyframes bounce-gentle {
-    0%, 100% {
-      transform: translateY(-5%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-    50% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-  }
-
-  @keyframes float-side {
-    0%, 100% {
-      transform: translateX(-10%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-    50% {
-      transform: translateX(10%);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-  }
-
-  @keyframes rotate-float {
-    0% { transform: rotate(0deg) translateY(0); }
-    50% { transform: rotate(180deg) translateY(-10px); }
-    100% { transform: rotate(360deg) translateY(0); }
-  }
-
-  @keyframes pulse-slow {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-  }
-
-  @keyframes slide-up {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
 
   @keyframes slide-in-left {
@@ -482,125 +273,31 @@
     }
   }
 
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
-  
-  @keyframes shimmer {
+  @keyframes scale-in {
     0% {
-      background-position: -200% 0;
+      opacity: 0;
+      transform: scale(0.9);
     }
     100% {
-      background-position: 200% 0;
+      opacity: 1;
+      transform: scale(1);
     }
   }
 
-  .animate-shimmer {
-    background: linear-gradient(90deg, 
-      rgba(5, 150, 105, 0.1), 
-      rgba(249, 115, 22, 0.1), 
-      rgba(5, 150, 105, 0.1));
-    background-size: 200% 100%;
-    animation: shimmer 3s infinite linear;
-  }
-
-  .animate-float-side {
-    animation: float-side 6s ease-in-out infinite;
-  }
-
-  .animate-bounce-gentle {
-    animation: bounce-gentle 4s ease-in-out infinite;
-  }
-
-  .animate-rotate-float {
-    animation: rotate-float 8s linear infinite;
-  }
-
-  .animate-slide-up {
-    animation: slide-up 0.8s ease-out;
-  }
-
-  .animate-slide-left {
-    animation: slide-in-left 0.8s ease-out;
-  }
-
-  .animate-slide-right {
-    animation: slide-in-right 0.8s ease-out;
-  }
-
-  .animate-pulse-slow {
-    animation: pulse-slow 3s ease-in-out infinite;
-  }
-  
-  .animate-on-hover {
-    transition: all 0.3s ease;
-  }
-  
-  .animate-on-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Responsive Animations */
-  @media (max-width: 768px) {
-    .floating-shape {
-      @apply w-4 h-4;
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
     }
-    
-    .particle {
-      @apply w-2 h-2;
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
-
-    .msl-text {
-      opacity: 0.02;
-    }
-
-    .msl-text:nth-child(1) { font-size: 80px; }
-    .msl-text:nth-child(2) { font-size: 100px; }
-    .msl-text:nth-child(3) { font-size: 60px; }
-    .msl-text:nth-child(4) { font-size: 90px; }
-    .msl-text:nth-child(5) { font-size: 70px; }
-    .msl-text:nth-child(6) { font-size: 85px; }
-    .msl-text:nth-child(7) { font-size: 95px; }
-    .msl-text:nth-child(8) { font-size: 65px; }
-    .msl-text:nth-child(9) { font-size: 75px; }
-    .msl-text:nth-child(10) { font-size: 85px; }
   }
 
-  @media (max-width: 480px) {
-    .floating-shape {
-      @apply w-3 h-3;
-    }
-    
-    .particle {
-      @apply w-1.5 h-1.5;
-    }
-
-    .animate-float-side,
-    .animate-bounce-gentle,
-    .animate-rotate-float {
-      animation-duration: 8s;
-    }
-
-    .msl-text {
-      opacity: 0.015;
-    }
-
-    .msl-text:nth-child(1) { font-size: 60px; }
-    .msl-text:nth-child(2) { font-size: 80px; }
-    .msl-text:nth-child(3) { font-size: 40px; }
-    .msl-text:nth-child(4) { font-size: 70px; }
-    .msl-text:nth-child(5) { font-size: 50px; }
-    .msl-text:nth-child(6) { font-size: 65px; }
-    .msl-text:nth-child(7) { font-size: 75px; }
-    .msl-text:nth-child(8) { font-size: 45px; }
-    .msl-text:nth-child(9) { font-size: 55px; }
-    .msl-text:nth-child(10) { font-size: 65px; }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
   }
 
   /* Marquee Animation */
@@ -628,5 +325,65 @@
   @keyframes marquee-reverse {
     0% { transform: translateX(-50%); }
     100% { transform: translateX(0%); }
+  }
+
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .msl-text {
+      opacity: 0.02;
+    }
+
+    .msl-text:nth-child(1) { font-size: 80px; }
+    .msl-text:nth-child(2) { font-size: 100px; }
+    .msl-text:nth-child(3) { font-size: 60px; }
+    .msl-text:nth-child(4) { font-size: 90px; }
+    .msl-text:nth-child(5) { font-size: 70px; }
+    .msl-text:nth-child(6) { font-size: 85px; }
+    .msl-text:nth-child(7) { font-size: 95px; }
+    .msl-text:nth-child(8) { font-size: 65px; }
+    .msl-text:nth-child(9) { font-size: 75px; }
+    .msl-text:nth-child(10) { font-size: 85px; }
+  }
+
+  @media (max-width: 480px) {
+    .msl-text {
+      opacity: 0.015;
+    }
+
+    .msl-text:nth-child(1) { font-size: 60px; }
+    .msl-text:nth-child(2) { font-size: 80px; }
+    .msl-text:nth-child(3) { font-size: 40px; }
+    .msl-text:nth-child(4) { font-size: 70px; }
+    .msl-text:nth-child(5) { font-size: 50px; }
+    .msl-text:nth-child(6) { font-size: 65px; }
+    .msl-text:nth-child(7) { font-size: 75px; }
+    .msl-text:nth-child(8) { font-size: 45px; }
+    .msl-text:nth-child(9) { font-size: 55px; }
+    .msl-text:nth-child(10) { font-size: 65px; }
   }
 }

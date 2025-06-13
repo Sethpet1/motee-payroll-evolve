@@ -1,51 +1,49 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Calendar, Phone, Mail, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Phone, Mail, Calendar } from 'lucide-react';
 
 const CallToAction = () => {
   const ctaOptions = [
     {
-      title: "Schedule a Demo",
-      description: "See MOTEE in action with a personalized demonstration",
-      icon: Calendar,
-      action: "Book Demo",
-      color: "motee-blue",
-      primary: true
-    },
-    {
-      title: "Speak to an Expert",
-      description: "Get answers to your specific payroll challenges",
-      icon: Phone,
-      action: "Call Now",
+      title: "Basic",
+      description: "Perfect for small businesses just starting out with payroll management.",
+      action: "Get Started",
       color: "motee-green",
-      primary: false
+      primary: false,
+      icon: ArrowRight
     },
     {
-      title: "Get a Quote",
-      description: "Receive a customized pricing proposal for your business",
-      icon: Mail,
-      action: "Get Quote",
+      title: "Professional",
+      description: "Advanced features for growing businesses with complex payroll needs.",
+      action: "Choose Pro",
       color: "motee-orange",
-      primary: false
+      primary: true,
+      icon: ArrowRight
+    },
+    {
+      title: "Enterprise",
+      description: "Custom solutions for large organizations with unique requirements.",
+      action: "Contact Sales",
+      color: "motee-blue",
+      primary: false,
+      icon: ArrowRight
     }
   ];
 
   const guarantees = [
-    "30-day money-back guarantee",
-    "Free migration and setup",
-    "24/7 dedicated support",
-    "No long-term contracts"
+    "100% Fraud Prevention",
+    "24/7 Support",
+    "Data Security",
+    "Tax Compliance",
+    "Easy Integration",
+    "Regular Updates",
+    "Training Included",
+    "Money-back Guarantee"
   ];
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-motee-blue via-motee-green to-motee-orange relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-motee-blue/90 via-motee-green/90 to-motee-orange/90"></div>
-      <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-48 h-48 bg-white/10 rounded-full blur-xl animate-pulse delay-1000"></div>
-      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
@@ -91,38 +89,7 @@ const CallToAction = () => {
           ))}
         </div>
 
-        {/* Main CTA */}
-        <div className="text-center mb-16 animate-slide-in-left">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/20">
-            <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Payroll?
-            </h3>
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              Don't let another day pass with vulnerable payroll systems. 
-              Start your journey to fraud-free, efficient payroll management today.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-motee-blue hover:bg-gray-100 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 group"
-              >
-                Start Free Trial
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white text-white hover:bg-white hover:text-motee-blue px-8 py-4 text-lg font-semibold transition-all duration-300"
-              >
-                View Pricing
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Guarantees */}
+        {/* Our Promise */}
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 animate-fade-in">
           <h4 className="text-2xl font-bold text-white text-center mb-8">Our Promise to You</h4>
           
@@ -156,14 +123,6 @@ const CallToAction = () => {
               <h5 className="font-semibold mb-2">Office Hours</h5>
               <p className="text-white/90">Mon-Fri: 8AM-6PM WAT</p>
             </div>
-          </div>
-        </div>
-
-        {/* Urgency Element */}
-        <div className="mt-12 text-center animate-pulse">
-          <div className="inline-flex items-center space-x-2 bg-motee-orange/20 backdrop-blur-sm rounded-full px-6 py-3 border border-motee-orange/30">
-            <div className="w-3 h-3 bg-motee-orange rounded-full animate-ping"></div>
-            <span className="text-white font-medium">Limited Time: 50% Off Implementation Fees</span>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ import CalculatorPage from './pages/Calculator';
 import PricingPage from './pages/Pricing';
 import NotFound from './pages/NotFound';
 import BookDemo from './pages/BookDemo';
+import AboutMSLPage from './pages/AboutMSL';
 
 // Create a QueryClient instance
 const queryClient = new QueryClient({
@@ -119,6 +120,7 @@ const App = () => {
                 <Route path="/calculator" element={<CalculatorPage />} />
                 <Route path="/pricing" element={<PricingPage />} />
                 <Route path="/book-demo" element={<BookDemo />} />
+                <Route path="/about-msl" element={<AboutMSLPage />} />
                 <Route path="/404" element={<NotFound />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
               </Routes>

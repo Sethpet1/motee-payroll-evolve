@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target, Eye, Heart } from 'lucide-react';
@@ -24,13 +23,13 @@ const MissionVision = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-motee-blue to-motee-blue-light rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:animate-pulse">
                 <Target className="h-8 w-8 text-white" />
               </div>
-              <CardTitle className="text-3xl font-bold text-motee-blue">Mission</CardTitle>
+              <CardTitle className="text-3xl font-bold text-motee-blue">OurMission</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
               <p className="text-lg text-motee-gray-dark leading-relaxed">
-                To revolutionize payroll management in Nigeria by delivering secure, 
-                efficient, and transparent solutions that eliminate fraud, ensure compliance, 
-                and empower businesses to focus on what matters most—their people and growth.
+                To restore trust in payroll across Nigeria by delivering fraud-resistant, employee-first payroll solutions that serve public institutions, SMEs, and enterprises.<br /><br />
+                We help eliminate fictitious workers, empower small businesses with simple, compliant payroll tools, and support large organizations with secure, scalable systems.<br /><br />
+                Because every honest worker deserves to be paid right—on time, every time.
               </p>
               
               <div className="mt-8 space-y-4">
@@ -56,13 +55,14 @@ const MissionVision = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-motee-green to-motee-green-light rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:animate-pulse">
                 <Eye className="h-8 w-8 text-white" />
               </div>
-              <CardTitle className="text-3xl font-bold text-motee-green">Vision</CardTitle>
+              <CardTitle className="text-3xl font-bold text-motee-green">OurVision</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
               <p className="text-lg text-motee-gray-dark leading-relaxed">
-                To become Nigeria's most trusted payroll technology partner, 
-                setting the global standard for integrity-driven, biometric-secured 
-                payroll solutions that protect businesses and empower their workforce.
+                We imagine a Nigeria where payroll should not trigger fear, confusion, or corruption—but a system of trust, dignity, and progress.<br /><br />
+                We see a civil servant who no longer dreads payday, because her salary arrives exactly when promised—no delays, no ghost workers stealing her due.<br /><br />
+                We see a small business owner, once buried in spreadsheets, now growing confidently with automated payroll that keeps him compliant and stress-free.<br /><br />
+                We see a finance leader at a large enterprise sleeping well at night, knowing every employee—across every branch—is paid accurately, and legally.
               </p>
               
               <div className="mt-8 space-y-4">

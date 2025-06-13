@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MSLBackground from '@/components/MSLBackground';
-import BackgroundAnimations from '@/components/BackgroundAnimations';
 
 const BookDemo = () => {
   const [form, setForm] = useState({
@@ -26,7 +25,6 @@ const BookDemo = () => {
   return (
     <div className="min-h-screen relative">
       <MSLBackground />
-      <BackgroundAnimations />
       <Header />
       <main className="relative z-10 flex flex-col items-center justify-center py-24 px-4">
         <section className="w-full max-w-xl bg-white/90 rounded-2xl shadow-xl p-8 md:p-12 border border-gray-200 backdrop-blur-md">

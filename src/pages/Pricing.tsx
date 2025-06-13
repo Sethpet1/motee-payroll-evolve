@@ -2,7 +2,6 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MSLBackground from "@/components/MSLBackground";
-import BackgroundAnimations from "@/components/BackgroundAnimations";
 
 interface PricingTier {
   name: string;
@@ -72,7 +71,6 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-motee-blue/5 relative">
       <MSLBackground />
-      <BackgroundAnimations />
       <Header />
       
       <main className="relative z-10">
