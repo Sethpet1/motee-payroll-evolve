@@ -24,7 +24,7 @@ const HeroSection = () => {
     <section className="relative py-20 lg:py-32 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
+          {/* Contents */}
           <div className="mt-12 text-center lg:text-left">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
               Revolutionizing <span className="text-motee-green">Payroll</span> Management in Nigeria
