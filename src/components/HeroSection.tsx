@@ -111,7 +111,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500">
                 <img 
-                  src="/src/assets/Images/man-4334177_1280.jpg" 
+                  src="/public/assets/images/man-4334177_1280.jpg" 
                   alt="MOTEE Solutions Dashboard" 
                   className="w-full h-full object-cover rounded-lg shadow-lg"
                 />

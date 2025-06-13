@@ -20,7 +20,7 @@ const AboutMSL = () => {
             {/* Insert picture of happy employees here */}
             <div className="w-full max-w-md h-64 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
               <img
-                src="/src/assets/Images/people-1979261_1280.jpg"
+                src="/assets/images/people-1979261_1280.jpg"
                 alt="Happy employees"
                 className="w-full h-full object-cover rounded-2xl"
               />
@@ -42,7 +42,7 @@ const AboutMSL = () => {
             <div className="grid grid-cols-2 gap-4">
               {/* Insert two images here */}
               <img
-                src="/src/assets/Images/man-7116367_1280.jpg"
+                src="/public/assets/images/man-7116367_1280.jpg"
                 alt="Office scene 1"
                 className="w-full h-full object-cover rounded-xl"
               />
