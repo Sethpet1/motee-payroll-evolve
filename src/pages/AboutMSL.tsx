@@ -3,7 +3,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MSLBackground from '@/components/MSLBackground';
 import AboutMSL from '@/components/AboutMSL';
-import { ReactDOM } from 'react-dom';
 
 const AboutMSLPage = () => {
   return (

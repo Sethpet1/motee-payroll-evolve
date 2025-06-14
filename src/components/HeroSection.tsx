@@ -85,6 +85,13 @@ When payroll works effortlessly, your people feel safe.
                   </div>
                 )}
               </div>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-2 border-motee-green text-motee-green hover:bg-motee-green hover:text-white px-8 py-6 text-lg font-semibold"
+              >
+                Watch Now
+              </Button>
               <WatchNowButton />
             </div>
             
