@@ -4,66 +4,66 @@ const MarqueeText = () => {
   const marqueeItems = [
     { 
       name: "GTBank", 
-      logo: "/src/assets/logos/guaranty-trust-bank.svg" 
+      logo: "/logos/guaranty-trust-bank.svg" 
     },
     { 
       name: "Sterling Bank", 
-      logo: "/src/assets/logos/sterling-bank-plc.svg" 
+      logo: "/logos/sterling-bank-plc.svg" 
     },
     { 
       name: "Polaris Bank", 
-      logo: "/src/assets/logos/polaris-bank.svg" 
+      logo: "/logos/polaris-bank.svg" 
     },
     { 
       name: "Mainstreet Bank", 
-      logo: "/src/assets/logos/mainstreet-bank.svg" 
+      logo: "/logos/mainstreet-bank.svg" 
     },
     { 
       name: "Paystack", 
-      logo: "/src/assets/logos/paystack.svg" 
+      logo: "/logos/paystack.svg" 
     },
     { 
       name: "Bolt", 
-      logo: "/src/assets/logos/bolt.svg" 
+      logo: "/logos/bolt.svg" 
     },
     { 
       name: "Barter", 
-      logo: "/src/assets/logos/barter.svg" 
+      logo: "/logos/barter.svg" 
     },
     { 
       name: "Cool FM", 
-      logo: "/src/assets/logos/cool-fm.svg" 
+      logo: "/logos/cool-fm.svg" 
     }
   ];
 
   const reverseMarqueeItems = [
     { 
       name: "Total Nigeria", 
-      logo: "/src/assets/logos/total-nigeria.svg" 
+      logo: "/logos/total-nigeria.svg" 
     },
     { 
       name: "Oando PLC", 
-      logo: "/src/assets/logos/oando-plc.svg" 
+      logo: "/logos/oando-plc.svg" 
     },
     { 
       name: "UPS", 
-      logo: "/src/assets/logos/ups.svg" 
+      logo: "/logos/ups.svg" 
     },
     { 
       name: "Ibom Air", 
-      logo: "/src/assets/logos/ibom-air.svg" 
+      logo: "/logos/ibom-air.svg" 
     },
     { 
       name: "Milo", 
-      logo: "/src/assets/logos/milo.svg" 
+      logo: "/logos/milo.svg" 
     },
     { 
       name: "Aso Savings", 
-      logo: "/src/assets/logos/aso-savings.svg" 
+      logo: "/logos/aso-savings.svg" 
     },
     { 
       name: "NIMC", 
-      logo: "/src/assets/logos/national-identity-management-commission.svg" 
+      logo: "/logos/national-identity-management-commission.svg" 
     }
   ];
 

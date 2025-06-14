@@ -7,7 +7,7 @@ const Team = () => {
       name: "Sarah Johnson",
       role: "Chief Executive Officer",
       description: "Leading MOTEE with 15+ years in fintech and payroll innovation across Africa.",
-      image: "/src/assets/Images/profile.jpg",
+      image: "/Images/profile.jpg",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -18,7 +18,7 @@ const Team = () => {
       name: "Michael Adebayo",
       role: "Chief Technology Officer",
       description: "Building secure, scalable payroll solutions with expertise in biometric security.",
-      image: "/src/assets/Images/profile.jpg",
+      image: "/Images/profile.jpg",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -29,7 +29,7 @@ const Team = () => {
       name: "Fatima Ibrahim",
       role: "Head of Operations",
       description: "Ensuring seamless payroll operations and compliance across Nigerian businesses.",
-      image: "/src/assets/Images/profile.jpg",
+      image: "/Images/profile.jpg",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -40,7 +40,7 @@ const Team = () => {
       name: "David Okafor",
       role: "Lead Developer",
       description: "Crafting innovative payroll features and maintaining system reliability.",
-      image: "/src/assets/Images/profile.jpg",
+      image: "/Images/profile.jpg",
       social: {
         linkedin: "#",
         twitter: "#",

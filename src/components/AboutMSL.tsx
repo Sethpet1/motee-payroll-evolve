@@ -20,7 +20,7 @@ const AboutMSL = () => {
             {/* Insert picture of happy employees here */}
             <div className="w-full max-w-lg h-80 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
               <img
-                src="/src/assets/Images/3.jpg"
+                src="/Images/3.jpg"
                 alt="Happy employees"
                 className="w-full h-full object-cover rounded-2xl"
               />
@@ -43,7 +43,7 @@ const AboutMSL = () => {
               {/* Insert image here */}
               <div className="w-full max-w-lg h-80 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
                 <img
-                  src="/src/assets/Images/dd.jpg"
+                  src="/Images/dd.jpg"
                   alt="Office scene 1"
                   className="w-full h-full object-cover rounded-2xl"
                 />
@@ -73,7 +73,7 @@ const AboutMSL = () => {
             {/* Insert picture for switching payroll here */}
             <div className="w-full max-w-lg h-80 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
               <img
-                src="/src/assets/Images/pay.jpg"
+                src="/Images/pay.jpg"
                 alt="Switching payroll provider"
                 className="w-full h-full object-cover rounded-2xl"
               />
