@@ -11,7 +11,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import MSLBackground from '@/components/MSLBackground';
-
+import BookDemoButton from '@/components/ui/BookDemoButton';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -67,7 +67,7 @@ const Header = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent">
-                  MOTEE Solutions
+                  MOTEE
             </span>
                 <span className="text-xs text-gray-500">Revolutionizing Payroll</span>
               </div>
@@ -77,8 +77,9 @@ const Header = () => {
             <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList className="flex items-center space-x-1">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="h-12 px-4 font-medium bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent hover:from-motee-orange hover:to-motee-green transition-all duration-300">
+                  <NavigationMenuTrigger className="h-12 px-4 font-medium bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent hover:from-motee-orange hover:to-motee-green hover:bg-gray-50/50 transition-all duration-300">
                     Solutions
+                    <ChevronDown className="ml-1 h-4 w-4 text-black hover:text-motee-green transition-colors duration-300" />
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-[400px] gap-3 p-4">
@@ -96,8 +97,9 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="h-12 px-4 font-medium bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent hover:from-motee-orange hover:to-motee-green transition-all duration-300">
+                  <NavigationMenuTrigger className="h-12 px-4 font-medium bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent hover:from-motee-orange hover:to-motee-green hover:bg-gray-50/50 transition-all duration-300">
                     Who We Help
+                    <ChevronDown className="ml-1 h-4 w-4 text-black hover:text-motee-green transition-colors duration-300" />
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-[300px] gap-3 p-4">
@@ -151,12 +153,7 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Button
-                    asChild
-                    className="h-12 px-6 bg-gradient-to-r from-motee-green to-motee-orange hover:from-motee-orange hover:to-motee-green text-white font-medium"
-                  >
-                    <Link to="/book-demo">Book a Demo</Link>
-                  </Button>
+                 <BookDemoButton />
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>

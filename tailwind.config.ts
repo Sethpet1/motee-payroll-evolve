@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,10 +56,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'site-bg': '#FFFDF6',
 				'motee-green': '#059669',
 				'motee-green-light': '#10B981',
 				'motee-green-dark': '#047857',
-				'motee-orange': '#EA580C',
+				'motee-orange': '#FF7D29',
 				'motee-orange-light': '#F97316',
 				'motee-orange-dark': '#C2410C',
 				'motee-blue': '#1E40AF',
