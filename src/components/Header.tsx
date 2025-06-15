@@ -67,7 +67,7 @@ const Header = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent">
-                  MOTEE Solutions Limited (MSL)
+                  MOTEE Solutions
             </span>
                 <span className="text-xs text-gray-500">One Stop Shop for Your Payroll Solutions</span>
               </div>

@@ -29,15 +29,7 @@ const BookDemo = () => {
       <MSLBackground />
       <Header />
       <main className="relative z-10 flex flex-col items-center justify-center py-24 px-4">
-        <section className="w-full max-w-6xl bg-white/90 rounded-2xl shadow-xl p-0 md:p-0 border border-gray-200 backdrop-blur-md flex flex-col md:flex-row overflow-hidden relative">
-          {/* Close Button */}
-          <button
-            onClick={() => window.history.length > 1 ? window.history.back() : window.location.assign('/')} // fallback to home if no history
-            className="absolute top-4 right-4 z-20 text-gray-400 hover:text-motee-orange text-3xl font-bold focus:outline-none focus:ring-2 focus:ring-motee-orange bg-white/80 rounded-full w-10 h-10 flex items-center justify-center shadow"
-            aria-label="Close Book a Demo"
-          >
-            &times;
-          </button>
+        <section className="w-full max-w-5xl bg-white/90 rounded-2xl shadow-xl p-0 md:p-0 border border-gray-200 backdrop-blur-md flex flex-col md:flex-row overflow-hidden">
           <div className="flex-1 flex flex-col justify-center px-8 py-12 md:py-16 text-justify">
             <h2 className="text-2xl md:text-3xl font-bold mb-2 text-motee-green">
               Our experts are on hand to discuss your business needs and answer any questions.
