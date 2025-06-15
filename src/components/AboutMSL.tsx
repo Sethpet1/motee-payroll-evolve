@@ -9,10 +9,10 @@ const AboutMSL = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-motee-green">About MSL</h2>
-            <p className="text-lg text-motee-gray-dark mb-4">
+            <p className="text-lg text-motee-gray-dark mb-4 text-justify">
               The true measure of a company isn't just the profits it generates, but in the values it places on the people who create them: <span className="font-semibold text-motee-green">Happy employees = happy business.</span> A reliable payroll system is the foundation of that happiness.
             </p>
-            <p className="text-lg text-motee-gray-dark">
+            <p className="text-lg text-motee-gray-dark text-justify">
               {/* You can add more intro text here if needed */}
             </p>
           </div>
@@ -32,10 +32,10 @@ const AboutMSL = () => {
         <div className="mb-16">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-8">
             <div>
-              <p className="text-lg text-motee-gray-dark mb-4">
+              <p className="text-lg text-motee-gray-dark mb-4 text-justify">
                 In offices across Nigeria, hard-working employees wait for salaries that become delayed, inaccurate or never come at all. Fictitious workers drain public funds. Small businesses struggle with tax confusion. Enterprises lose sleep over compliance risks. As a result, payroll has been perceived as 'boring' for a long time, but to us, boring means brilliant—the kind of boring that means every payslip is accurate, every deadline is met, and every compliance box is ticked. No surprises. No headaches. Just smooth, seamless payroll.
               </p>
-              <p className="text-lg text-motee-gray-dark mb-4">
+              <p className="text-lg text-motee-gray-dark mb-4 text-justify">
                 Boring payroll software means there are no surprises. It means your employees are paid accurately and on time, every time. It means <span className="font-semibold text-motee-green">compliance</span>, <span className="font-semibold text-motee-green">reliability</span>, and <span className="font-semibold text-motee-green">peace of mind</span>.
               </p>
             </div>
@@ -56,16 +56,16 @@ const AboutMSL = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <h3 className="text-2xl font-bold text-motee-green mb-4">At MSL we do the boring tasks</h3>
-            <p className="text-lg text-motee-gray-dark mb-4">
+            <p className="text-lg text-motee-gray-dark mb-4 text-justify">
               We've seen the damage broken payroll systems can cause—missed payments, lost trust, and businesses held back by chaos.
             </p>
-            <p className="text-lg text-motee-gray-dark mb-4">
+            <p className="text-lg text-motee-gray-dark mb-4 text-justify">
               If payroll errors, inefficiencies, or outdated systems are causing constant headaches, switching to a better payroll provider might be the smartest move your business makes. But many companies avoid making the switch out of fear of disruption, data loss, or a complicated transition process.
             </p>
-            <p className="text-lg text-motee-gray-dark mb-4">
+            <p className="text-lg text-motee-gray-dark mb-4 text-justify">
               The good news? Switching payroll providers doesn't have to be difficult. With the right approach (and the right provider), it can be a smooth, stress-free transition.
             </p>
-            <p className="text-lg text-motee-gray-dark">
+            <p className="text-lg text-motee-gray-dark text-justify">
               Switching payroll providers shouldn't be a hassle—it should be an opportunity to improve accuracy, service and your solution. If your payroll provider isn't making life easier, maybe it's time to explore your options.
             </p>
           </div>
@@ -83,7 +83,7 @@ const AboutMSL = () => {
 
         {/* Final Section */}
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-lg text-motee-gray-dark mb-4">
+          <p className="text-lg text-motee-gray-dark mb-4 text-justify">
             Running a business is demanding, especially when it comes to managing payroll and HR tasks. Whether you're juggling payroll on your own or overseeing an HR team, our managed payroll services and integrated payroll and HR software solutions make it easy to keep on top of compliance with an accurate and stress-free solution.
           </p>
         </div>

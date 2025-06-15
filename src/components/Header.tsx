@@ -38,8 +38,8 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   const solutionsMenu = [
-    { name: "HR Management", href: "/solutions/hr-management" },
-    { name: "Leave and Absence", href: "/solutions/leave-absence" },
+    { name: "HR Management", href: "/solutions/hr-management", desc: "Centralize employee data and HR processes." },
+    { name: "Leave and Absence", href: "/solutions/leave-absence", desc: "Automate leave requests and approvals." },
     { name: "Payroll", href: "/solutions/payroll" },
     { name: "Time & Attendance", href: "/solutions/time-attendance" },
     { name: "Performance Management", href: "/solutions/performance" },
@@ -52,11 +52,11 @@ const Header = () => {
     { name: "Public Sector", href: "/who-we-help/public-sector" },
   ];
 
+
   return (
     <>
-      <MSLBackground />
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
+        isScrolled ? 'backdrop-blur-sm shadow-md' : 'bg'
       }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -67,9 +67,9 @@ const Header = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent">
-                  MOTEE
+                  MOTEE Solutions
             </span>
-                <span className="text-xs text-gray-500">Revolutionizing Payroll</span>
+                <span className="text-xs text-gray-500">One Stop Shop for Your Payroll Solutions</span>
               </div>
           </Link>
 
@@ -82,15 +82,21 @@ const Header = () => {
                     <ChevronDown className="ml-1 h-4 w-4 text-black hover:text-motee-green transition-colors duration-300" />
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[400px] gap-3 p-4">
-                      {solutionsMenu.map((item) => (
+                    <div className="grid w-[400px] gap-0 p-0 border border-gray-800 rounded-xl shadow-2xl bg-black overflow-hidden">
+                      {solutionsMenu.map((item, idx) => (
                         <Link
                           key={item.name}
                           to={item.href}
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-motee-green"
+                          className={
+                            "block select-none space-y-1 p-4 leading-none no-underline outline-none transition-colors text-white hover:bg-motee-orange/90 hover:text-black" +
+                            (idx !== solutionsMenu.length - 1 ? " border-b border-gray-800" : "")
+                          }
                         >
-                          <div className="text-sm font-medium leading-none">{item.name}</div>
-            </Link>
+                          <div className="text-base font-semibold leading-none">{item.name}</div>
+                          {item.desc && (
+                            <div className="text-xs text-gray-300">{item.desc}</div>
+                          )}
+                        </Link>
                       ))}
                     </div>
                   </NavigationMenuContent>
@@ -102,15 +108,18 @@ const Header = () => {
                     <ChevronDown className="ml-1 h-4 w-4 text-black hover:text-motee-green transition-colors duration-300" />
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[300px] gap-3 p-4">
-                      {whoWeHelpMenu.map((item) => (
+                    <div className="grid w-[300px] gap-0 p-0 border border-gray-800 rounded-xl shadow-2xl bg-black overflow-hidden">
+                      {whoWeHelpMenu.map((item, idx) => (
                         <Link
                           key={item.name}
                           to={item.href}
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-motee-green"
+                          className={
+                            "block select-none space-y-1 p-4 leading-none no-underline outline-none transition-colors text-white hover:bg-motee-orange/90 hover:text-black" +
+                            (idx !== whoWeHelpMenu.length - 1 ? " border-b border-gray-800" : "")
+                          }
                         >
-                          <div className="text-sm font-medium leading-none">{item.name}</div>
-            </Link>
+                          <div className="text-base font-semibold leading-none">{item.name}</div>
+                        </Link>
                       ))}
                     </div>
                   </NavigationMenuContent>
@@ -153,7 +162,9 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                 <BookDemoButton />
+                <Link to="/book-demo">
+                    <BookDemoButton />
+                  </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>

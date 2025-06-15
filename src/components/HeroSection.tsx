@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import BookDemoButton from "@/components/ui/BookDemoButton";
 import { ArrowRight, ChevronRight } from 'lucide-react';
+import WatchNowButton from './ui/WatchNowButton';
+import FeaturesSection from '@/components/FeaturesSection';
 
 const keyBenefits = [
   "Faster onboarding",
@@ -24,15 +25,16 @@ const HeroSection = () => {
     <section className="relative py-20 lg:py-32 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Contents */}
-          <div className="mt-12 text-center lg:text-left">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6 animate-slide-up">
+          {/* Content */}
+          <div className="text-center lg:text-left">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-slide-up">
               Revolutionizing <span className="text-motee-green">Payroll</span> Management in Nigeria
             </h1>
-            <p className="text-xl text-gray-600 mb-8 animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
-              Eliminate fraud, reduce costs by 40% and<br/>
-              regain employee trust with our AI-powered<br/>
-              payroll solution for Nigerian businesses.
+            <p className="text-xl text-gray-600 mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            Revolutionizing Payroll Management in Nigeria
+Payroll mistakes hurt more than numbers — they break trust.
+At MSL, we believe people deserve better. That is why we have reimagined payroll to be secure, accurate, and truly employee-first.
+When payroll works effortlessly, your people feel safe.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: '0.4s' }}>
@@ -83,7 +85,7 @@ const HeroSection = () => {
                   </div>
                 )}
               </div>
-              <BookDemoButton />
+              <WatchNowButton />
             </div>
             
             <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-gray-200">
@@ -130,6 +132,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      <FeaturesSection />
     </section>
   );
 };

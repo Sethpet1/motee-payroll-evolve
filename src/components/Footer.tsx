@@ -18,8 +18,7 @@ const Footer = () => {
             </div>
             
             <p className="text-orange-100 leading-relaxed">
-              Revolutionizing payroll management in Nigeria with integrity-driven, 
-              biometric-secured solutions that protect businesses and empower their workforce.
+              At MOTEE, we believe that a company's success is measured not only by its financial achievements but by how it values its greatest asset - its people. Our commitment to employee satisfaction drives business growth, and we understand that a dependable payroll system is fundamental to fostering this success.
             </p>
             
             <div className="flex space-x-4">
