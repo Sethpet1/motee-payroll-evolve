@@ -27,10 +27,14 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 animate-slide-up">
-              Revolutionizing <span className="text-motee-green">Payroll</span> Management in Nigeria
+            <h1 className="text-4xl lg:text-6xl font-bold mb-7 animate-slide-up">
+              Revolutionizing <span className="relative inline-block">
+                <span className="text-motee-green font-bold bg-gradient-to-r from-motee-green via-motee-green/80 to-motee-green/60 bg-clip-text text-transparent transition-colors duration-700">
+                  <span className="animate-payroll-wiggle text-motee-green font-bold inline-block">Payroll</span>
+                </span>
+              </span> Management in Nigeria
             </h1>
-            <p className="text-xl text-gray-600 mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl text-gray-600 mb-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
             Revolutionizing Payroll Management in Nigeria
 Payroll mistakes hurt more than numbers — they break trust.
 At MSL, we believe people deserve better. That is why we have reimagined payroll to be secure, accurate, and truly employee-first.
@@ -107,7 +111,7 @@ When payroll works effortlessly, your people feel safe.
           {/* Dashboard Preview */}
           <div className="animate-slide-right">
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500">
+              <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500 mb-12">
                 <img 
                   src="/assets/images/man-4334177_1280.jpg" 
                   alt="MOTEE Solutions Dashboard" 
@@ -124,7 +128,19 @@ When payroll works effortlessly, your people feel safe.
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600">Tax Compliance Monitoring</span>
+                    <span className="text-sm text-gray-600">Automated Tax compliant Update</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                    <span className="text-sm text-gray-600">Mobile-First Interface</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <span className="text-sm text-gray-600">Nigeria Data Protection Regulation (NDPR) Compliant Integrated System</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                    <span className="text-sm text-gray-600">PENCOM Compliant</span>
                   </div>
                 </div>
               </div>

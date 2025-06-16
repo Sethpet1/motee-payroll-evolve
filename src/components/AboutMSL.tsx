@@ -1,5 +1,4 @@
 import React from "react";
-import AboutMSLPage from '../pages/AboutMSL';
 
 const AboutMSL = () => {
   return (
@@ -8,12 +7,13 @@ const AboutMSL = () => {
         {/* Intro Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-motee-green">About MSL</h2>
-            <p className="text-lg text-motee-gray-dark mb-4 text-justify">
-              The true measure of a company isn't just the profits it generates, but in the values it places on the people who create them: <span className="font-semibold text-motee-green">Happy employees = happy business.</span> A reliable payroll system is the foundation of that happiness.
+            <h2 className="text-3xl lg:text-2xl font-bold mb-6 text-motee-green">About MSL</h2>
+            <p className="text-xl text-motee-gray-dark leading-relaxed mb-6 text-justify" 
+               style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
+              The true measure of a company is not just in the profits it generates, but in the value it places on the people who make those profits possible. When employees are happy, business thrives. And at the heart of that happiness is a reliable payroll system.
             </p>
             <p className="text-lg text-motee-gray-dark text-justify">
-              {/* You can add more intro text here if needed */}
+            When payroll works effortlessly, your people feel safe. They can focus on what they do best, and you can focus on what you do best.
             </p>
           </div>
           <div className="flex justify-center">
@@ -55,7 +55,7 @@ const AboutMSL = () => {
         {/* Solution Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h3 className="text-2xl font-bold text-motee-green mb-4">At MSL we do the boring tasks</h3>
+            <h3 className="text-1.5xl font-bold text-motee-green mb-4">At MSL we do the boring tasks</h3>
             <p className="text-lg text-motee-gray-dark mb-4 text-justify">
               We've seen the damage broken payroll systems can cause—missed payments, lost trust, and businesses held back by chaos.
             </p>

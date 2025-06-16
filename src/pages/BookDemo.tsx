@@ -29,10 +29,21 @@ const BookDemo = () => {
       <MSLBackground />
       <Header />
       <main className="relative z-10 flex flex-col items-center justify-center py-24 px-4">
-        <section className="w-full max-w-5xl bg-white/90 rounded-2xl shadow-xl p-0 md:p-0 border border-gray-200 backdrop-blur-md flex flex-col md:flex-row overflow-hidden">
-          <div className="flex-1 flex flex-col justify-center px-8 py-12 md:py-16 text-justify">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2 text-motee-green">
-              Our experts are on hand to discuss your business needs and answer any questions.
+        <section className="w-full max-w-7xl bg-white/90 rounded-2xl shadow-2xl p-0 md:p-0 border border-gray-200 backdrop-blur-md flex flex-col md:flex-row overflow-hidden relative">
+          {/* X Close Button */}
+          <button
+            onClick={() => window.location.href = '/'}
+            className="absolute top-4 right-4 z-20 text-gray-400 hover:text-motee-orange text-3xl font-bold focus:outline-none focus:ring-2 focus:ring-motee-orange bg-white/80 rounded-full w-10 h-10 flex items-center justify-center shadow-md transition"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+          <div className="flex-1 flex flex-col justify-center px-16 py-12 md:py-16 text-justify">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-motee-green leading-tight">
+              Our Experts Are Ready To Help<br />
+              <span className="text-xl md:text-1xl lg:text-2xl text-motee-gray-dark mt-2 block">
+                Let's Discuss Your Business Needs and Answer Your Questions
+              </span>
             </h2>
             <div className="my-6 text-lg font-medium text-gray-700 text-center md:text-justify">
               How can we help today?

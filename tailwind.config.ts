@@ -2,6 +2,9 @@ import type { Config } from "tailwindcss";
 
 export default {
 	darkMode: ["class"],
+	safelist: [
+		'animate-payroll-wiggle'
+	],
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -180,7 +183,14 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
-				}
+				},
+				'payroll-wiggle': {
+					'0%, 100%': { transform: 'rotate(-2deg) scale(1.05)' },
+					'20%': { transform: 'rotate(2deg) scale(1.1)' },
+					'40%': { transform: 'rotate(-2deg) scale(1.05)' },
+					'60%': { transform: 'rotate(2deg) scale(1.1)' },
+					'80%': { transform: 'rotate(-2deg) scale(1.05)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -194,7 +204,8 @@ export default {
 				'float-side': 'float-side 6s infinite',
 				'rotate-float': 'rotate-float 8s infinite linear',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
-				'slide-up': 'slide-up 0.6s ease-out'
+				'slide-up': 'slide-up 0.6s ease-out',
+				'payroll-wiggle': 'payroll-wiggle 2s infinite',
 			},
 			backgroundImage: {
 				'mesh-background': 'linear-gradient(to bottom right, rgba(5, 150, 105, 0.1), rgba(234, 88, 12, 0.1))'

@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import MSLBackground from '@/components/MSLBackground';
 import AboutMSL from '@/components/AboutMSL';
 
+
 const AboutMSLPage = () => {
   return (
     <div className="min-h-screen relative bg-white">
@@ -16,5 +17,4 @@ const AboutMSLPage = () => {
     </div>
   );
 };
-
 export default AboutMSLPage; 

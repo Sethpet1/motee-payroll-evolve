@@ -21,8 +21,8 @@ const WatchNowButton: React.FC<WatchNowButtonProps> = ({
   const baseClasses = "font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-0 relative overflow-hidden group";
   
   const variantClasses = {
-    default: "bg-motee-green hover:bg-green-600 text-white",
-    outline: "border-2 border-motee-green text-motee-green hover:bg-motee-green hover:text-white",
+    default: "bg-motee-orange hover:bg-orange-600 text-white",
+    outline: "border-2 border-motee-orange text-motee-orange hover:bg-motee-orange hover:text-white",
     ghost: "bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm"
   };
 

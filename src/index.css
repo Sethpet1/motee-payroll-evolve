@@ -390,4 +390,17 @@
     .msl-text:nth-child(9) { font-size: 55px; }
     .msl-text:nth-child(10) { font-size: 65px; }
   }
+
+  @keyframes payroll-wiggle {
+    0%, 100% { transform: rotate(-2deg) scale(1.05); }
+    20% { transform: rotate(2deg) scale(1.1); }
+    40% { transform: rotate(-2deg) scale(1.05); }
+    60% { transform: rotate(2deg) scale(1.1); }
+    80% { transform: rotate(-2deg) scale(1.05); }
+  }
+
+  .animate-payroll-wiggle {
+    animation: payroll-wiggle 2s infinite;
+    display: inline-block;
+  }
 }

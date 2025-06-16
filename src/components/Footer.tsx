@@ -17,8 +17,9 @@ const Footer = () => {
               <span className="text-2xl font-bold">MOTEE</span>
             </div>
             
-            <p className="text-orange-100 leading-relaxed">
-              At MOTEE, we believe that a company's success is measured not only by its financial achievements but by how it values its greatest asset - its people. Our commitment to employee satisfaction drives business growth, and we understand that a dependable payroll system is fundamental to fostering this success.
+            <p className="text-orange-100 leading-7 text-justify max-w-4xl mx-auto px-4 mb-3" 
+               style={{ textAlign: 'justify', textJustify: 'inter-word', lineHeight: '1.8', marginTop: '1.5rem' }}>
+              The true measure of a company is not just in the profits it generates, but in the value it places on the people who make those profits possible. When employees are happy, business thrives. And at the heart of that happiness is a reliable payroll system.
             </p>
             
             <div className="flex space-x-4">

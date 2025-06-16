@@ -77,50 +77,68 @@ const Header = () => {
             <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList className="flex items-center space-x-1">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="h-12 px-4 font-medium bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent hover:from-motee-orange hover:to-motee-green hover:bg-gray-50/50 transition-all duration-300">
+                  <NavigationMenuTrigger className="h-12 px-4 font-bold text-motee-green hover:text-motee-orange transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-motee-orange rounded-none focus:outline-none focus:ring-0">
                     Solutions
-                    <ChevronDown className="ml-1 h-4 w-4 text-black hover:text-motee-green transition-colors duration-300" />
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[400px] gap-0 p-0 border border-gray-800 rounded-xl shadow-2xl bg-black overflow-hidden">
-                      {solutionsMenu.map((item, idx) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className={
-                            "block select-none space-y-1 p-4 leading-none no-underline outline-none transition-colors text-white hover:bg-motee-orange/90 hover:text-black" +
-                            (idx !== solutionsMenu.length - 1 ? " border-b border-gray-800" : "")
-                          }
-                        >
-                          <div className="text-base font-semibold leading-none">{item.name}</div>
-                          {item.desc && (
-                            <div className="text-xs text-gray-300">{item.desc}</div>
-                          )}
-                        </Link>
-                      ))}
+                    <div className="w-[1200px] max-w-[99vw] grid grid-cols-3 gap-10 p-10 bg-black rounded-2xl shadow-2xl border-2 border-lime-500">
+                      <div>
+                        <h3 className="text-1xl font-bold text-motee-green mb-2">Solutions</h3>
+                        <p className="text-motee-gray mb-4 text-white/80">Designed to simplify employee management and accelerate growth.</p>
+                        <ul className="space-y-2">
+                          <li><Link to="/solutions/hr-management" className="hover:text-motee-orange font-medium text-white">HR Management</Link></li>
+                          <li><Link to="/solutions/leave-absence" className="hover:text-motee-orange font-medium text-white">Leave and Absence</Link></li>
+                          <li><Link to="/solutions/payroll" className="hover:text-motee-orange font-medium text-white">Payroll</Link></li>
+                          <li><Link to="/solutions/time-attendance" className="hover:text-motee-orange font-medium text-white">Time & Attendance</Link></li>
+                        </ul>
+                      </div>
+                      <div className="border-l border-lime-500 pl-10">
+                        <h3 className="text-1xl font-bold text-motee-green mb-2">For Organizations</h3>
+                        <ul className="space-y-2">
+                          <li><Link to="/solutions/performance" className="hover:text-motee-orange font-medium text-white">Performance Management</Link></li>
+                          <li><Link to="/solutions/e-learning" className="hover:text-motee-orange font-medium text-white">E-Learning</Link></li>
+                          <li><Link to="/solutions/startups" className="hover:text-motee-orange font-medium text-white">Startups</Link></li>
+                          <li><Link to="/solutions/enterprise" className="hover:text-motee-orange font-medium text-white">Medium & Large Enterprise</Link></li>
+                          <li><Link to="/solutions/public-sector" className="hover:text-motee-orange font-medium text-white">Public Sector</Link></li>
+                        </ul>
+                      </div>
+                      <div className="border-l-2 border-lime-500 pl-10">
+                        <h3 className="text-1xl font-bold text-motee-green mb-2">More Solutions</h3>
+                        <ul className="space-y-2">
+                          <li><Link to="/solutions/retail" className="hover:text-motee-orange font-medium text-white">Retail</Link></li>
+                          <li><Link to="/solutions/manufacturing" className="hover:text-motee-orange font-medium text-white">Manufacturing</Link></li>
+                          <li><Link to="/solutions/transport-logistics" className="hover:text-motee-orange font-medium text-white">Transport & Logistics</Link></li>
+                          <li><Link to="/solutions/construction-real-estate" className="hover:text-motee-orange font-medium text-white">Construction & Real Estate</Link></li>
+                        </ul>
+                      </div>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="h-12 px-4 font-medium bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent hover:from-motee-orange hover:to-motee-green hover:bg-gray-50/50 transition-all duration-300">
+                  <NavigationMenuTrigger className="h-12 px-4 font-bold text-motee-green hover:text-motee-orange transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-motee-orange rounded-none focus:outline-none focus:ring-0">
                     Who We Help
-                    <ChevronDown className="ml-1 h-4 w-4 text-black hover:text-motee-green transition-colors duration-300" />
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[300px] gap-0 p-0 border border-gray-800 rounded-xl shadow-2xl bg-black overflow-hidden">
-                      {whoWeHelpMenu.map((item, idx) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className={
-                            "block select-none space-y-1 p-4 leading-none no-underline outline-none transition-colors text-white hover:bg-motee-orange/90 hover:text-black" +
-                            (idx !== whoWeHelpMenu.length - 1 ? " border-b border-gray-800" : "")
-                          }
-                        >
-                          <div className="text-base font-semibold leading-none">{item.name}</div>
-                        </Link>
-                      ))}
+                    <div className="w-[1200px] max-w-[99vw] grid grid-cols-3 gap-10 p-10 bg-black rounded-2xl shadow-2xl border-2 border-lime-500">
+                      <div>
+                        <h3 className="text-1xl font-bold text-motee-green mb-2">SMEs</h3>
+                        <ul className="space-y-2">
+                          <li><Link to="/who-we-help/smes" className="hover:text-motee-orange font-medium text-white">Small & Medium Enterprises</Link></li>
+                        </ul>
+                      </div>
+                      <div className="border-l border-lime-500 pl-10">
+                        <h3 className="text-1xl font-bold text-motee-green mb-2">Enterprise</h3>
+                        <ul className="space-y-2">
+                          <li><Link to="/who-we-help/enterprise" className="hover:text-motee-orange font-medium text-white">Medium & Large Enterprise</Link></li>
+                        </ul>
+                      </div>
+                      <div className="border-l-2 border-lime-500 pl-10">
+                        <h3 className="text-1xl font-bold text-motee-green mb-2">Public Sector</h3>
+                        <ul className="space-y-2">
+                          <li><Link to="/who-we-help/public-sector" className="hover:text-motee-orange font-medium text-white">Public Sector</Link></li>
+                        </ul>
+                      </div>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>

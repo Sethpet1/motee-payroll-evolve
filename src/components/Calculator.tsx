@@ -10,66 +10,77 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-interface CalculationResult {
-  grossAmount: number;
-  taxAmount: number;
-  netAmount: number;
-  taxRate: number;
+interface PayrollCalculation {
+  netSalary: number;
+  employerCosts: number;
+  totalCost: number;
 }
 
 const Calculator = () => {
-  const [amount, setAmount] = useState<number>(0);
-  const [taxRate, setTaxRate] = useState<number>(20);
-  const [currency, setCurrency] = useState<string>("GBP");
-  const [result, setResult] = useState<CalculationResult>({
-    grossAmount: 0,
-    taxAmount: 0,
-    netAmount: 0,
-    taxRate: 20,
+  const [formData, setFormData] = useState({
+    country: 'Nigeria',
+    basicSalary: 0,
+    housingAllowance: 0,
+    transportAllowance: 0,
+    deductPension: false,
+    deductNHF: false,
+    deductNHIS: false,
+    deductPAYE: false
   });
 
-  const calculateTax = () => {
-    const numericAmount = parseFloat(amount.toString());
-    if (isNaN(numericAmount)) {
-      setResult(null);
-      return;
-    }
+  const [result, setResult] = useState<PayrollCalculation>({
+    netSalary: 0,
+    employerCosts: 0,
+    totalCost: 0
+  });
 
-    const numericTaxRate = parseFloat(taxRate.toString()) / 100;
-    const taxAmount = numericAmount * numericTaxRate;
-    const netAmount = numericAmount - taxAmount;
-
-    setResult({
-      grossAmount: numericAmount,
-      taxAmount,
-      netAmount,
-      taxRate: parseFloat(taxRate.toString()),
-    });
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : Number(value)
+    }));
   };
 
-  useEffect(() => {
-    if (amount) {
-      calculateTax();
+  const calculatePayroll = () => {
+    const { basicSalary, housingAllowance, transportAllowance, deductNHF, deductPension, deductNHIS, deductPAYE } = formData;
+    
+    // Calculate gross salary
+    const grossSalary = basicSalary + housingAllowance + transportAllowance;
+    
+    let deductions = 0;
+    
+    // Calculate NHF (2.5% of basic salary)
+    if (deductNHF) {
+      deductions += basicSalary * 0.025;
     }
-  }, [amount, taxRate]);
-
-  const formatCurrency = (value: number) => {
-    const formatter = new Intl.NumberFormat('en-NG', {
-      style: 'currency',
-      currency: currency,
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
+    
+    // Calculate Pension (8% of basic salary + housing + transport)
+    if (deductPension) {
+      deductions += grossSalary * 0.08;
+    }
+    
+    // Calculate NHIS (if selected)
+    if (deductNHIS) {
+      deductions += grossSalary * 0.05;
+    }
+    
+    // Calculate PAYE (simplified for demo)
+    if (deductPAYE) {
+      // Progressive tax rate implementation would go here
+      deductions += grossSalary * 0.1; // Simplified 10% tax rate
+    }
+    
+    const netSalary = grossSalary - deductions;
+    
+    // Employer costs (example: employer pension contribution 10%)
+    const employerCosts = deductPension ? grossSalary * 0.1 : 0;
+    
+    setResult({
+      netSalary,
+      employerCosts,
+      totalCost: grossSalary + employerCosts
     });
-
-    // Custom formatting for NGN to show ₦ symbol
-    if (currency === 'NGN') {
-      return `₦${value.toLocaleString('en-NG', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      })}`;
-    }
-
-    return formatter.format(value);
   };
 
   return (
@@ -77,101 +88,141 @@ const Calculator = () => {
       <div className="space-y-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold bg-gradient-to-r from-motee-blue to-motee-green bg-clip-text text-transparent">
-            Payroll Calculator
+            Payroll Cost Calculator
           </h2>
           <p className="mt-2 text-motee-gray">
-            Calculate your take-home pay with our easy-to-use calculator
+            Select the country you want to hire in, to explore and benchmark salaries for international roles.
           </p>
         </div>
 
-        {/* Input Section */}
         <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Gross Amount Input */}
-            <div className="space-y-2">
-              <label htmlFor="amount" className="block text-lg font-semibold text-motee-blue">
-                Gross Amount
-              </label>
-              <div className="relative">
+          {/* Country Selection */}
+          <div className="space-y-2">
+            <label className="block text-lg font-semibold text-motee-gray">Choose desired country</label>
+            <select
+              value={formData.country}
+              onChange={(e) => setFormData(prev => ({ ...prev, country: e.target.value }))}
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-motee-green focus:ring-2 focus:ring-motee-green/30 outline-none bg-white text-gray-900"
+            >
+              <option value="Nigeria">Nigeria</option>
+            </select>
+          </div>
+
+          {/* Salary Section */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-motee-gray">Salary</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-motee-gray mb-1">Basic Salary Rate</label>
                 <input
                   type="number"
-                  id="amount"
-                  value={amount}
-                  onChange={(e) => setAmount(Number(e.target.value))}
-                  className="w-full px-4 py-3 text-motee-gray bg-white border-2 border-motee-blue/20 rounded-lg focus:border-motee-blue focus:ring-2 focus:ring-motee-blue/20 focus:outline-none transition-colors"
-                  placeholder="Enter amount"
-                  min="0"
-                  step="0.01"
+                  name="basicSalary"
+                  value={formData.basicSalary}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-motee-green focus:ring-2 focus:ring-motee-green/30 outline-none bg-white text-gray-900"
+                  placeholder="0"
                 />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-motee-gray/60">
-                  {currency}
-                </span>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-motee-gray mb-1">Housing Allowance Rate</label>
+                <input
+                  type="number"
+                  name="housingAllowance"
+                  value={formData.housingAllowance}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-motee-green focus:ring-2 focus:ring-motee-green/30 outline-none bg-white text-gray-900"
+                  placeholder="0"
+                />
               </div>
             </div>
-
-            {/* Tax Rate Input */}
-            <div className="space-y-2">
-              <label htmlFor="taxRate" className="block text-lg font-semibold text-motee-blue">
-                Tax Rate (%)
-              </label>
+            <div>
+              <label className="block text-sm font-medium text-motee-gray mb-1">Transport Allowance Rate</label>
               <input
                 type="number"
-                id="taxRate"
-                value={taxRate}
-                onChange={(e) => setTaxRate(Number(e.target.value))}
-                className="w-full px-4 py-3 text-motee-gray bg-white border-2 border-motee-blue/20 rounded-lg focus:border-motee-blue focus:ring-2 focus:ring-motee-blue/20 focus:outline-none transition-colors"
-                placeholder="Enter tax rate"
-                min="0"
-                max="100"
-                step="0.1"
+                name="transportAllowance"
+                value={formData.transportAllowance}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-motee-green focus:ring-2 focus:ring-motee-green/30 outline-none bg-white text-gray-900"
+                placeholder="0"
               />
             </div>
+          </div>
 
-            {/* Currency Selection */}
-            <div className="space-y-2">
-              <label htmlFor="currency" className="block text-lg font-semibold text-motee-blue">
-                Currency
-              </label>
-              <select
-                id="currency"
-                value={currency}
-                onChange={(e) => setCurrency(e.target.value)}
-                className="w-full px-4 py-3 text-motee-gray bg-white border-2 border-motee-blue/20 rounded-lg focus:border-motee-blue focus:ring-2 focus:ring-motee-blue/20 focus:outline-none transition-colors appearance-none cursor-pointer"
-              >
-                <option value="GBP">British Pound (GBP)</option>
-                <option value="EUR">Euro (EUR)</option>
-                <option value="USD">US Dollar (USD)</option>
-                <option value="NGN">Naira (NGN)</option>
-              </select>
+          {/* Deductions Section */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                name="deductPension"
+                checked={formData.deductPension}
+                onChange={handleInputChange}
+                className="w-4 h-4 text-motee-green border-gray-300 rounded focus:ring-motee-green"
+              />
+              <label className="text-sm text-gray-700">Deduct Pension</label>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                name="deductNHF"
+                checked={formData.deductNHF}
+                onChange={handleInputChange}
+                className="w-4 h-4 text-motee-green border-gray-300 rounded focus:ring-motee-green"
+              />
+              <label className="text-sm text-gray-700">Deduct NHF</label>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                name="deductNHIS"
+                checked={formData.deductNHIS}
+                onChange={handleInputChange}
+                className="w-4 h-4 text-motee-green border-gray-300 rounded focus:ring-motee-green"
+              />
+              <label className="text-sm text-gray-700">Deduct NHIS</label>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                name="deductPAYE"
+                checked={formData.deductPAYE}
+                onChange={handleInputChange}
+                className="w-4 h-4 text-motee-green border-gray-300 rounded focus:ring-motee-green"
+              />
+              <label className="text-sm text-gray-700">Deduct PAYE</label>
             </div>
           </div>
-        </div>
 
-        {/* Results Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-motee-blue/5 p-6 rounded-lg border-2 border-motee-blue/20">
-            <h3 className="text-lg font-semibold text-motee-blue mb-2">Gross Amount</h3>
-            <p className="text-2xl font-bold text-motee-gray">
-              {formatCurrency(result.grossAmount)}
-            </p>
-          </div>
-          <div className="bg-motee-blue/5 p-6 rounded-lg border-2 border-motee-blue/20">
-            <h3 className="text-lg font-semibold text-motee-blue mb-2">Tax Amount</h3>
-            <p className="text-2xl font-bold text-motee-gray">
-              {formatCurrency(result.taxAmount)}
-            </p>
-          </div>
-          <div className="bg-motee-blue/5 p-6 rounded-lg border-2 border-motee-blue/20">
-            <h3 className="text-lg font-semibold text-motee-blue mb-2">Net Amount</h3>
-            <p className="text-2xl font-bold text-motee-gray">
-              {formatCurrency(result.netAmount)}
-            </p>
-          </div>
-        </div>
+          <button
+            onClick={calculatePayroll}
+            className="w-full py-3 bg-motee-green text-white font-semibold rounded-lg hover:bg-motee-green/90 transition-colors"
+          >
+            Calculate
+          </button>
 
-        <div className="text-center text-sm text-motee-gray mt-4">
-          <p>This calculator provides an estimate based on standard tax rates.</p>
-          <p>For accurate calculations, please consult with a tax professional.</p>
+          {/* Results Section */}
+          <div className="mt-8 space-y-6">
+            <h3 className="text-xl font-semibold text-motee-gray">Total calculations</h3>
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-lg font-medium text-motee-gray">Employee Costs</h4>
+                <div className="text-2xl font-bold text-motee-green">
+                  ₦{result.netSalary.toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                </div>
+              </div>
+              <div>
+                <h4 className="text-lg font-medium text-motee-gray">Employer Costs</h4>
+                <div className="text-2xl font-bold text-motee-green">
+                  ₦{result.employerCosts.toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                </div>
+              </div>
+              <div className="bg-motee-blue p-6 rounded-xl text-white">
+                <h4 className="text-lg font-medium">Net Pay</h4>
+                <div className="text-3xl font-bold">
+                  ₦{result.totalCost.toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
