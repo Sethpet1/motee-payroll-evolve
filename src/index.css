@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 45 20% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 45 20% 98%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 45 20% 98%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 210 79% 39%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 45 20% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 45 20% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  html, body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #FFFDF6;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: inherit;
+  }
+
+  body {
+    @apply text-gray-900;
+    background-color: #FFFDF6;
+  }
+}
+
+@layer utilities {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-motee-green via-motee-orange to-motee-green bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-r from-black via-motee-green to-motee-orange;
+  }
+
+  /* MSL Text Animation Background */
+  .msl-text-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -3;
+    overflow: hidden;
+  }
+
+  .msl-text {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    opacity: 0.03;
+    color: #059669;
+    text-shadow: 0 0 50px rgba(5, 150, 105, 0.3);
+    animation: mslFloat 25s infinite linear;
+    user-select: none;
+  }
+
+  .msl-text:nth-child(1) {
+    font-size: 150px;
+    left: -200px;
+    top: 10%;
+    animation-duration: 30s;
+    animation-delay: 0s;
+    color: #059669;
+  }
+
+  .msl-text:nth-child(2) {
+    font-size: 200px;
+    left: -300px;
+    top: 40%;
+    animation-duration: 35s;
+    animation-delay: -5s;
+    color: #f97316;
+  }
+
+  .msl-text:nth-child(3) {
+    font-size: 120px;
+    left: -150px;
+    top: 70%;
+    animation-duration: 28s;
+    animation-delay: -10s;
+    color: #10b981;
+  }
+
+  .msl-text:nth-child(4) {
+    font-size: 180px;
+    left: -250px;
+    top: 20%;
+    animation-duration: 32s;
+    animation-delay: -15s;
+    color: #ea580c;
+  }
+
+  .msl-text:nth-child(5) {
+    font-size: 140px;
+    left: -180px;
+    top: 60%;
+    animation-duration: 26s;
+    animation-delay: -20s;
+    color: #047857;
+  }
+  
+  .msl-text:nth-child(6) {
+    font-size: 160px;
+    right: -250px;
+    top: 25%;
+    animation-duration: 33s;
+    animation-delay: -8s;
+    color: #059669;
+    animation-direction: reverse;
+  }
+
+  .msl-text:nth-child(7) {
+    font-size: 190px;
+    right: -320px;
+    top: 50%;
+    animation-duration: 34s;
+    animation-delay: -12s;
+    color: #ea580c;
+    animation-direction: reverse;
+  }
+
+  .msl-text:nth-child(8) {
+    font-size: 130px;
+    right: -180px;
+    top: 80%;
+    animation-duration: 29s;
+    animation-delay: -18s;
+    color: #10b981;
+    animation-direction: reverse;
+  }
+
+  .msl-text:nth-child(9) {
+    font-size: 170px;
+    right: -220px;
+    top: 15%;
+    animation-duration: 31s;
+    animation-delay: -22s;
+    color: #f97316;
+    animation-direction: reverse;
+  }
+
+  .msl-text:nth-child(10) {
+    font-size: 150px;
+    right: -200px;
+    top: 65%;
+    animation-duration: 27s;
+    animation-delay: -25s;
+    color: #047857;
+    animation-direction: reverse;
+  }
+
+  /* Essential Animations */
+  @keyframes mslFloat {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  /* Marquee Animation */
+  .marquee {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marquee 40s linear infinite;
+  }
+
+  .marquee-reverse {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marquee-reverse 40s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+  }
+
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .msl-text {
+      opacity: 0.02;
+    }
+
+    .msl-text:nth-child(1) { font-size: 80px; }
+    .msl-text:nth-child(2) { font-size: 100px; }
+    .msl-text:nth-child(3) { font-size: 60px; }
+    .msl-text:nth-child(4) { font-size: 90px; }
+    .msl-text:nth-child(5) { font-size: 70px; }
+    .msl-text:nth-child(6) { font-size: 85px; }
+    .msl-text:nth-child(7) { font-size: 95px; }
+    .msl-text:nth-child(8) { font-size: 65px; }
+    .msl-text:nth-child(9) { font-size: 75px; }
+    .msl-text:nth-child(10) { font-size: 85px; }
+  }
+
+  @media (max-width: 480px) {
+    .msl-text {
+      opacity: 0.015;
+    }
+
+    .msl-text:nth-child(1) { font-size: 60px; }
+    .msl-text:nth-child(2) { font-size: 80px; }
+    .msl-text:nth-child(3) { font-size: 40px; }
+    .msl-text:nth-child(4) { font-size: 70px; }
+    .msl-text:nth-child(5) { font-size: 50px; }
+    .msl-text:nth-child(6) { font-size: 65px; }
+    .msl-text:nth-child(7) { font-size: 75px; }
+    .msl-text:nth-child(8) { font-size: 45px; }
+    .msl-text:nth-child(9) { font-size: 55px; }
+    .msl-text:nth-child(10) { font-size: 65px; }
+  }
+}
