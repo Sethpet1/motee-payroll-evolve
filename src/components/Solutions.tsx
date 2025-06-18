@@ -42,7 +42,7 @@ const Solutions = () => {
   return (
     <section id="solutions" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-10 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             The <span className="gradient-text">MOTEE</span> Solution
           </h2>

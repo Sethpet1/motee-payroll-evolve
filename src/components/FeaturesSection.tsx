@@ -52,13 +52,6 @@ export default function FeaturesSection() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-center text-4xl font-bold mb-4">
-          <span className="text-motee-green">MOTEE</span>
-        </h2>
-        <p className="text-center text-lg text-gray-600 mb-12">
-          Revolutionary payroll technology that combines cutting-edge biometric security, intelligent automation, and human-centered design to eliminate fraud and empower your business.
-        </p>
-        {/* Top Row */}
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           {/* Left: Biometric Card */}
           <div className="flex flex-col h-full">

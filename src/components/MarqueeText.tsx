@@ -3,8 +3,7 @@ import React from 'react';
 const MarqueeText = () => {
   const marqueeItems = [
     { 
-      name: "GTBank", 
-      logo: "/logos/guaranty-trust-bank.svg" 
+      name: "Real-Time Analytics",
     },
     { 
       name: "Sterling Bank", 

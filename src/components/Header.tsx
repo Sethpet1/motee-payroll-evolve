@@ -6,14 +6,12 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import MSLBackground from '@/components/MSLBackground';
 import BookDemoButton from '@/components/ui/BookDemoButton';
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
@@ -55,19 +53,17 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'backdrop-blur-sm shadow-md' : 'bg'
-      }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-50 bg-white shadow">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo and Brand */}
+           
             <Link to="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-r from-motee-green to-motee-orange rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M</span>
+              <img src="/logos/ChatGPT Image Jun 18, 2025, 08_30_37 PM.png" alt="MSL Logo" className="w-100 h-10" />
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent">
-                  MOTEE Solutions
+                  MOTEE Solutions Ltd (MSL)
             </span>
                 <span className="text-xs text-gray-500">One Stop Shop for Your Payroll Solutions</span>
               </div>
@@ -77,38 +73,21 @@ const Header = () => {
             <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList className="flex items-center space-x-1">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="h-12 px-4 font-bold text-motee-green hover:text-motee-orange transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-motee-orange rounded-none focus:outline-none focus:ring-0">
+                  <NavigationMenuTrigger className="h-12 px-4 font-bold text-black hover:text-motee-green transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-motee-orange rounded-none focus:outline-none focus:ring-0">
                     Solutions
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[1200px] max-w-[99vw] grid grid-cols-3 gap-10 p-10 bg-black rounded-2xl shadow-2xl border-2 border-lime-500">
+                    <div className="w-[1000px] max-w-[60vw] grid grid-cols-3 gap-10 p-10 bg-white rounded-1xl shadow-1xl border-2 border-lime-500">
+                      <p className="text-xl font-bold text-motee-green mb-2">Solutions</p>
                       <div>
-                        <h3 className="text-1xl font-bold text-motee-green mb-2">Solutions</h3>
-                        <p className="text-motee-gray mb-4 text-white/80">Designed to simplify employee management and accelerate growth.</p>
-                        <ul className="space-y-2">
-                          <li><Link to="/solutions/hr-management" className="hover:text-motee-orange font-medium text-white">HR Management</Link></li>
-                          <li><Link to="/solutions/leave-absence" className="hover:text-motee-orange font-medium text-white">Leave and Absence</Link></li>
-                          <li><Link to="/solutions/payroll" className="hover:text-motee-orange font-medium text-white">Payroll</Link></li>
-                          <li><Link to="/solutions/time-attendance" className="hover:text-motee-orange font-medium text-white">Time & Attendance</Link></li>
-                        </ul>
-                      </div>
-                      <div className="border-l border-lime-500 pl-10">
-                        <h3 className="text-1xl font-bold text-motee-green mb-2">For Organizations</h3>
-                        <ul className="space-y-2">
-                          <li><Link to="/solutions/performance" className="hover:text-motee-orange font-medium text-white">Performance Management</Link></li>
-                          <li><Link to="/solutions/e-learning" className="hover:text-motee-orange font-medium text-white">E-Learning</Link></li>
-                          <li><Link to="/solutions/startups" className="hover:text-motee-orange font-medium text-white">Startups</Link></li>
-                          <li><Link to="/solutions/enterprise" className="hover:text-motee-orange font-medium text-white">Medium & Large Enterprise</Link></li>
-                          <li><Link to="/solutions/public-sector" className="hover:text-motee-orange font-medium text-white">Public Sector</Link></li>
-                        </ul>
-                      </div>
-                      <div className="border-l-2 border-lime-500 pl-10">
-                        <h3 className="text-1xl font-bold text-motee-green mb-2">More Solutions</h3>
-                        <ul className="space-y-2">
-                          <li><Link to="/solutions/retail" className="hover:text-motee-orange font-medium text-white">Retail</Link></li>
-                          <li><Link to="/solutions/manufacturing" className="hover:text-motee-orange font-medium text-white">Manufacturing</Link></li>
-                          <li><Link to="/solutions/transport-logistics" className="hover:text-motee-orange font-medium text-white">Transport & Logistics</Link></li>
-                          <li><Link to="/solutions/construction-real-estate" className="hover:text-motee-orange font-medium text-white">Construction & Real Estate</Link></li>
+                        <ul className="space-y-2 border-b border-lime-500 pb-4">
+                          <li><Link to="/solutions/hr-management" className="hover:text-motee-orange font-medium text-black">HR Management</Link></li>
+                          <li><Link to="/solutions/leave-absence" className="hover:text-motee-orange font-medium text-black">Leave and Absence</Link></li>
+                          <li><Link to="/solutions/payroll" className="hover:text-motee-orange font-medium text-black">Payroll</Link></li>
+                          <li><Link to="/solutions/time-attendance" className="hover:text-motee-orange font-medium text-black">Time & Attendance</Link></li>
+                          <li><Link to="/solutions/performance" className="hover:text-motee-orange font-medium text-black">Performance Management</Link></li>
+                          <li><Link to="/solutions/e-learning" className="hover:text-motee-orange font-medium text-black">E-Learning</Link></li>
+                          <li><Link to="/hr-pages" className="hover:text-motee-orange font-medium text-black">Asset Tracking</Link></li>
                         </ul>
                       </div>
                     </div>
@@ -116,27 +95,27 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="h-12 px-4 font-bold text-motee-green hover:text-motee-orange transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-motee-orange rounded-none focus:outline-none focus:ring-0">
+                  <NavigationMenuTrigger className="h-12 px-4 font-bold text-black hover:text-motee-green transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-motee-orange rounded-none focus:outline-none focus:ring-0">
                     Who We Help
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[1200px] max-w-[99vw] grid grid-cols-3 gap-10 p-10 bg-black rounded-2xl shadow-2xl border-2 border-lime-500">
+                    <div className="w-[1000px] max-w-[60vw] grid grid-cols-3 gap-10 p-10 bg-white rounded-1xl shadow-1xl border-2 border-lime-500">
                       <div>
                         <h3 className="text-1xl font-bold text-motee-green mb-2">SMEs</h3>
                         <ul className="space-y-2">
-                          <li><Link to="/who-we-help/smes" className="hover:text-motee-orange font-medium text-white">Small & Medium Enterprises</Link></li>
+                          <li><Link to="/who-we-help/smes" className="hover:text-motee-orange font- text-black">Small & Medium Enterprises</Link></li>
                         </ul>
                       </div>
                       <div className="border-l border-lime-500 pl-10">
                         <h3 className="text-1xl font-bold text-motee-green mb-2">Enterprise</h3>
                         <ul className="space-y-2">
-                          <li><Link to="/who-we-help/enterprise" className="hover:text-motee-orange font-medium text-white">Medium & Large Enterprise</Link></li>
+                          <li><Link to="/who-we-help/enterprise" className="hover:text-motee-orange font-medium text-black">Medium & Large Enterprise</Link></li>
                         </ul>
                       </div>
                       <div className="border-l-2 border-lime-500 pl-10">
                         <h3 className="text-1xl font-bold text-motee-green mb-2">Public Sector</h3>
                         <ul className="space-y-2">
-                          <li><Link to="/who-we-help/public-sector" className="hover:text-motee-orange font-medium text-white">Public Sector</Link></li>
+                          <li><Link to="/who-we-help/public-sector" className="hover:text-motee-orange font-medium text-black">Public Sector</Link></li>
                         </ul>
                       </div>
                     </div>
@@ -146,7 +125,7 @@ const Header = () => {
                 <NavigationMenuItem>
                   <Link
                     to="/why-msl"
-                    className="h-12 px-4 flex items-center text-gray-700 hover:text-motee-green hover:bg-gray-50"
+                    className="h-12 px-4 font-bold flex items-center text-gray-700 hover:text-motee-green hover:bg-gray-50"
                   >
                     Why MSL
             </Link>
@@ -155,7 +134,7 @@ const Header = () => {
                 <NavigationMenuItem>
                   <Link
                     to="/about-msl"
-                    className="h-12 px-4 flex items-center text-gray-700 hover:text-motee-green hover:bg-gray-50"
+                    className="h-12 px-4 font-bold flex items-center text-gray-700 hover:text-motee-green hover:bg-gray-50"
                   >
                     About MSL
                   </Link>
@@ -164,7 +143,7 @@ const Header = () => {
                 <NavigationMenuItem>
                   <Link
                     to="/calculator"
-                    className="h-12 px-4 flex items-center text-gray-700 hover:text-motee-green hover:bg-gray-50"
+                    className="h-12 px-2 font-bold flex items-center text-gray-700 hover:text-motee-green hover:bg-gray-50"
                   >
                     Calculator
                   </Link>
@@ -173,7 +152,7 @@ const Header = () => {
                 <NavigationMenuItem>
                   <Link
                     to="/pricing"
-                    className="h-12 px-4 flex items-center text-gray-700 hover:text-motee-green hover:bg-gray-50"
+                    className="h-12 px-4 font-bold flex items-center text-gray-700 hover:text-motee-green hover:bg-gray-50"
                   >
                     Pricing
                   </Link>

@@ -14,6 +14,7 @@ import MSLBackground from '@/components/MSLBackground';
 import AboutMSL from '@/components/AboutMSL';
 import EmployeeExperience from '@/components/EmployeeExperience';
 import Team from '@/components/Team';
+import { Link } from 'react-router-dom';
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -49,7 +50,6 @@ const Index = () => {
       <main className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <HeroSection />
         <MarqueeText />
-        <AboutMSL />
         <MissionVision />
         <Team />
         {/* <ProblemStatement /> */}

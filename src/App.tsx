@@ -10,6 +10,16 @@ import PricingPage from './pages/Pricing';
 import NotFound from './pages/NotFound';
 import BookDemo from './pages/BookDemo';
 import AboutMSLPage from './pages/AboutMSL';
+import HrManagement from './pages/HrManagement';
+import LeaveAbsence from './pages/LeaveAbsence';
+import Payroll from './pages/Payroll';
+import TimeAttendance from './pages/TimeAttendance';
+import PerformanceManagement from './pages/PerformanceManagement';
+import ELearning from './pages/ELearning';
+import AssetTracking from './pages/AssetTracking';
+import SMEs from './pages/SMEs';
+import Enterprise from './pages/Enterprise';
+import PublicSector from './pages/PublicSector';
 
 // Create a QueryClient instance
 const queryClient = new QueryClient({
@@ -122,6 +132,15 @@ const App = () => {
                 <Route path="/book-demo" element={<BookDemo />} />
                 <Route path="/about-msl" element={<AboutMSLPage />} />
                 <Route path="/404" element={<NotFound />} />
+                <Route path="/solutions/hr-management" element={<HrManagement />} />
+                <Route path="/solutions/leave-absence" element={<LeaveAbsence />} />
+                <Route path="/solutions/payroll" element={<Payroll />} />
+                <Route path="/solutions/time-attendance" element={<TimeAttendance />} />
+                <Route path="/solutions/performance" element={<PerformanceManagement />} />
+                <Route path="/solutions/e-learning" element={<ELearning />} />
+                <Route path="/hr-pages" element={<AssetTracking />} />
+                <Route path="/who-we-help/smes" element={<SMEs />} />
+                <Route path="/who-we-help/enterprise" element={<Enterprise />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
               </Routes>
             </Suspense>
