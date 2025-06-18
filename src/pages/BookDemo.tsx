@@ -38,26 +38,23 @@ const BookDemo = () => {
           >
             &times;
           </button>
-          <div className="flex-1 flex flex-col justify-center px-16 py-12 md:py-16 text-justify">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-motee-green leading-tight">
-              Our Experts Are Ready To Help<br />
-              <span className="text-xl md:text-1xl lg:text-2xl text-motee-gray-dark mt-2 block">
-                Let's Discuss Your Business Needs and Answer Your Questions
-              </span>
-            </h2>
+          <div className="flex-1 flex flex-col justify-center px-16 py-12 md:py-16 ">
+          <h2 className="text-xl md:text-xl lg:text-xl font-medium mb-4 text-motee-green leading-tight">Our Experts Are Ready To Help<br/>
+          <span className="text-xl md:text-xl sm:text-xl text-motee-gray-dark mt-2 block">Let's Discusss Your Business Needs 
+            and Answer Your Questions</span></h2>
             <div className="my-6 text-lg font-medium text-gray-700 text-center md:text-justify">
               How can we help today?
             </div>
             <div className="flex justify-center md:justify-start gap-8 mb-8">
               {['Quote', 'Demo', 'Sales question'].map(option => (
-                <label key={option} className="flex items-center gap-2 text-lg cursor-pointer">
+                <label key={option} className="flex items-center gap-2 text-sm cursor-pointer">
                   <input
                     type="radio"
                     name="helpType"
                     value={option}
                     checked={selectedOption === option}
                     onChange={() => setSelectedOption(option)}
-                    className="accent-motee-orange w-5 h-5"
+                    className="accent-motee-green w-3 h-3"
                   />
                   {option}
                 </label>

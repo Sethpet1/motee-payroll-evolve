@@ -40,7 +40,7 @@ const HeroSection = () => {
               Management in Nigeria
             </h1>
             <p
-              className="text-xl text-gray-600 mb-8 mt-5 animate-slide-up justify-center"
+              className="font-14px text-gray-600 mb-8 mt-5 animate-slide-up justify-center"
               style={{ animationDelay: "0.1s" }}
             >
               Payroll is not just about numbers — it is about trust. <br /> Mistakes in
@@ -74,7 +74,7 @@ const HeroSection = () => {
                 </Button>
                 {/* Dropdown */}
                 {showDropdown && (
-                  <div className="absolute left-0 mt-2 min-w-[12rem] w-full sm:w-64 bg-white rounded-xl shadow-xl border border-gray-100 z-20 animate-fade-in block">
+                  <div className="relative flex flex-col left-0 mt-2 min-h-[12rem] w-full sm:w-64 bg-white rounded-xl shadow-xl border border-gray-100 z-20 animate-fade-in block">
                     <ul className="flex flex-col block divide-y divide-gray-100">
                       <li className="px-6 py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-left">
                         Faster onboarding
