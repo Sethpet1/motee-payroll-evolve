@@ -23,7 +23,7 @@ const HeroSection = () => {
   const [showCompliance, setShowCompliance] = useState(false);
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative py-4 lg:py-8 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -67,23 +67,23 @@ const HeroSection = () => {
               >
                 <Button
                   size="lg"
-                  className="bg-motee-green hover:bg-motee-green-dark text-white px-8 py-6 text-lg font-semibold group"
+                  className="bg-motee-green hover:bg-motee-green-dark text-white px-6 py-4 text-sm font-semibold group"
                 >
                   Key Benefits
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 {/* Dropdown */}
                 {showDropdown && (
-                  <div className="relative flex flex-col left-0 mt-2 min-h-[12rem] w-full sm:w-64 bg-white rounded-xl shadow-xl border border-gray-100 z-20 animate-fade-in block">
-                    <ul className="flex flex-col block divide-y divide-gray-100">
-                      <li className="px-6 py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-left">
+                  <div className="absolute left-0 mt-2 min-w-[32rem] w-auto sm:w-auto bg-white rounded-xl shadow-xl border border-gray-100 z-20 animate-fade-in block px-2">
+                    <ul className="flex flex-row divide-x divide-gray-100">
+                      <li className="px-10 py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-center">
                         Faster onboarding
                       </li>
-                      <li className="px-6 py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-left">
+                      <li className="px-10 py-5 text-motee-gray-dark text-base font-small hover:bg-motee-green/10 transition-colors cursor-pointer text-center">
                         Accurate payroll processing
                       </li>
                       <li
-                        className="relative px-6 py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-left flex items-center justify-between"
+                        className="relative px-10 py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-center flex items-center justify-between"
                         onMouseEnter={() => setShowCompliance(true)}
                         onMouseLeave={() => setShowCompliance(false)}
                         onTouchStart={(e) => {
@@ -95,7 +95,7 @@ const HeroSection = () => {
                         <ChevronRight className="ml-2 h-4 w-4 text-motee-green" />
                         {/* Nested Dropdown */}
                         {showCompliance && (
-                          <div className="absolute top-0 left-full ml-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 z-30 animate-fade-in block">
+                          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 z-30 animate-fade-in block">
                             <ul className="flex flex-col block divide-y divide-gray-100 py-2">
                               {complianceDetails.map((detail, idx) => (
                                 <li

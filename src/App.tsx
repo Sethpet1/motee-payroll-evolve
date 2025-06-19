@@ -20,6 +20,7 @@ import AssetTracking from './pages/AssetTracking';
 import SMEs from './pages/SMEs';
 import Enterprise from './pages/Enterprise';
 import PublicSector from './pages/PublicSector';
+import WhyMSL from './pages/WhyMSL';
 
 // Create a QueryClient instance
 const queryClient = new QueryClient({
@@ -141,6 +142,7 @@ const App = () => {
                 <Route path="/hr-pages" element={<AssetTracking />} />
                 <Route path="/who-we-help/smes" element={<SMEs />} />
                 <Route path="/who-we-help/enterprise" element={<Enterprise />} />
+                <Route path="/why-msl" element={<WhyMSL />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
               </Routes>
             </Suspense>

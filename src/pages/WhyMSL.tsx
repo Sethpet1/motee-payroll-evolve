@@ -1,0 +1,135 @@
+import React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import PayrollSmilingSection from '@/components/PayrollSmilingSection';
+import { useNavigate } from 'react-router-dom';
+
+const WhyMSL = () => {
+  const navigate = useNavigate();
+  
+  const handleBookDemo = () => {
+    navigate('/book-demo');
+  };
+
+  return (
+    <div className="min-h-screen bg-white flex flex-col">
+      <Header />
+      <main className="flex-1 relative">
+        {/* Top Right Question Marks */}
+        <div className="hidden md:flex absolute top-4 right-4 flex-row items-center justify-center">
+          <span className="text-[8rem] font-extrabold bg-gradient-to-br from-motee-green to-motee-orange bg-clip-text text-transparent drop-shadow-2xl mr-2 animate-pulse">?</span>
+          <span className="text-[6rem] font-extrabold bg-gradient-to-tr from-motee-orange to-motee-green bg-clip-text text-transparent drop-shadow-xl animate-pulse">?</span>
+        </div>
+
+        {/* Hero Section with Story */}
+        <div className="container mx-auto px-4 py-16">
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            {/* Story Content */}
+            <div className="w-full md:w-1/2">
+              <h1 className="text-4xl md:text-5xl font-bold mb-8 text-motee-gray-dark">
+                Why Choose <span className="text-motee-green">MOTEE</span> Solutions?
+              </h1>
+              <div className="prose prose-lg max-w-none text-motee-gray-dark">
+                <p className="text-lg leading-relaxed mb-6">
+                  In a small but bustling corner of Lagos, Miriam, a diligent administrative officer at a mid-sized logistics company, spent her days juggling emails, coordinating meetings, and managing the chaos that came with serving multiple departments. She was the backbone of the office — the kind of employee who always stayed late to make sure things ran smoothly the next day.
+                </p>
+                <p className="text-lg leading-relaxed mb-6">
+                  But behind her quiet competence, there was a recurring burden: salary delays, unexplained deductions, and inconsistent payroll practices. Every month was a guessing game — would her pay come on time? Would it be complete?
+                </p>
+                <p className="text-lg leading-relaxed mb-6 font-medium">
+                  Then, in December — just before the holidays — the worst happened: her salary never came at all.
+                </p>
+                <div className="bg-gray-50 p-6 rounded-xl mb-8 shadow-inner">
+                  <p className="text-lg leading-relaxed mb-4">
+                    She waited. She emailed. She called HR. They apologized and blamed "technical issues" and "banking delays." Weeks passed. Her rent was overdue. Her mother's medication ran out. Her electricity was disconnected. Her younger brother dropped out of school because she could not pay his fees.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    To make matters worse, her colleague, Femi, confessed that he had accidentally been paid twice. Meanwhile, their former supervisor — who resigned months ago — was still receiving a salary. The payroll system was broken. There were ghost workers, manual errors, and no accountability.
+                  </p>
+                </div>
+                <p className="text-xl font-semibold mb-6 text-motee-orange">
+                  Miriam felt invisible. Disposable. Cheated.
+                </p>
+                <p className="text-lg leading-relaxed mb-8">
+                  She was not alone. In offices across Nigeria, similar stories played out every month. Employees who worked hard, but were let down by unreliable payroll systems, opaque deductions, and systems prone to fraud.
+                </p>
+                <div className="bg-gradient-to-r from-motee-green/10 to-motee-orange/10 p-8 rounded-xl mb-8">
+                  <h2 className="text-2xl font-bold mb-4 text-motee-green">That is when MOTEE Solutions Ltd. was born.</h2>
+                  <p className="text-lg leading-relaxed mb-6">
+                    Created by a global payroll expert who returned home after years of witnessing how modern payroll systems empower workers abroad, MOTEE was launched not just as a company, but as a mission:
+                  </p>
+                  <p className="text-xl font-semibold text-motee-gray-dark italic mb-8">
+                    To ensure no office worker in Nigeria ever had to wonder if their salary would come, or if it would be correct.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image Section - Right Side */}
+            <div className="w-full md:w-1/2 md:sticky md:top-8">
+              <div className="relative w-full h-[700px] flex items-center justify-center">
+                {/* First Image */}
+                <div className="absolute left-5 top-6 w-3/4 h-[600px] rounded-2xl overflow-hidden shadow-xl transform -rotate-6 hover:rotate-0 transition-all duration-300 z-10">
+                  <img 
+                    src="/assets/ask-4304978_1280.jpg" 
+                    alt="MOTEE Solutions Innovation" 
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+                
+                {/* Second Image */}
+                <div className="absolute right-5 bottom-6 w-3/4 h-[600px] rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-300 z-20">
+                  <img 
+                    src="/assets/images/de1aa0e5-e778-4c59-8524-f2c840e3b0ff.jpg" 
+                    alt="Why MOTEE Solutions Ltd?" 
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 mt-16">
+            {[
+              "Biometric Validation Payroll",
+              "Employee Self-Service Access",
+              "Real-Time Reporting & Insights",
+              "Improved Data Security",
+              "Regulatory Compliance Made Simple",
+              "Automated Payroll Calculation",
+              "Automated Payroll Taxes",
+              "Bank-Integrated Disbursement"
+            ].map((feature, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                <div className="w-12 h-12 rounded-full bg-motee-green/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-motee-gray-dark">{feature}</h3>
+              </div>
+            ))}
+          </div>
+
+          {/* Success Story */}
+          <div className="max-w-4xl mx-auto bg-gradient-to-br from-motee-green/5 to-motee-orange/5 p-8 rounded-2xl mb-16">
+            <h2 className="text-2xl font-bold mb-6 text-motee-gray-dark">The Impact Today</h2>
+            <p className="text-lg leading-relaxed mb-6">
+              Today, Miriam works for a tech company that uses MOTEE. Her salary arrives on time — down to the last naira. She checks her payslip from her phone. Her brother is back in school. She pays her rent with confidence.
+            </p>
+            <p className="text-xl font-bold text-motee-green">
+              MOTEE isn't just fixing payroll. It's restoring trust.
+            </p>
+          </div>
+        </div>
+      </main>
+      <PayrollSmilingSection />
+      <Footer />
+    </div>
+  );
+};
+
+export default WhyMSL; 
