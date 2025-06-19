@@ -93,15 +93,17 @@ const MarqueeText = () => {
         }
       `}</style>
       
-      <div className="relative z-10 overflow-hidden bg-white">
+      <div className="relative z-3 overflow-hidden bg-white">
         {/* Header Section */}
-        <div className="py-4 bg-gradient-to-r from-gray-700 to-black text-center">
-          <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
-            Trusted by Leading Companies
-          </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Join thousands of businesses across Nigeria that rely on our innovative solutions
-          </p>
+        <div className="py-2 bg-gradient-to-r from-gray-700 to-black text-center">
+          <div className="flex flex-col gap-0.5">
+            <h2 className="text-lg md:text-xl font-semibold text-white">
+              Trusted by Leading Companies
+            </h2>
+            <p className="text-sm text-gray-300 max-w-2xl mx-auto">
+              Join thousands of businesses across Nigeria that rely on our innovative solutions
+            </p>
+          </div>
         </div>
         
         {/* First Marquee Row */}

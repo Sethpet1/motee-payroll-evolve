@@ -10,6 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import BookDemoButton from '@/components/ui/BookDemoButton';
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,26 +51,24 @@ const Header = () => {
     { name: "Public Sector", href: "/who-we-help/public-sector" },
   ];
 
-
   return (
     <>
       <header className="sticky top-0 z-50 bg-white shadow">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-           
             <Link to="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-r from-motee-green to-motee-orange rounded-lg flex items-center justify-center">
-              <img src="/logos/ChatGPT Image Jun 18, 2025, 08_30_37 PM.png" alt="MSL Logo" className="w-100 h-10" />
+                <img src="/logos/ChatGPT Image Jun 18, 2025, 08_30_37 PM.png" alt="MSL Logo" className="w-100 h-10" />
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-bold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent">
+                <span className="text-2xl font-bold font-poppins bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent tracking-tight">
                   MOTEE Solutions Ltd (MSL)
-            </span>
+                </span>
                 <span className="text-xs text-gray-500">One Stop Shop for Your Payroll Solutions</span>
               </div>
-          </Link>
+            </Link>
 
-          {/* Desktop Navigation */}
+            {/* Desktop Navigation */}
             <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList className="flex items-center space-x-1">
                 <NavigationMenuItem>
@@ -233,7 +232,7 @@ const Header = () => {
                     className="h-12 px-4 font-bold flex items-center text-gray-700 hover:text-motee-green hover:bg-gray-50"
                   >
                     Why MSL
-            </Link>
+                  </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -264,7 +263,7 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                <Link to="/book-demo">
+                  <Link to="/book-demo">
                     <BookDemoButton />
                   </Link>
                 </NavigationMenuItem>
@@ -334,10 +333,10 @@ const Header = () => {
               <Link to="/calculator" className="py-2 text-lg font-semibold text-gray-700 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>Calculator</Link>
               <Link to="/pricing" className="py-2 text-lg font-semibold text-gray-700 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
               <Link to="/book-demo" className="py-2 text-lg font-semibold text-white bg-gradient-to-r from-motee-green to-motee-orange rounded-lg text-center mt-4" onClick={() => setMobileMenuOpen(false)}>Book a Demo</Link>
-        </div>
-      </div>
+            </div>
+          </div>
         )}
-    </header>
+      </header>
     </>
   );
 };
