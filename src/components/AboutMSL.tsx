@@ -2,90 +2,163 @@ import React from "react";
 
 const AboutMSL = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Intro Section */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h2 className="text-3xl lg:text-2xl font-bold mb-6 text-motee-green">About MSL</h2>
-            <p className="text-xl text-motee-gray-dark leading-relaxed mb-6 text-justify" 
-               style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
-              The true measure of a company is not just in the profits it generates, but in the value it places on the people who make those profits possible. When employees are happy, business thrives. And at the heart of that happiness is a reliable payroll system.
-            </p>
-            <p className="text-lg text-motee-gray-dark text-justify">
-            When payroll works effortlessly, your people feel safe. They can focus on what they do best, and you can focus on what you do best.
-            </p>
+        {/* Hero Section */}
+        <div className="relative text-center mb-24">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-[800px] h-[800px] bg-gradient-to-r from-motee-green/5 to-motee-orange/5 rounded-full blur-3xl"></div>
           </div>
-          <div className="flex justify-center">
-            {/* Insert picture of happy employees here */}
-            <div className="w-full max-w-lg h-80 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
+          <div className="relative">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-pulse">
+              <span className="bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent animate-pulse">
+                About MSL
+              </span>
+            </h1>
+            <div className="flex flex-col items-center gap-6">
+              <div className="w-32 h-1 bg-gradient-to-r from-motee-green to-motee-orange mx-auto rounded-full"></div>
+              <p className="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed">
+                Transforming payroll management with innovative solutions that put people first
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Intro Section */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <p className="text-xl text-gray-700 leading-relaxed">
+                The true measure of a company is not just in the profits it generates, but in the value it places on the people who make those profits possible. When employees are happy, business thrives. And at the heart of that happiness is a reliable payroll system.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                When payroll works effortlessly, your people feel safe. They can focus on what they do best, and you can focus on what you do best.
+              </p>
+            </div>
+            <div className="flex items-center gap-4 pt-4">
+              <div className="flex -space-x-2">
+                <div className="w-10 h-10 bg-motee-green rounded-full border-2 border-white"></div>
+                <div className="w-10 h-10 bg-motee-orange rounded-full border-2 border-white"></div>
+                <div className="w-10 h-10 bg-blue-500 rounded-full border-2 border-white"></div>
+              </div>
+              <span className="text-sm text-gray-500">Trusted by 1000+ companies</span>
+            </div>
+          </div>
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-r from-motee-green/20 to-motee-orange/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+            <div className="relative w-full max-w-lg h-96 bg-white rounded-2xl shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-500">
               <img
                 src="/Images/3.jpg"
                 alt="Happy employees"
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
 
         {/* Problem Section */}
-        <div className="mb-16">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-8">
-            <div>
-              <p className="text-lg text-motee-gray-dark mb-4 text-justify">
-                In offices across Nigeria, hard-working employees wait for salaries that become delayed, inaccurate or never come at all. Fictitious workers drain public funds. Small businesses struggle with tax confusion. Enterprises lose sleep over compliance risks. As a result, payroll has been perceived as 'boring' for a long time, but to us, boring means brilliant—the kind of boring that means every payslip is accurate, every deadline is met, and every compliance box is ticked. No surprises. No headaches. Just smooth, seamless payroll.
-              </p>
-              <p className="text-lg text-motee-gray-dark mb-4 text-justify">
-                Boring payroll software means there are no surprises. It means your employees are paid accurately and on time, every time. It means <span className="font-semibold text-motee-green">compliance</span>, <span className="font-semibold text-motee-green">reliability</span>, and <span className="font-semibold text-motee-green">peace of mind</span>.
-              </p>
-            </div>
-            <div className="flex justify-center">
-              {/* Insert image here */}
-              <div className="w-full max-w-lg h-80 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
-                <img
-                  src="/Images/dd.jpg"
-                  alt="Office scene 1"
-                  className="w-full h-full object-cover rounded-2xl"
-                />
+        <div className="mb-20">
+          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">The Problem</h3>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    In offices across Nigeria, hard-working employees wait for salaries that become delayed, inaccurate or never come at all. Fictitious workers drain public funds. Small businesses struggle with tax confusion. Enterprises lose sleep over compliance risks.
+                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    As a result, payroll has been perceived as 'boring' for a long time, but to us, boring means brilliant—the kind of boring that means every payslip is accurate, every deadline is met, and every compliance box is ticked.
+                  </p>
+                  <div className="bg-gradient-to-r from-motee-green/10 to-motee-orange/10 rounded-xl p-4">
+                    <p className="text-lg text-gray-700">
+                      <span className="font-semibold text-motee-green">Boring payroll software</span> means there are no surprises. It means your employees are paid accurately and on time, every time. It means <span className="font-semibold text-motee-green">compliance</span>, <span className="font-semibold text-motee-green">reliability</span>, and <span className="font-semibold text-motee-green">peace of mind</span>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative w-full max-w-lg h-96 bg-white rounded-2xl shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-500">
+                  <img
+                    src="/Images/dd.jpg"
+                    alt="Office scene 1"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Solution Section */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          <div>
-            <h3 className="text-1.5xl font-bold text-motee-green mb-4">At MSL we do the boring tasks</h3>
-            <p className="text-lg text-motee-gray-dark mb-4 text-justify">
-              We've seen the damage broken payroll systems can cause—missed payments, lost trust, and businesses held back by chaos.
-            </p>
-            <p className="text-lg text-motee-gray-dark mb-4 text-justify">
-              If payroll errors, inefficiencies, or outdated systems are causing constant headaches, switching to a better payroll provider might be the smartest move your business makes. But many companies avoid making the switch out of fear of disruption, data loss, or a complicated transition process.
-            </p>
-            <p className="text-lg text-motee-gray-dark mb-4 text-justify">
-              The good news? Switching payroll providers doesn't have to be difficult. With the right approach (and the right provider), it can be a smooth, stress-free transition.
-            </p>
-            <p className="text-lg text-motee-gray-dark text-justify">
-              Switching payroll providers shouldn't be a hassle—it should be an opportunity to improve accuracy, service and your solution. If your payroll provider isn't making life easier, maybe it's time to explore your options.
-            </p>
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-8 bg-motee-green/20 rounded-lg flex items-center justify-center">
+                <svg className="w-5 h-5 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">At MSL we do the boring tasks</h3>
+            </div>
+            <div className="space-y-4">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                We've seen the damage broken payroll systems can cause—missed payments, lost trust, and businesses held back by chaos.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                If payroll errors, inefficiencies, or outdated systems are causing constant headaches, switching to a better payroll provider might be the smartest move your business makes.
+              </p>
+              <div className="bg-gradient-to-r from-motee-green/5 to-motee-orange/5 rounded-xl p-6 border border-motee-green/20">
+                <h4 className="font-semibold text-motee-green mb-2">The Good News?</h4>
+                <p className="text-lg text-gray-700">
+                  Switching payroll providers doesn't have to be difficult. With the right approach (and the right provider), it can be a smooth, stress-free transition.
+                </p>
+              </div>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Switching payroll providers shouldn't be a hassle—it should be an opportunity to improve accuracy, service and your solution.
+              </p>
+            </div>
           </div>
-          <div className="flex justify-center">
-            {/* Insert picture for switching payroll here */}
-            <div className="w-full max-w-lg h-80 bg-gray-100 rounded-2xl shadow-inner flex items-center justify-center overflow-hidden">
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-r from-motee-green/20 to-motee-orange/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+            <div className="relative w-full max-w-lg h-96 bg-white rounded-2xl shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-500">
               <img
                 src="/Images/pay.jpg"
                 alt="Switching payroll provider"
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
         </div>
 
         {/* Final Section */}
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-lg text-motee-gray-dark mb-4 text-justify">
-            Running a business is demanding, especially when it comes to managing payroll and HR tasks. Whether you're juggling payroll on your own or overseeing an HR team, our managed payroll services and integrated payroll and HR software solutions make it easy to keep on top of compliance with an accurate and stress-free solution.
-          </p>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-motee-green/10 to-motee-orange/10 rounded-3xl p-8 md:p-12 text-center">
+            <div className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Transform Your Payroll?</h3>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              Running a business is demanding, especially when it comes to managing payroll and HR tasks. Whether you're juggling payroll on your own or overseeing an HR team, our managed payroll services and integrated payroll and HR software solutions make it easy to keep on top of compliance with an accurate and stress-free solution.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-3 bg-gradient-to-r from-motee-green to-motee-orange text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                Get Started Today
+              </button>
+              <button className="px-8 py-3 border-2 border-motee-green text-motee-green font-semibold rounded-xl hover:bg-motee-green hover:text-white transition-all duration-300">
+                Learn More
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
