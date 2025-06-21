@@ -109,16 +109,15 @@ const Calculator = () => {
     ) {
       employerPension =
         (basicSalary + housingAllowance + transportAllowance) * 0.1;
-      totalDeductions += employerPension;
     }
 
-    // Calculate NHIS (5% of gross salary) /* Employee pays 5% */
+    // Calculate NHIS costs
+    let nhis = 0;
+    let employerNhis = 0;
     if (deductNHIS) {
-      totalDeductions += grossSalary * 0.05;
-
-      // Calculate Employer NHIS (10% of gross salary)
-      const employerNhis = grossSalary * 0.1;
-      totalDeductions += employerNhis;
+      nhis = grossSalary * 0.05; // Employee's contribution
+      employerNhis = grossSalary * 0.1; // Employer's contribution
+      totalDeductions += nhis;
     }
 
     // Calculate PAYE (Proper Nigerian PAYE calculation)
@@ -170,37 +169,25 @@ const Calculator = () => {
       totalDeductions += payeTax;
     }
 
-
     // Calculate net salary (gross salary - total deductions)
     const netSalary = grossSalary - totalDeductions;
-    console.log(netSalary);
 
     // Calculate total cost to employer (gross salary + employer pension + employer NHIS)
-    const totalCost = grossSalary + employerPension;
+    const totalCost = grossSalary + employerPension + employerNhis;
 
-    // Calculate NHF (2.5% of basic salary)
-    const nhf = deductNHF ? basicSalary * 0.025 : basicSalary * 0.025;
-
-    // Calculate NHIS (5% of gross salary)
-    const nhis = deductNHIS ? grossSalary * 0.05 : grossSalary * 0.05;
-
-    // Calculate NHIS (10% of gross salary)
-    const employerNhis = deductNHIS ? grossSalary * 0.1 : grossSalary * 0.1;
+    // Calculate NHF for display if needed
+    const nhf = deductNHF ? basicSalary * 0.025 : 0;
 
     setResult({
       netSalary,
       employeePension,
       employerPension,
-      nhf: deductNHF ? nhf : 0,
-      nhis: deductNHIS ? nhis : 0,
-      employerNhis: deductNHIS ? employerNhis : 0,
-      payeTax: deductPAYE ? payeTax : 0,
-      totalDeductions:
-        employeePension +
-        (deductNHIS ? nhis : 0) +
-        (deductPAYE ? payeTax : 0) +
-        (deductNHF ? nhf : 0),
-      totalCost: totalCost + employerNhis,
+      nhf,
+      nhis,
+      employerNhis,
+      payeTax,
+      totalDeductions,
+      totalCost,
     });
   };
 
