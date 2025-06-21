@@ -4,6 +4,7 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import WatchNowButton from "./ui/WatchNowButton";
 import FeaturesSection from "@/components/FeaturesSection";
 import PayrollSmilingSection from "@/components/PayrollSmilingSection";
+import WavyBackground from "./ui/WavyBackground";
 
 const keyBenefits = [
   "Faster onboarding",
@@ -23,12 +24,12 @@ const HeroSection = () => {
   const [showCompliance, setShowCompliance] = useState(false);
 
   return (
-    <section className="relative py-4 lg:py-8 overflow-hidden">
+    <section className="relative py-4 md:py-8 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left">
-            <h1 className="text-3xl lg:text-5xl font-bold mb-3 mt-4 animate-slide-up">
+          <div className="text-center md:text-left">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 mt-4 animate-slide-up">
               Revolutionizing{" "}
               <span className="relative inline-block">
                 <span className="text-motee-green font-bold bg-gradient-to-r from-motee-green via-motee-green/80 to-motee-green/60 bg-clip-text text-transparent transition-colors duration-700">
@@ -53,11 +54,11 @@ const HeroSection = () => {
             </p>
 
             <div
-              className="flex flex-coL sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up"
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-slide-up"
               style={{ animationDelay: "0.4s" }}
             >
               <div
-                className="relative group"
+                className="relative group w-full sm:w-auto"
                 onMouseEnter={() => setShowDropdown(true)}
                 onMouseLeave={() => {
                   setShowDropdown(false);
@@ -67,23 +68,23 @@ const HeroSection = () => {
               >
                 <Button
                   size="lg"
-                  className="bg-motee-green hover:bg-motee-green-dark text-white px-6 py-4 text-sm font-semibold group"
+                  className="bg-motee-green hover:bg-motee-green-dark text-white px-6 py-4 text-sm font-semibold group w-full sm:w-auto"
                 >
                   Key Benefits
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 {/* Dropdown */}
                 {showDropdown && (
-                  <div className="absolute left-0 mt-2 min-w-[32rem] w-auto sm:w-auto bg-white rounded-xl shadow-xl border border-gray-100 z-20 animate-fade-in block px-2">
-                    <ul className="flex flex-row divide-x divide-gray-100">
-                      <li className="px-10 py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-center">
+                  <div className="absolute left-1/2 -translate-x-1/2 md:left-0 md:-translate-x-0 mt-2 w-72 md:w-auto md:min-w-[32rem] bg-white rounded-xl shadow-xl border border-gray-100 z-20 animate-fade-in block px-2">
+                    <ul className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                      <li className="px-6 py-4 md:px-10 md:py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-center">
                         Faster onboarding
                       </li>
-                      <li className="px-10 py-5 text-motee-gray-dark text-base font-small hover:bg-motee-green/10 transition-colors cursor-pointer text-center">
+                      <li className="px-6 py-4 md:px-10 md:py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-center">
                         Accurate payroll processing
                       </li>
                       <li
-                        className="relative px-10 py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-center flex items-center justify-between"
+                        className="relative px-6 py-4 md:px-10 md:py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-center flex items-center justify-between"
                         onMouseEnter={() => setShowCompliance(true)}
                         onMouseLeave={() => setShowCompliance(false)}
                         onTouchStart={(e) => {
@@ -95,7 +96,7 @@ const HeroSection = () => {
                         <ChevronRight className="ml-2 h-4 w-4 text-motee-green" />
                         {/* Nested Dropdown */}
                         {showCompliance && (
-                          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 z-30 animate-fade-in block">
+                          <div className="absolute bottom-full md:top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 z-30 animate-fade-in block">
                             <ul className="flex flex-col block divide-y divide-gray-100 py-2">
                               {complianceDetails.map((detail, idx) => (
                                 <li
@@ -113,14 +114,14 @@ const HeroSection = () => {
                   </div>
                 )}
               </div>
-              <WatchNowButton />
+              <WatchNowButton className="w-full sm:w-auto" />
             </div>
-
-            <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-gray-200">
+            <div className="flex flex-wrap gap-8 justify-center md:justify-start mt-12 pt-8 border-t border-gray-200">
               <div
                 className="text-center animate-slide-up"
                 style={{ animationDelay: "0.5s" }}
               >
+                <WavyBackground />
                 <div className="text-2xl font-bold bg-gradient-to-r from-motee-green to-orange-500 bg-clip-text text-transparent">
                   99.9%
                 </div>
@@ -146,6 +147,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+          <WavyBackground />
 
           {/* Dashboard Preview */}
           <div className="animate-slide-right">
@@ -201,6 +203,7 @@ const HeroSection = () => {
         </div>
       </div>
       <PayrollSmilingSection />
+      <WavyBackground />
       <FeaturesSection />
     </section>
   );

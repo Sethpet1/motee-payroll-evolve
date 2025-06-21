@@ -12,8 +12,10 @@ const PayrollSmilingSection = () => {
           Stress-Free Global Payroll <br className="hidden lg:block" />
           That Leaves You Smiling
           </h2>
-          <p className="text-gray-700 text-base lg:text-lg mb-8">
-            You're diverse, unique and exciting, and your HR tasks don't have to be monotonous. Workpay streamlines your to-do list so you can focus on the rules that matter most. Whether it's onboarding new employees or scheduling a leave, the system works!
+          <p className="text-gray-700 text-base lg:text-md mb-8 justify-center">
+          We understand the complexities of managing people and staying compliant while trying to grow. That is why we built MSL Payroll — a smart, intuitive solution that goes beyond just paying employees. 
+          It automates tedious admin, integrates seamlessly with your HR tools, and supports your team every step of the way.  
+          Whether you are onboarding your first hire or managing a distributed workforce, MSL Payroll scales with you.
           </p>
           <Link to="/book-demo">
             <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg font-semibold rounded-lg shadow">

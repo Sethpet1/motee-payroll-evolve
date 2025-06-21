@@ -13,23 +13,23 @@ const testimonials: TestimonialProps[] = [
   {
     author: "Sarah Johnson",
     role: "HR Director",
-    company: "Tech Solutions Inc.",
+    company: "MSL",
     content: "MOTEE has revolutionized our payroll process. What used to take days now takes hours, and the accuracy is impeccable. The customer support team is always there when we need them.",
-    image: "/public/Images/profile.jpg"
+    image: "/Images/profile.jpg"
   },
   {
     author: "Michael Chen",
     role: "Finance Manager",
     company: "Global Enterprises",
     content: "The automation and compliance features have saved us countless hours and helped us avoid costly mistakes. It's the best investment we've made for our HR department.",
-    image: "/public/Images/one.jpg"
+    image: "/Images/one.jpg"
   },
   {
     author: "Lisa Rodriguez",
     role: "Operations Head",
     company: "Innovate Corp",
     content: "The interface is intuitive, and the reporting features are comprehensive. MOTEE has streamlined our entire payroll operation and improved employee satisfaction.",
-    image: "/public/Images/two.jpg"
+    image: "/Images/two.jpg"
   }
 ];
 

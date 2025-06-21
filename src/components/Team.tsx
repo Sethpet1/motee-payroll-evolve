@@ -1,5 +1,6 @@
 import React from 'react';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
+import WavyBackground from './ui/WavyBackground';
 
 const Team = () => {
   const teamMembers = [
@@ -140,6 +141,7 @@ const Team = () => {
             <button className="bg-motee-orange hover:bg-orange-500 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-colors duration-300 shadow-sm hover:shadow-md">
               View Open Positions
             </button>
+            <WavyBackground />
           </div>
         </div>
       </div>

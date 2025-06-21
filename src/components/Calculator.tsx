@@ -9,7 +9,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
 import { useNavigate } from "react-router-dom";
 
 interface PayrollCalculation {
@@ -19,6 +25,7 @@ interface PayrollCalculation {
   nhf: number;
   nhis: number;
   employerNhis: number;
+  payeTax: number;
   totalDeductions: number;
   totalCost: number;
 }
@@ -43,6 +50,7 @@ const Calculator = () => {
     nhf: 0,
     nhis: 0,
     employerNhis: 0,
+    payeTax: 0,
     totalDeductions: 0,
     totalCost: 0,
   });
@@ -69,20 +77,39 @@ const Calculator = () => {
     } = formData;
 
     // Calculate gross salary
-    const grossSalary = formData.salary > 0 ? formData.salary : basicSalary + housingAllowance + transportAllowance;
+    const grossSalary =
+      formData.salary > 0
+        ? formData.salary
+        : basicSalary + housingAllowance + transportAllowance;
 
     let totalDeductions = 0;
 
     // Calculate NHF (2.5% of basic salary)
     if (deductNHF) {
       const nhf = basicSalary * 0.025;
+      totalDeductions += nhf;
     }
 
     // Calculate Employee Pension costs (8% of basic salary + housing + transport)
     let employeePension = 0;
-    if (deductPension && grossSalary > 0) {
-      employeePension = grossSalary * 0.08;
+    if (
+      deductPension &&
+      basicSalary + housingAllowance + transportAllowance > 0
+    ) {
+      employeePension =
+        (basicSalary + housingAllowance + transportAllowance) * 0.08;
       totalDeductions += employeePension;
+    }
+
+    // Calculate Employer Pension costs (10% of basic salary + housing + transport)
+    let employerPension = 0;
+    if (
+      deductPension &&
+      basicSalary + housingAllowance + transportAllowance > 0
+    ) {
+      employerPension =
+        (basicSalary + housingAllowance + transportAllowance) * 0.1;
+      totalDeductions += employerPension;
     }
 
     // Calculate NHIS (5% of gross salary) /* Employee pays 5% */
@@ -94,39 +121,61 @@ const Calculator = () => {
       totalDeductions += employerNhis;
     }
 
-    // Calculate PAYE (simplified progressive tax rate)
+    // Calculate PAYE (Proper Nigerian PAYE calculation)
     let payeTax = 0;
     if (deductPAYE) {
-      if (grossSalary <= 300000) {
-        payeTax = grossSalary * 0.07; // 7% for first 300k
-      } else if (grossSalary <= 600000) {
-        payeTax = 300000 * 0.07 + (grossSalary - 300000) * 0.11; // 11% for next 300k
-      } else if (grossSalary <= 1100000) {
-        payeTax = 300000 * 0.07 + 300000 * 0.11 + (grossSalary - 600000) * 0.15; // 15% for next 500k
-      } else if (grossSalary <= 1600000) {
-        payeTax =
-          300000 * 0.07 +
-          300000 * 0.11 +
-          500000 * 0.15 +
-          (grossSalary - 1100000) * 0.19; // 19% for next 500k
-      } else {
-        payeTax =
-          300000 * 0.07 +
-          300000 * 0.11 +
-          500000 * 0.15 +
-          500000 * 0.19 +
-          (grossSalary - 1600000) * 0.21; // 21% for remaining
+      // Step 1: Calculate annual figures
+      const annualGrossSalary = grossSalary * 12;
+      const annualBasicSalary = basicSalary * 12;
+      const annualHousingAllowance = housingAllowance * 12;
+      const annualTransportAllowance = transportAllowance * 12;
+      
+      // Step 2: Calculate BHT (Basic + Housing + Transport) for pension
+      const annualBHT = annualBasicSalary + annualHousingAllowance + annualTransportAllowance;
+      
+      // Step 3: Calculate statutory deductions
+      const annualPension = deductPension ? annualBHT * 0.08 : 0;
+      const annualNHF = deductNHF ? annualBasicSalary * 0.025 : 0;
+      
+      // Step 4: Calculate Consolidated Relief Allowance (CRA)
+      const onePercentOfGross = annualGrossSalary * 0.01;
+      const twentyPercentOfGross = annualGrossSalary * 0.20;
+      const cra = Math.max(200000, onePercentOfGross) + twentyPercentOfGross;
+      
+      // Step 5: Calculate total reliefs
+      const totalReliefs = cra + annualPension + annualNHF;
+      
+      // Step 6: Calculate taxable income
+      const taxableIncome = annualGrossSalary - totalReliefs;
+      
+      // Step 7: Apply progressive tax bands
+      if (taxableIncome > 0) {
+        if (taxableIncome <= 300000) {
+          payeTax = taxableIncome * 0.07;
+        } else if (taxableIncome <= 600000) {
+          payeTax = 300000 * 0.07 + (taxableIncome - 300000) * 0.11;
+        } else if (taxableIncome <= 1100000) {
+          payeTax = 300000 * 0.07 + 300000 * 0.11 + (taxableIncome - 600000) * 0.15;
+        } else if (taxableIncome <= 1600000) {
+          payeTax = 300000 * 0.07 + 300000 * 0.11 + 500000 * 0.15 + (taxableIncome - 1100000) * 0.19;
+        } else if (taxableIncome <= 3200000) {
+          payeTax = 300000 * 0.07 + 300000 * 0.11 + 500000 * 0.15 + 500000 * 0.19 + (taxableIncome - 1600000) * 0.21;
+        } else {
+          payeTax = 300000 * 0.07 + 300000 * 0.11 + 500000 * 0.15 + 500000 * 0.19 + 1600000 * 0.21 + (taxableIncome - 3200000) * 0.24;
+        }
       }
+      
+      // Convert annual tax to monthly
+      payeTax = payeTax / 12;
       totalDeductions += payeTax;
     }
 
-    // Calculate Employer Pension costs (10% of gross salary)
-    const employerPension = deductPension ? grossSalary * 0.1 : 0;
 
-    // Calculate net salary (gross salary - deductions)
+    // Calculate net salary (gross salary - total deductions)
     const netSalary = grossSalary - totalDeductions;
+    console.log(netSalary);
 
-    // Calculate total cost to employer (gross salary + employer pension)
+    // Calculate total cost to employer (gross salary + employer pension + employer NHIS)
     const totalCost = grossSalary + employerPension;
 
     // Calculate NHF (2.5% of basic salary)
@@ -145,8 +194,13 @@ const Calculator = () => {
       nhf: deductNHF ? nhf : 0,
       nhis: deductNHIS ? nhis : 0,
       employerNhis: deductNHIS ? employerNhis : 0,
-      totalDeductions: employeePension + (deductNHIS ? nhis : 0) + (deductPAYE ? payeTax : 0),
-      totalCost,
+      payeTax: deductPAYE ? payeTax : 0,
+      totalDeductions:
+        employeePension +
+        (deductNHIS ? nhis : 0) +
+        (deductPAYE ? payeTax : 0) +
+        (deductNHF ? nhf : 0),
+      totalCost: totalCost + employerNhis,
     });
   };
 
@@ -289,7 +343,9 @@ const Calculator = () => {
 
           {/* Results Section */}
           <div className="mt-10">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Total Calculations</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              Total Calculations
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Net Pay */}
               <div className="bg-white border border-green-200 rounded-xl p-6 shadow flex flex-col items-start">
@@ -297,12 +353,19 @@ const Calculator = () => {
                   <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-100 mr-3">
                     <span className="text-green-600 font-bold text-lg">₦</span>
                   </span>
-                  <span className="text-lg font-semibold text-green-700">Net Pay</span>
+                  <span className="text-lg font-semibold text-green-700">
+                    Net Pay
+                  </span>
                 </div>
                 <div className="text-3xl font-bold text-green-700 mb-1">
-                  {result.netSalary.toLocaleString("en-NG", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  {result.netSalary.toLocaleString("en-NG", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </div>
-                <span className="text-sm text-gray-500">Take-home after all deductions</span>
+                <span className="text-sm text-gray-500">
+                  Take-home after all deductions
+                </span>
               </div>
               {/* Total Deductions */}
               <div className="bg-white border border-red-200 rounded-xl p-6 shadow flex flex-col items-start">
@@ -310,12 +373,19 @@ const Calculator = () => {
                   <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-red-100 mr-3">
                     <span className="text-red-600 font-bold text-lg">-</span>
                   </span>
-                  <span className="text-lg font-semibold text-red-700">Total Deductions</span>
+                  <span className="text-lg font-semibold text-red-700">
+                    Total Deductions
+                  </span>
                 </div>
                 <div className="text-3xl font-bold text-red-600 mb-1">
-                  {result.totalDeductions.toLocaleString("en-NG", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  {result.totalDeductions.toLocaleString("en-NG", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </div>
-                <span className="text-sm text-gray-500">Sum of all employee deductions</span>
+                <span className="text-sm text-gray-500">
+                  Sum of all employee deductions
+                </span>
               </div>
               {/* Employee Pension */}
               <div className="bg-white border border-blue-200 rounded-xl p-6 shadow flex flex-col items-start">
@@ -323,12 +393,19 @@ const Calculator = () => {
                   <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 mr-3">
                     <span className="text-blue-600 font-bold text-lg">%</span>
                   </span>
-                  <span className="text-lg font-semibold text-blue-700">Employee Pension</span>
+                  <span className="text-lg font-semibold text-blue-700">
+                    Employee Pension
+                  </span>
                 </div>
                 <div className="text-2xl font-bold text-blue-700 mb-1">
-                  {result.employeePension.toLocaleString("en-NG", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  {result.employeePension.toLocaleString("en-NG", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </div>
-                <span className="text-sm text-gray-500">8% of gross salary</span>
+                <span className="text-sm text-gray-500">
+                  8% of BHT (Basic + Housing + Transport)
+                </span>
               </div>
               {/* Employer Pension */}
               <div className="bg-white border border-blue-50 rounded-xl p-6 shadow flex flex-col items-start">
@@ -336,64 +413,129 @@ const Calculator = () => {
                   <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 mr-3">
                     <span className="text-blue-400 font-bold text-lg">%</span>
                   </span>
-                  <span className="text-lg font-semibold text-blue-400">Employer Pension</span>
+                  <span className="text-lg font-semibold text-blue-400">
+                    Employer Pension
+                  </span>
                 </div>
                 <div className="text-2xl font-bold text-blue-400 mb-1">
-                  {result.employerPension.toLocaleString("en-NG", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  {result.employerPension.toLocaleString("en-NG", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </div>
-                <span className="text-sm text-gray-500">10% of gross salary</span>
+                <span className="text-sm text-gray-500">
+                  10% of BHT (Basic + Housing + Transport)
+                </span>
               </div>
               {/* NHF */}
               <div className="bg-white border border-yellow-200 rounded-xl p-6 shadow flex flex-col items-start">
                 <div className="flex items-center mb-2">
                   <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-yellow-100 mr-3">
-                    <span className="text-yellow-600 font-bold text-lg">NHF</span>
+                    <span className="text-yellow-600 font-bold text-lg">
+                      NHF
+                    </span>
                   </span>
-                  <span className="text-lg font-semibold text-yellow-700">NHF</span>
+                  <span className="text-lg font-semibold text-yellow-700">
+                    NHF
+                  </span>
                 </div>
                 <div className="text-2xl font-bold text-yellow-700 mb-1">
-                  {result.nhf.toLocaleString("en-NG", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  {result.nhf.toLocaleString("en-NG", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </div>
-                <span className="text-sm text-gray-500">2.5% of basic salary</span>
+                <span className="text-sm text-gray-500">
+                  2.5% of basic salary
+                </span>
               </div>
               {/* Employee NHIS */}
               <div className="bg-white border border-purple-200 rounded-xl p-6 shadow flex flex-col items-start">
                 <div className="flex items-center mb-2">
                   <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 mr-3">
-                    <span className="text-purple-600 font-bold text-lg">NHIS</span>
+                    <span className="text-purple-600 font-bold text-lg">
+                      NHIS
+                    </span>
                   </span>
-                  <span className="text-lg font-semibold text-purple-700">Employee NHIS</span>
+                  <span className="text-lg font-semibold text-purple-700">
+                    Employee NHIS
+                  </span>
                 </div>
                 <div className="text-2xl font-bold text-purple-700 mb-1">
-                  {result.nhis.toLocaleString("en-NG", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  {result.nhis.toLocaleString("en-NG", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </div>
-                <span className="text-sm text-gray-500">5% of gross salary</span>
+                <span className="text-sm text-gray-500">
+                  5% of gross salary
+                </span>
               </div>
               {/* Employer NHIS */}
               <div className="bg-white border border-purple-50 rounded-xl p-6 shadow flex flex-col items-start">
                 <div className="flex items-center mb-2">
                   <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-purple-50 mr-3">
-                    <span className="text-purple-400 font-bold text-lg">NHIS</span>
+                    <span className="text-purple-400 font-bold text-lg">
+                      NHIS
+                    </span>
                   </span>
-                  <span className="text-lg font-semibold text-purple-400">Employer NHIS</span>
+                  <span className="text-lg font-semibold text-purple-400">
+                    Employer NHIS
+                  </span>
                 </div>
                 <div className="text-2xl font-bold text-purple-400 mb-1">
-                  {result.employerNhis.toLocaleString("en-NG", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  {result.employerNhis.toLocaleString("en-NG", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </div>
-                <span className="text-sm text-gray-500">10% of gross salary</span>
+                <span className="text-sm text-gray-500">
+                  10% of gross salary
+                </span>
+              </div>
+              {/* PAYE Tax */}
+              <div className="bg-white border border-orange-200 rounded-xl p-6 shadow flex flex-col items-start">
+                <div className="flex items-center mb-2">
+                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-orange-100 mr-3">
+                    <span className="text-orange-600 font-bold text-lg">
+                      PAYE
+                    </span>
+                  </span>
+                  <span className="text-lg font-semibold text-orange-700">
+                    PAYE Tax
+                  </span>
+                </div>
+                <div className="text-2xl font-bold text-orange-700 mb-1">
+                  {result.payeTax.toLocaleString("en-NG", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
+                </div>
+                <span className="text-sm text-gray-500">
+                  Progressive tax with CRA & reliefs
+                </span>
               </div>
               {/* Total Cost to Employer */}
               <div className="bg-motee-green/90 border border-green-200 rounded-xl p-6 shadow flex flex-col items-start col-span-1 md:col-span-2">
                 <div className="flex items-center mb-2">
                   <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white mr-3">
-                    <span className="text-motee-green font-bold text-lg">₦</span>
+                    <span className="text-motee-green font-bold text-lg">
+                      ₦
+                    </span>
                   </span>
-                  <span className="text-lg font-semibold text-white">Total Cost to Employer</span>
+                  <span className="text-lg font-semibold text-white">
+                    Total Cost to Employer
+                  </span>
                 </div>
                 <div className="text-3xl font-bold text-white mb-1">
-                  {result.totalCost.toLocaleString("en-NG", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  {result.totalCost.toLocaleString("en-NG", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
                 </div>
-                <span className="text-sm text-white/80">Gross salary + employer contributions</span>
+                <span className="text-sm text-white/80">
+                  Gross salary + employer contributions
+                </span>
               </div>
             </div>
           </div>

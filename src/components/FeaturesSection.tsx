@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle, Fingerprint, Calculator, Zap } from 'lucide-react';
+import WavyBackground from './ui/WavyBackground';
 
 const features = [
   {
@@ -49,103 +50,51 @@ const features = [
 ];
 
 export default function FeaturesSection() {
+  const FeatureCard = ({ feature, image, reverse = false }) => (
+    <div className={`grid md:grid-cols-2 gap-8 items-center ${reverse ? 'md:grid-flow-row-dense' : ''}`}>
+      <div className={`flex flex-col h-full ${reverse ? 'md:col-start-2' : ''}`}>
+        <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col h-full">
+          <div className="flex items-center gap-3 mb-4">
+            <div className={`bg-${feature.color}-100 p-2 rounded-lg`}>{feature.icon}</div>
+            <h3 className="text-2xl font-bold text-gray-900">{feature.title}</h3>
+          </div>
+          <p className="text-gray-600 mb-4">{feature.description}</p>
+          <div className="grid grid-cols-2 gap-2 mb-6">
+            {feature.points.map((point, idx) => (
+              <div key={idx} className="flex items-center gap-2 text-gray-700">
+                <CheckCircle className={`w-4 h-4 text-${feature.color}-600`} />
+                <span className="text-sm">{point}</span>
+              </div>
+            ))}
+          </div>
+          {feature.learnMore && (
+            <button className={`mt-auto bg-${feature.color}-600 text-white px-5 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-${feature.color}-700 transition`}>
+              Learn More <span>&rarr;</span>
+            </button>
+          )}
+        </div>
+      </div>
+      <div className={`flex flex-col h-full ${reverse ? 'md:col-start-1' : ''}`}>
+        <div className="relative rounded-2xl overflow-hidden shadow-lg h-full min-h-[300px] flex items-center">
+          <img src={image} alt={feature.title} className="w-full h-full object-cover" />
+          {feature.status && (
+            <div className="absolute bottom-4 left-4 bg-white/90 rounded-lg px-4 py-2 flex items-center gap-2 shadow">
+              <span className={`w-3 h-3 rounded-full bg-${feature.color}-600 inline-block`}></span>
+              <span className="font-medium text-gray-800">{feature.status}</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          {/* Left: Biometric Card */}
-          <div className="flex flex-col h-full">
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-blue-100 p-2 rounded-lg">{features[0].icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900">{features[0].title}</h3>
-              </div>
-              <p className="text-gray-600 mb-4">{features[0].description}</p>
-              <div className="grid grid-cols-2 gap-2 mb-6">
-                {features[0].points.map((point, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle className="w-4 h-4 text-blue-600" />
-                    <span className="text-sm">{point}</span>
-                  </div>
-                ))}
-              </div>
-              <button className="mt-auto bg-blue-700 text-white px-5 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-blue-800 transition">
-                Learn More <span>&rarr;</span>
-              </button>
-            </div>
-          </div>
-          {/* Right: Biometric Image */}
-          <div className="flex flex-col h-full">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg h-full min-h-[300px] flex items-center">
-              <img src="/assets/images/laptop-2595394_1280.jpg" alt="" className="w-full h-full object-cover" />
-              <div className="absolute bottom-4 left-4 bg-white/90 rounded-lg px-4 py-2 flex items-center gap-2 shadow">
-                <span className="w-3 h-3 rounded-full bg-blue-600 inline-block"></span>
-                <span className="font-medium text-gray-800">System Active</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Bottom Row */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Left: Tax Image */}
-          <div className="flex flex-col h-full">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg h-full min-h-[300px] flex items-center">
-              <img src={features[1].image} alt="" className="w-full h-full object-cover" />
-            </div>
-          </div>
-          {/* Right: Tax Card */}
-          <div className="flex flex-col h-full">
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-green-100 p-2 rounded-lg">{features[1].icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900">{features[1].title}</h3>
-              </div>
-              <p className="text-gray-600 mb-4">{features[1].description}</p>
-              <div className="grid grid-cols-2 gap-2">
-                {features[1].points.map((point, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
-                    <span className="text-sm">{point}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* Third Row: Scalable Enterprise */}
-        <div className="grid md:grid-cols-2 gap-8 mt-8">
-          {/* Left: Scalable Card */}
-          <div className="flex flex-col h-full">
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="bg-orange-100 p-2 rounded-lg">{features[2].icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900">{features[2].title}</h3>
-              </div>
-              <p className="text-gray-600 mb-4">{features[2].description}</p>
-              <div className="grid grid-cols-2 gap-2 mb-6">
-                {features[2].points.map((point, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-gray-700">
-                    <CheckCircle className="w-4 h-4 text-orange-600" />
-                    <span className="text-sm">{point}</span>
-                  </div>
-                ))}
-              </div>
-              <button className="mt-auto bg-orange-600 text-white px-5 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-orange-700 transition">
-                Learn More <span>&rarr;</span>
-              </button>
-            </div>
-          </div>
-          {/* Right: Scalable Image */}
-          <div className="flex flex-col h-full">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg h-full min-h-[300px] flex items-center">
-              <img src={features[2].image} alt="" className="w-full h-full object-cover" />
-              <div className="absolute bottom-4 left-4 bg-white/90 rounded-lg px-4 py-2 flex items-center gap-2 shadow">
-                <span className="w-3 h-3 rounded-full bg-orange-600 inline-block"></span>
-                <span className="font-medium text-gray-800">System Active</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 space-y-16">
+        <WavyBackground />
+        <FeatureCard feature={features[0]} image="/assets/images/laptop-2595394_1280.jpg" />
+        <FeatureCard feature={features[1]} image={features[1].image} reverse={true} />
+        <FeatureCard feature={features[2]} image={features[2].image} />
       </div>
     </section>
   );

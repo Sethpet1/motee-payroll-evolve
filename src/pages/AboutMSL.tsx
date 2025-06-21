@@ -5,6 +5,7 @@ import MSLBackground from '@/components/MSLBackground';
 import AboutMSL from '@/components/AboutMSL';
 import MissionVision from '@/components/MissionVision';
 import Testimonials from '@/components/ui/Testimonials';
+import WavyBackground from '@/components/ui/WavyBackground';
 
 const AboutMSLPage = () => {
   return (
@@ -12,6 +13,7 @@ const AboutMSLPage = () => {
       <MSLBackground />
       <Header />
         <AboutMSL />
+        <WavyBackground />
         <MissionVision />
         <Testimonials />
       <Footer />

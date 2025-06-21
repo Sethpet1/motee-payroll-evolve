@@ -4,65 +4,66 @@ const MarqueeText = () => {
   const marqueeItems = [
     { 
       name: "Real-Time Analytics",
+      logo: ""
     },
     { 
-      name: "Sterling Bank", 
-      logo: "/logos/sterling-bank-plc.svg" 
+      name: "99.9% Upadte", 
+      logo: "" 
     },
     { 
-      name: "Polaris Bank", 
-      logo: "/logos/polaris-bank.svg" 
+      name: "Cloud Native Architecture", 
+      logo: "" 
     },
     { 
-      name: "Mainstreet Bank", 
-      logo: "/logos/mainstreet-bank.svg" 
+      name: "Premium Support", 
+      logo: "" 
     },
     { 
-      name: "Paystack", 
-      logo: "/logos/paystack.svg" 
+      name: "Advanced Monitoring", 
+      logo: "" 
     },
     { 
-      name: "Bolt", 
-      logo: "/logos/bolt.svg" 
+      name: "Custom Integration", 
+      logo: "" 
     },
     { 
-      name: "Barter", 
-      logo: "/logos/barter.svg" 
+      name: "Mobile Friendly", 
+      logo: "" 
     },
     { 
-      name: "Cool FM", 
-      logo: "/logos/cool-fm.svg" 
+      name: "Real-Time Notifications", 
+      logo: "" 
     }
   ];
 
   const reverseMarqueeItems = [
     { 
-      name: "Total Nigeria", 
-      logo: "/logos/total-nigeria.svg" 
+      name: "Mobile Friendly", 
+      logo: "" 
     },
     { 
-      name: "Oando PLC", 
-      logo: "/logos/oando-plc.svg" 
+      name: "Multi-Factor Authentication", 
+      logo: "" 
     },
     { 
-      name: "UPS", 
-      logo: "/logos/ups.svg" 
+      name: "Data Validation", 
+      logo: "" 
     },
     { 
-      name: "Ibom Air", 
-      logo: "/logos/ibom-air.svg" 
+      name: "Automatic Backups", 
+      logo: "" 
     },
     { 
-      name: "Milo", 
-      logo: "/logos/milo.svg" 
+      name: "Customizable Reports", 
+      logo: "" 
     },
     { 
-      name: "Aso Savings", 
-      logo: "/logos/aso-savings.svg" 
+      name: "Multi-Currency Support", 
+      logo: "" 
     },
     { 
-      name: "NIMC", 
-      logo: "/logos/national-identity-management-commission.svg" 
+      name: "Customizable Workflows", 
+      logo: "" 
     }
   ];
 

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, ChevronDown } from 'lucide-react';
 import { Link } from "react-router-dom";
+import WavyBackground from './ui/WavyBackground';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,6 +15,7 @@ import BookDemoButton from '@/components/ui/BookDemoButton';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hrSubmenuOpen, setHrSubmenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -39,10 +41,11 @@ const Header = () => {
   const solutionsMenu = [
     { name: "HR Management", href: "/solutions/hr-management", desc: "Centralize employee data and HR processes." },
     { name: "Leave and Absence", href: "/solutions/leave-absence", desc: "Automate leave requests and approvals." },
-    { name: "Payroll", href: "/solutions/payroll" },
-    { name: "Time & Attendance", href: "/solutions/time-attendance" },
-    { name: "Performance Management", href: "/solutions/performance" },
-    { name: "E-Learning", href: "/solutions/e-learning" },
+    { name: "Payroll", href: "/solutions/payroll", desc: "Streamline payroll processing and compliance." },
+    { name: "Time & Attendance", href: "/solutions/time-attendance", desc: "Track time and attendance efficiently." },
+    { name: "Performance Management", href: "/solutions/performance", desc: "Track and improve employee performance." },
+    { name: "E-Learning", href: "/solutions/e-learning", desc: "Empower employees with online training." },
+    { name: "Asset Tracking", href: "/hr-pages", desc: "Manage and track company assets." },
   ];
 
   const whoWeHelpMenu = [
@@ -51,10 +54,21 @@ const Header = () => {
     { name: "Public Sector", href: "/who-we-help/public-sector" },
   ];
 
+  const hrManagementSubmenu = [
+    { name: "Cup", href: "/hr-management/cup" },
+    { name: "Stick", href: "/hr-management/stick" },
+    { name: "Time", href: "/hr-management/time" },
+    { name: "Money", href: "/hr-management/money" },
+    { name: "Bad", href: "/hr-management/bad" },
+    { name: "Perform", href: "/hr-management/perform" },
+    { name: "Candy", href: "/hr-management/candy" },
+    { name: "Asset", href: "/hr-management/asset" },
+  ];
+
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white shadow">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-50 bg-white shadow-sm ">
+        <div className="container mx-auto px-6 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-r from-motee-green to-motee-orange rounded-lg flex items-center justify-center">
@@ -76,6 +90,7 @@ const Header = () => {
                     Solutions
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
+                    <WavyBackground />
                     <div className="w-[1000px] max-w-[60vw] p-8 bg-white rounded-2xl shadow-lg border border-lime-500/50">
                       <div className="grid grid-cols-2 gap-8">
                         <div className="col-span-3">
@@ -85,118 +100,67 @@ const Header = () => {
                               What Sets Us Apart
                             </h3>
                           </div>
+                          <WavyBackground />
                           <div className="grid grid-cols-3 gap-6">
-                            <Link to="/solutions/hr-management" 
-                              className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md"
-                            >
-                              <div className="flex items-start gap-4">
-                                <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
-                                  <svg className="w-6 h-6 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                  </svg>
+                            {solutionsMenu.map((item) => (
+                              <Link
+                                key={item.name}
+                                to={item.href}
+                                className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md"
+                                onMouseEnter={item.name === "HR Management" ? () => setHrSubmenuOpen(true) : undefined}
+                                onMouseLeave={item.name === "HR Management" ? () => setHrSubmenuOpen(false) : undefined}
+                              >
+                                <div className="flex items-start gap-4">
+                                  <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
+                                    {/* You can add icons here based on item.name or another property */}
+                                    <svg className="w-6 h-6 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                  </div>
+                                  <div className="space-y-2">
+                                    <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">{item.name}</h4>
+                                    <p className="text-sm leading-relaxed text-gray-500 group-hover:text-motee-orange/70">{item.desc}</p>
+                                  </div>
                                 </div>
-                                <div className="space-y-2">
-                                  <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">HR Management</h4>
-                                  <p className="text-sm leading-relaxed text-gray-500 group-hover:text-motee-orange/70">Centralize employee data and HR processes</p>
-                                </div>
-                              </div>
-                            </Link>
-                            <Link to="/solutions/leave-absence" 
-                              className="group p-4 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300"
-                            >
-                              <div className="flex items-start gap-3">
-                                <div className="p-2 rounded-lg bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
-                                  <svg className="w-5 h-5 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                  </svg>
-                                </div>
-                                <div>
-                                  <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">Leave and Absence</h4>
-                                  <p className="text-sm text-gray-500 mt-1 group-hover:text-motee-orange/70">Automate leave requests and approvals</p>
-                                </div>
-                              </div>
-                            </Link>
-                            <Link to="/solutions/payroll" 
-                              className="group p-4 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300"
-                            >
-                              <div className="flex items-start gap-3">
-                                <div className="p-2 rounded-lg bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
-                                  <svg className="w-5 h-5 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                  </svg>
-                                </div>
-                                <div>
-                                  <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">Payroll</h4>
-                                  <p className="text-sm text-gray-500 mt-1 group-hover:text-motee-orange/70">Streamline payroll processing and compliance</p>
-                                </div>
-                              </div>
-                            </Link>
-                            <Link to="/solutions/time-attendance" 
-                              className="group p-4 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300"
-                            >
-                              <div className="flex items-start gap-3">
-                                <div className="p-2 rounded-lg bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
-                                  <svg className="w-5 h-5 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                  </svg>
-                                </div>
-                                <div>
-                                  <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">Time & Attendance</h4>
-                                  <p className="text-sm text-gray-500 mt-1 group-hover:text-motee-orange/70">Track time and attendance efficiently</p>
-                                </div>
-                              </div>
-                            </Link>
-                            <Link to="/solutions/performance" 
-                              className="group p-4 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300"
-                            >
-                              <div className="flex items-start gap-3">
-                                <div className="p-2 rounded-lg bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
-                                  <svg className="w-5 h-5 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                  </svg>
-                                </div>
-                                <div>
-                                  <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">Performance Management</h4>
-                                  <p className="text-sm text-gray-500 mt-1 group-hover:text-motee-orange/70">Track and improve employee performance</p>
-                                </div>
-                              </div>
-                            </Link>
-                            <Link to="/solutions/e-learning" 
-                              className="group p-4 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300"
-                            >
-                              <div className="flex items-start gap-3">
-                                <div className="p-2 rounded-lg bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
-                                  <svg className="w-5 h-5 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                  </svg>
-                                </div>
-                                <div>
-                                  <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">E-Learning</h4>
-                                  <p className="text-sm text-gray-500 mt-1 group-hover:text-motee-orange/70">Empower employees with online training</p>
-                                </div>
-                              </div>
-                            </Link>
-                            <Link to="/hr-pages" 
-                              className="group p-4 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300"
-                            >
-                              <div className="flex items-start gap-3">
-                                <div className="p-2 rounded-lg bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
-                                  <svg className="w-5 h-5 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                                  </svg>
-                                </div>
-                                <div>
-                                  <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">Asset Tracking</h4>
-                                  <p className="text-sm text-gray-500 mt-1 group-hover:text-motee-orange/70">Manage and track company assets</p>
-                                </div>
-                              </div>
-                            </Link>
+                              </Link>
+                            ))}
                           </div>
                         </div>
                       </div>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+
+                {/* HR Management Submenu - Floating */}
+                {hrSubmenuOpen && (
+                  <div 
+                    className="fixed right-55 top-20 w-56 bg-white border-2 border-motee-green/20 rounded-xl shadow-2xl py-3 z-[70] backdrop-blur-sm animate-in slide-in-from-left-2 duration-200"
+                    onMouseEnter={() => setHrSubmenuOpen(true)}
+                    onMouseLeave={() => setHrSubmenuOpen(false)}
+                    style={{ marginLeft: '100px' }}
+                  >
+                    <div className="px-3 py-2 border-b border-motee-green/10 mb-2">
+                      <h5 className="text-sm font-semibold text-motee-green flex items-center gap-2">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        HR Management
+                      </h5>
+                    </div>
+                    {hrManagementSubmenu.map((item, index) => (
+                      <Link
+                        key={index}
+                        to={item.href}
+                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-motee-green/10 hover:to-motee-orange/10 hover:text-motee-green transition-all duration-200 border-l-2 border-transparent hover:border-motee-green/30"
+                      >
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 rounded-full bg-motee-green/30 group-hover:bg-motee-green transition-colors duration-200"></div>
+                          {item.name}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="h-12 px-4 font-bold text-black hover:text-motee-green transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-motee-orange rounded-none focus:outline-none focus:ring-0">
@@ -290,29 +254,31 @@ const Header = () => {
         </div>
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
-          <div className="fixed inset-0 z-[99] bg-black/70 backdrop-blur-sm flex justify-end">
+          <div className="fixed inset-0 z-[99] bg-black/70 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)}>
             <div 
               ref={mobileMenuRef} 
               id="mobile-menu"
               role="dialog"
               aria-modal="true"
               tabIndex={-1}
-              className="w-72 max-w-full h-full bg-white shadow-xl p-6 flex flex-col space-y-2 animate-slide-left focus:outline-none"
+              onClick={(e) => e.stopPropagation()}
+              className="fixed top-0 right-0 w-72 max-w-[80vw] h-full bg-white shadow-xl p-6 flex flex-col space-y-2 transform transition-transform duration-300 ease-in-out translate-x-0"
+              style={{ transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(100%)' }}
             >
               <button
-                className="self-end mb-4 text-gray-700 hover:text-motee-green text-2xl focus:outline-none focus:ring-2 focus:ring-motee-green"
+                className="self-end mb-4 text-gray-700 hover:text-motee-green text-3xl focus:outline-none focus:ring-2 focus:ring-motee-green"
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close menu"
-                tabIndex={0}
-                onTouchStart={() => setMobileMenuOpen(false)}
               >
-                ×
+                &times;
               </button>
               <Link to="/" className="py-2 text-lg font-semibold text-motee-green hover:text-motee-orange" onClick={() => setMobileMenuOpen(false)}>Home</Link>
               <div className="border-t border-gray-200 my-2"></div>
               {/* Solutions Dropdown */}
               <details className="group">
-                <summary className="py-2 text-lg font-semibold cursor-pointer text-gray-700 hover:text-motee-green flex items-center justify-between">Solutions <span className="ml-2">▼</span></summary>
+                <summary className="py-2 text-lg font-semibold cursor-pointer text-gray-700 hover:text-motee-green flex items-center justify-between list-none">
+                  Solutions <ChevronDown className="w-5 h-5 transition-transform duration-200 group-open:rotate-180" />
+                </summary>
                 <div className="pl-4 flex flex-col space-y-1 mt-1">
                   {solutionsMenu.map((item) => (
                     <Link key={item.name} to={item.href} className="py-1 text-gray-600 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>{item.name}</Link>
@@ -321,7 +287,9 @@ const Header = () => {
               </details>
               {/* Who We Help Dropdown */}
               <details className="group">
-                <summary className="py-2 text-lg font-semibold cursor-pointer text-gray-700 hover:text-motee-green flex items-center justify-between">Who We Help <span className="ml-2">▼</span></summary>
+                <summary className="py-2 text-lg font-semibold cursor-pointer text-gray-700 hover:text-motee-green flex items-center justify-between list-none">
+                  Who We Help <ChevronDown className="w-5 h-5 transition-transform duration-200 group-open:rotate-180" />
+                </summary>
                 <div className="pl-4 flex flex-col space-y-1 mt-1">
                   {whoWeHelpMenu.map((item) => (
                     <Link key={item.name} to={item.href} className="py-1 text-gray-600 hover:text-motee-green" onClick={() => setMobileMenuOpen(false)}>{item.name}</Link>

@@ -1,17 +1,21 @@
 import React from "react";
+import { motion } from "framer-motion";
+import WavyBackground from "./ui/WavyBackground";
 
 const AboutMSL = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="relative text-center mb-24">
+        <div className="relative text-center mb-24 overflow-hidden rounded-3xl py-16">
+          <WavyBackground />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-[800px] h-[800px] bg-gradient-to-r from-motee-green/5 to-motee-orange/5 rounded-full blur-3xl"></div>
           </div>
           <div className="relative">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-pulse">
               <span className="bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent animate-pulse">
+                <WavyBackground />
                 About MSL
               </span>
             </h1>
@@ -20,6 +24,7 @@ const AboutMSL = () => {
               <p className="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed">
                 Transforming payroll management with innovative solutions that put people first
               </p>
+              <WavyBackground />
             </div>
           </div>
         </div>
@@ -28,20 +33,21 @@ const AboutMSL = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div className="space-y-6">
             <div className="space-y-4">
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <p className="text-l text-gray-700 leading-relaxed">
                 The true measure of a company is not just in the profits it generates, but in the value it places on the people who make those profits possible. When employees are happy, business thrives. And at the heart of that happiness is a reliable payroll system.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-l text-gray-600 leading-relaxed">
                 When payroll works effortlessly, your people feel safe. They can focus on what they do best, and you can focus on what you do best.
               </p>
             </div>
+            <WavyBackground />
             <div className="flex items-center gap-4 pt-4">
               <div className="flex -space-x-2">
                 <div className="w-10 h-10 bg-motee-green rounded-full border-2 border-white"></div>
                 <div className="w-10 h-10 bg-motee-orange rounded-full border-2 border-white"></div>
                 <div className="w-10 h-10 bg-blue-500 rounded-full border-2 border-white"></div>
               </div>
-              <span className="text-sm text-gray-500">Trusted by 1000+ companies</span>
+              <span className="text-sm text-gray-500">Trusted by 500+ companies</span>
             </div>
           </div>
           <div className="relative group">
@@ -67,17 +73,17 @@ const AboutMSL = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900">The Problem</h3>
+                  <h3 className="text-1xl font-bold text-gray-900">The Problem</h3>
                 </div>
                 <div className="space-y-4">
-                  <p className="text-lg text-gray-700 leading-relaxed">
+                  <p className="text-l text-gray-700 leading-relaxed">
                     In offices across Nigeria, hard-working employees wait for salaries that become delayed, inaccurate or never come at all. Fictitious workers drain public funds. Small businesses struggle with tax confusion. Enterprises lose sleep over compliance risks.
                   </p>
-                  <p className="text-lg text-gray-700 leading-relaxed">
+                  <p className="text-l text-gray-700 leading-relaxed">
                     As a result, payroll has been perceived as 'boring' for a long time, but to us, boring means brilliant—the kind of boring that means every payslip is accurate, every deadline is met, and every compliance box is ticked.
                   </p>
                   <div className="bg-gradient-to-r from-motee-green/10 to-motee-orange/10 rounded-xl p-4">
-                    <p className="text-lg text-gray-700">
+                    <p className="text-l text-gray-700">
                       <span className="font-semibold text-motee-green">Boring payroll software</span> means there are no surprises. It means your employees are paid accurately and on time, every time. It means <span className="font-semibold text-motee-green">compliance</span>, <span className="font-semibold text-motee-green">reliability</span>, and <span className="font-semibold text-motee-green">peace of mind</span>.
                     </p>
                   </div>
@@ -87,7 +93,7 @@ const AboutMSL = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                 <div className="relative w-full max-w-lg h-96 bg-white rounded-2xl shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-500">
                   <img
-                    src="/Images/dd.jpg"
+                    src="/Images/ChatGPT Image Jun 21, 2025, 11_58_41 AM.png"
                     alt="Office scene 1"
                     className="w-full h-full object-cover"
                   />
@@ -96,6 +102,7 @@ const AboutMSL = () => {
             </div>
           </div>
         </div>
+        <WavyBackground />
 
         {/* Solution Section */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
@@ -106,22 +113,22 @@ const AboutMSL = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">At MSL we do the boring tasks</h3>
+              <h3 className="text-1xl font-bold text-gray-900">At MSL we do the boring tasks</h3>
             </div>
             <div className="space-y-4">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-l text-gray-700 leading-relaxed">
                 We've seen the damage broken payroll systems can cause—missed payments, lost trust, and businesses held back by chaos.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-l text-gray-700 leading-relaxed">
                 If payroll errors, inefficiencies, or outdated systems are causing constant headaches, switching to a better payroll provider might be the smartest move your business makes.
               </p>
               <div className="bg-gradient-to-r from-motee-green/5 to-motee-orange/5 rounded-xl p-6 border border-motee-green/20">
                 <h4 className="font-semibold text-motee-green mb-2">The Good News?</h4>
-                <p className="text-lg text-gray-700">
+                <p className="text-l text-gray-700">
                   Switching payroll providers doesn't have to be difficult. With the right approach (and the right provider), it can be a smooth, stress-free transition.
                 </p>
               </div>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-l text-gray-700 leading-relaxed">
                 Switching payroll providers shouldn't be a hassle—it should be an opportunity to improve accuracy, service and your solution.
               </p>
             </div>
