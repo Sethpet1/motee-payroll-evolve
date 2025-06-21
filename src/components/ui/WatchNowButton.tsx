@@ -32,10 +32,19 @@ const WatchNowButton: React.FC<WatchNowButtonProps> = ({
     lg: "px-8 py-6 text-lg"
   };
 
+  const handleClick = () => {
+    console.log("WatchNowButton clicked!");
+    if (onClick) {
+      onClick();
+    } else {
+      console.log("No onClick handler provided");
+    }
+  };
+
   return (
     <Button 
       size={size}
-      onClick={onClick}
+      onClick={handleClick}
       className={cn(
         baseClasses,
         variantClasses[variant],

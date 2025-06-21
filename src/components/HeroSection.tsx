@@ -22,6 +22,11 @@ const complianceDetails = [
 const HeroSection = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showCompliance, setShowCompliance] = useState(false);
+  const [showVideoModal, setShowVideoModal] = useState(false);
+
+  const handleWatchNow = () => {
+    setShowVideoModal(true);
+  };
 
   return (
     <section className="relative py-4 md:py-8 overflow-hidden">
@@ -68,7 +73,7 @@ const HeroSection = () => {
               >
                 <Button
                   size="lg"
-                  className="bg-motee-green hover:bg-motee-green-dark text-white px-6 py-4 text-sm font-semibold group w-full sm:w-auto"
+                  className="bg-motee-green hover:bg-motee-green-dark text-white px-6 py-4 text-sm font-semibold w-full sm:w-auto"
                 >
                   Key Benefits
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -114,7 +119,9 @@ const HeroSection = () => {
                   </div>
                 )}
               </div>
-              <WatchNowButton className="w-full sm:w-auto" />
+              <div className="w-full sm:w-auto">
+                <WatchNowButton className="w-full sm:w-auto" onClick={handleWatchNow} />
+              </div>
             </div>
             <div className="flex flex-wrap gap-8 justify-center md:justify-start mt-12 pt-8 border-t border-gray-200">
               <div
@@ -205,6 +212,30 @@ const HeroSection = () => {
       <PayrollSmilingSection />
       <WavyBackground />
       <FeaturesSection />
+
+      {/* Video Modal */}
+      {showVideoModal && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+          <div className="relative bg-white rounded-xl max-w-4xl w-full max-h-[80vh] overflow-hidden">
+            <button
+              onClick={() => setShowVideoModal(false)}
+              className="absolute top-4 right-4 z-10 bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors"
+            >
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <div className="aspect-video bg-gray-900 flex items-center justify-center">
+              <div className="text-center text-white">
+                <div className="text-6xl mb-4">🎥</div>
+                <h3 className="text-xl font-semibold mb-2">MSL Payroll System Demo</h3>
+                <p className="text-gray-300">Video content coming soon...</p>
+                <p className="text-sm text-gray-400 mt-2">Experience our revolutionary payroll management system</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
