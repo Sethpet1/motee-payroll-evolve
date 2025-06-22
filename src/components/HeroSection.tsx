@@ -4,7 +4,6 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import WatchNowButton from "./ui/WatchNowButton";
 import FeaturesSection from "@/components/FeaturesSection";
 import PayrollSmilingSection from "@/components/PayrollSmilingSection";
-import WavyBackground from "./ui/WavyBackground";
 
 const keyBenefits = [
   "Faster onboarding",
@@ -128,7 +127,6 @@ const HeroSection = () => {
                 className="text-center animate-slide-up"
                 style={{ animationDelay: "0.5s" }}
               >
-                <WavyBackground />
                 <div className="text-2xl font-bold bg-gradient-to-r from-motee-green to-orange-500 bg-clip-text text-transparent">
                   99.9%
                 </div>
@@ -154,17 +152,18 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-          <WavyBackground />
 
           {/* Dashboard Preview */}
           <div className="animate-slide-right">
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500 mb-12">
-                <img
-                  src="/assets/images/man-4334177_1280.jpg"
-                  alt="MOTEE Solutions Dashboard"
-                  className="w-full h-full object-cover rounded-lg shadow-lg"
-                />
+                <div className="rounded-xl shadow-lg overflow-hidden aspect-video">
+                  <img
+                    src="/assets/images/ChatGPT Image Jun 21, 2025, 10_31_39 PM.png"
+                    alt="MOTEE Solutions Dashboard"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div className="mt-6 space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -210,7 +209,6 @@ const HeroSection = () => {
         </div>
       </div>
       <PayrollSmilingSection />
-      <WavyBackground />
       <FeaturesSection />
 
       {/* Video Modal */}

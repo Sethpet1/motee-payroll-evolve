@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import WavyBackground from "./ui/WavyBackground";
 
 const AboutMSL = () => {
   return (
@@ -8,14 +7,13 @@ const AboutMSL = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="relative text-center mb-24 overflow-hidden rounded-3xl py-16">
-          <WavyBackground />
+         
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-[800px] h-[800px] bg-gradient-to-r from-motee-green/5 to-motee-orange/5 rounded-full blur-3xl"></div>
           </div>
           <div className="relative">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-pulse">
               <span className="bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent animate-pulse">
-                <WavyBackground />
                 About MSL
               </span>
             </h1>
@@ -24,7 +22,6 @@ const AboutMSL = () => {
               <p className="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed">
                 Transforming payroll management with innovative solutions that put people first
               </p>
-              <WavyBackground />
             </div>
           </div>
         </div>
@@ -40,7 +37,6 @@ const AboutMSL = () => {
                 When payroll works effortlessly, your people feel safe. They can focus on what they do best, and you can focus on what you do best.
               </p>
             </div>
-            <WavyBackground />
             <div className="flex items-center gap-4 pt-4">
               <div className="flex -space-x-2">
                 <div className="w-10 h-10 bg-motee-green rounded-full border-2 border-white"></div>
@@ -77,14 +73,14 @@ const AboutMSL = () => {
                 </div>
                 <div className="space-y-4">
                   <p className="text-l text-gray-700 leading-relaxed">
-                    In offices across Nigeria, hard-working employees wait for salaries that become delayed, inaccurate or never come at all. Fictitious workers drain public funds. Small businesses struggle with tax confusion. Enterprises lose sleep over compliance risks.
+                  Nigeria businesses have reported losing as much as ₦220 billion per year as a result of payroll errors. And it's linked to the continuing use of traditional payroll methods.
                   </p>
                   <p className="text-l text-gray-700 leading-relaxed">
-                    As a result, payroll has been perceived as 'boring' for a long time, but to us, boring means brilliant—the kind of boring that means every payslip is accurate, every deadline is met, and every compliance box is ticked.
+                  Thankfully, there is a payroll solution that can help you avoid finance-related headaches—payroll software. Our online payroll offers benefits such as streamlining the payment process,improving accuracy, and saving costs.
                   </p>
                   <div className="bg-gradient-to-r from-motee-green/10 to-motee-orange/10 rounded-xl p-4">
                     <p className="text-l text-gray-700">
-                      <span className="font-semibold text-motee-green">Boring payroll software</span> means there are no surprises. It means your employees are paid accurately and on time, every time. It means <span className="font-semibold text-motee-green">compliance</span>, <span className="font-semibold text-motee-green">reliability</span>, and <span className="font-semibold text-motee-green">peace of mind</span>.
+                      <span className="font-semibold text-motee-green">No more spending hours on payroll calculations or dealing with costly mistakes.</span>We streamline the process, so you can invest your resources where they matter most
                     </p>
                   </div>
                 </div>
@@ -102,7 +98,6 @@ const AboutMSL = () => {
             </div>
           </div>
         </div>
-        <WavyBackground />
 
         {/* Solution Section */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
@@ -113,7 +108,7 @@ const AboutMSL = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-1xl font-bold text-gray-900">At MSL we do the boring tasks</h3>
+              <h3 className="text-1xl font-bold text-gray-900">Interested in MSL Payroll? See it in action.</h3>
             </div>
             <div className="space-y-4">
               <p className="text-l text-gray-700 leading-relaxed">

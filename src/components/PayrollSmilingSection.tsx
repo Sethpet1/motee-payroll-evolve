@@ -13,9 +13,8 @@ const PayrollSmilingSection = () => {
           That Leaves You Smiling
           </h2>
           <p className="text-gray-700 text-base lg:text-md mb-8 justify-center">
-          We understand the complexities of managing people and staying compliant while trying to grow. That is why we built MSL Payroll — a smart, intuitive solution that goes beyond just paying employees. 
-          It automates tedious admin, integrates seamlessly with your HR tools, and supports your team every step of the way.  
-          Whether you are onboarding your first hire or managing a distributed workforce, MSL Payroll scales with you.
+          We understand the complexities of managing people and staying compliant while trying to grow. That's why we built MSL Payroll — a smart, intuitive solution that goes beyond simply paying employees. <br /> <br />
+          MSL Payroll automates tedious admin tasks, integrates seamlessly with your HR tools, and supports your team every step of the way. Whether you're onboarding your first hire or managing a distributed workforce, MSL Payroll scales with you
           </p>
           <Link to="/book-demo">
             <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg font-semibold rounded-lg shadow">

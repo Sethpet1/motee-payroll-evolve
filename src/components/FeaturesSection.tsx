@@ -1,6 +1,5 @@
 import React from 'react';
 import { CheckCircle, Fingerprint, Calculator, Zap } from 'lucide-react';
-import WavyBackground from './ui/WavyBackground';
 
 const features = [
   {
@@ -91,7 +90,6 @@ export default function FeaturesSection() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 space-y-16">
-        <WavyBackground />
         <FeatureCard feature={features[0]} image="/assets/images/laptop-2595394_1280.jpg" />
         <FeatureCard feature={features[1]} image={features[1].image} reverse={true} />
         <FeatureCard feature={features[2]} image={features[2].image} />
