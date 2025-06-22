@@ -128,7 +128,7 @@ const WhyMSL = () => {
           <div className="max-w-4xl mx-auto bg-gradient-to-br from-motee-green/5 to-motee-orange/5 p-8 rounded-2xl mb-16">
             <h2 className="text-2xl font-bold mb-6 text-motee-gray-dark">The Impact Today</h2>
             <p className="text-lg leading-relaxed mb-6">
-              Today, Miriam works for a tech company that uses MOTEE. Her salary arrives on time — down to the last naira. She checks her payslip from her phone. Her brother is back in school. She pays her rent with confidence.
+              Today, Nathan works for a tech company that uses MOTEE. His salary arrives on time — down to the last naira. He checks his payslip from his phone. His brother is back in school. He pays his rent with confidence.
             </p>
             <p className="text-xl font-bold text-motee-green">
               MOTEE isn't just fixing payroll. It's restoring trust.
