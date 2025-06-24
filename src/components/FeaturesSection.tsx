@@ -3,7 +3,7 @@ import { CheckCircle, Fingerprint, Calculator, Zap } from 'lucide-react';
 
 const features = [
   {
-    icon: <Fingerprint className="w-8 h-8 text-blue-700" />,
+    icon: <Fingerprint className="w-8 h-8 text-blue-700 bg-gradient-to-br from-orange-50 via-white to-orange-100" />,
     title: "Biometric Fraud Protection",
     description: "Advanced fingerprint and facial recognition technology ensures only verified employees can access payroll systems.",
     points: [
@@ -18,7 +18,7 @@ const features = [
     status: "System Active"
   },
   {
-    icon: <Calculator className="w-8 h-8 text-green-700" />,
+    icon: <Calculator className="w-8 h-8 text-green-700 bg-gradient-to-br from-orange-50 via-white to-orange-100" />,
     title: "Simple Tax Tools",
     description: "Automated tax calculations, deductions, and compliance reporting that eliminates errors and ensures regulatory adherence.",
     points: [
@@ -32,7 +32,7 @@ const features = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80"
   },
   {
-    icon: <Zap className="w-8 h-8 text-orange-600" />,
+    icon: <Zap className="w-8 h-8 text-orange-600 bg-gradient-to-br from-orange-50 via-white to-orange-100" />,
     title: "Scalable Enterprise Systems",
     description: "Cloud-based infrastructure that grows with your business, handling everything from startups to enterprise corporations.",
     points: [
@@ -52,7 +52,7 @@ export default function FeaturesSection() {
   const FeatureCard = ({ feature, image, reverse = false }) => (
     <div className={`grid md:grid-cols-2 gap-8 items-center ${reverse ? 'md:grid-flow-row-dense' : ''}`}>
       <div className={`flex flex-col h-full ${reverse ? 'md:col-start-2' : ''}`}>
-        <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col h-full">
+        <div className="bg-gradient-to-br from-orange-50 via-white to-orange-100 rounded-2xl shadow-lg p-8 flex flex-col h-full">
           <div className="flex items-center gap-3 mb-4">
             <div className={`bg-${feature.color}-100 p-2 rounded-lg`}>{feature.icon}</div>
             <h3 className="text-2xl font-bold text-gray-900">{feature.title}</h3>

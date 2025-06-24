@@ -4,11 +4,22 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import WatchNowButton from "./ui/WatchNowButton";
 import FeaturesSection from "@/components/FeaturesSection";
 import PayrollSmilingSection from "@/components/PayrollSmilingSection";
+import MSLBackground from "./MSLBackground";
 
 const keyBenefits = [
   "Faster onboarding",
   "Accurate payroll processing",
   "Reliable compliance",
+];
+   
+const mslBackground = [
+  "/assets/images/MSL Background.png",
+  "/assets/images/MSL Background.png",
+  "/assets/images/MSL Background.png",
+  "/assets/images/MSL Background.png",
+  "/assets/images/MSL Background.png",
+  "/assets/images/MSL Background.png",
+  
 ];
 
 const complianceDetails = [
@@ -28,7 +39,8 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative py-4 md:py-8 overflow-hidden">
+    <section className="relative py-4 md:py-8 overflow-hidden bg-gradient-to-br from-orange-50 via-white to-orange-100">
+      <MSLBackground />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
