@@ -142,6 +142,7 @@ const App = () => {
                 <Route path="/hr-pages" element={<AssetTracking />} />
                 <Route path="/who-we-help/smes" element={<SMEs />} />
                 <Route path="/who-we-help/enterprise" element={<Enterprise />} />
+                <Route path="/who-we-help/public-sector" element={<PublicSector />} />
                 <Route path="/why-msl" element={<WhyMSL />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
               </Routes>

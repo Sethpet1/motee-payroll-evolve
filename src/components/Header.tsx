@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown, Briefcase, Building2, Users } from 'lucide-react';
 import { Link } from "react-router-dom";
 import WavyBackground from './ui/WavyBackground';
 import {
@@ -67,7 +67,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-gray-50 shadow-sm ">
+      <header className="sticky top-0 z-50 bg-white shadow-1px shadow-gray-200 ">
         <div className="container mx-auto px-6 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center space-x-3">
@@ -167,24 +167,38 @@ const Header = () => {
                     Who We Help
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[1000px] max-w-[60vw] grid grid-cols-3 gap-10 p-10 bg-white rounded-1xl shadow-1xl border-2 border-lime-500">
-                      <div>
-                        <h3 className="text-1xl font-bold text-motee-green mb-2">SMEs</h3>
-                        <ul className="space-y-2">
-                          <li><Link to="/who-we-help/smes" className="hover:text-motee-orange font- text-black">Small & Medium Enterprises</Link></li>
-                        </ul>
-                      </div>
-                      <div className="border-l border-lime-500 pl-10">
-                        <h3 className="text-1xl font-bold text-motee-green mb-2">Enterprise</h3>
-                        <ul className="space-y-2">
-                          <li><Link to="/who-we-help/enterprise" className="hover:text-motee-orange font-medium text-black">Medium & Large Enterprise</Link></li>
-                        </ul>
-                      </div>
-                      <div className="border-l-2 border-lime-500 pl-10">
-                        <h3 className="text-1xl font-bold text-motee-green mb-2">Public Sector</h3>
-                        <ul className="space-y-2">
-                          <li><Link to="/who-we-help/public-sector" className="hover:text-motee-orange font-medium text-black">Public Sector</Link></li>
-                        </ul>
+                    <div className="w-[700px] max-w-[60vw] p-8 bg-white rounded-2xl shadow-lg border border-lime-500/50">
+                      <div className="grid grid-cols-3 gap-6">
+                        <Link
+                          to="/who-we-help/smes"
+                          className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md flex flex-col items-center"
+                        >
+                          <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300 mb-3">
+                            <Briefcase className="w-7 h-7 text-motee-green" />
+                          </div>
+                          <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300 mb-1">SMEs</h4>
+                          <p className="text-sm text-gray-500 group-hover:text-motee-orange/70 text-center">Small & Medium Enterprises</p>
+                        </Link>
+                        <Link
+                          to="/who-we-help/enterprise"
+                          className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md flex flex-col items-center"
+                        >
+                          <div className="p-3 rounded-xl bg-motee-blue/10 group-hover:bg-motee-blue/20 transition-colors duration-300 mb-3">
+                            <Building2 className="w-7 h-7 text-motee-blue" />
+                          </div>
+                          <h4 className="font-semibold text-gray-900 group-hover:text-motee-blue transition-colors duration-300 mb-1">Enterprise</h4>
+                          <p className="text-sm text-gray-500 group-hover:text-motee-orange/70 text-center">Medium & Large Enterprise</p>
+                        </Link>
+                        <Link
+                          to="/who-we-help/public-sector"
+                          className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md flex flex-col items-center"
+                        >
+                          <div className="p-3 rounded-xl bg-motee-orange/10 group-hover:bg-motee-orange/20 transition-colors duration-300 mb-3">
+                            <Users className="w-7 h-7 text-motee-orange" />
+                          </div>
+                          <h4 className="font-semibold text-gray-900 group-hover:text-motee-orange transition-colors duration-300 mb-1">Public Sector</h4>
+                          <p className="text-sm text-gray-500 group-hover:text-motee-orange/70 text-center">Government & Institutions</p>
+                        </Link>
                       </div>
                     </div>
                   </NavigationMenuContent>
