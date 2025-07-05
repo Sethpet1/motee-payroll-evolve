@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import WatchNowButton from "./ui/WatchNowButton";
 import FeaturesSection from "@/components/FeaturesSection";
 import PayrollSmilingSection from "@/components/PayrollSmilingSection";
@@ -22,20 +23,20 @@ const mslBackground = [
   
 ];
 
-const complianceDetails = [
-  `Year-end Reporting
-  Reviewing payroll setting and reconciliation activities
-  Updating employee records and notifying local authorities
-  Producing and distributing final pay runs and reports`,
-];
+
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
-  const [showCompliance, setShowCompliance] = useState(false);
   const [showVideoModal, setShowVideoModal] = useState(false);
 
   const handleWatchNow = () => {
     setShowVideoModal(true);
+  };
+
+  const handleNavigateToPage = (path: string) => {
+    setShowDropdown(false);
+    navigate(path);
   };
 
   return (
@@ -78,7 +79,6 @@ const HeroSection = () => {
                 onMouseEnter={() => setShowDropdown(true)}
                 onMouseLeave={() => {
                   setShowDropdown(false);
-                  setShowCompliance(false);
                 }}
                 onTouchStart={() => setShowDropdown(!showDropdown)}
               >
@@ -91,42 +91,63 @@ const HeroSection = () => {
                 </Button>
                 {/* Dropdown */}
                 {showDropdown && (
-                  <div className="absolute left-1/2 -translate-x-1/2 md:left-0 md:-translate-x-0 mt-2 w-72 md:w-auto md:min-w-[32rem] bg-white rounded-xl shadow-xl border border-gray-100 z-20 animate-fade-in block px-2">
-                    <ul className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-100">
-                      <li className="px-6 py-4 md:px-10 md:py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-center">
-                        Faster onboarding
-                      </li>
-                      <li className="px-6 py-4 md:px-10 md:py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-center">
-                        Accurate payroll processing
-                      </li>
-                      <li
-                        className="relative px-6 py-4 md:px-10 md:py-5 text-motee-gray-dark text-base font-medium hover:bg-motee-green/10 transition-colors cursor-pointer text-center flex items-center justify-between"
-                        onMouseEnter={() => setShowCompliance(true)}
-                        onMouseLeave={() => setShowCompliance(false)}
-                        onTouchStart={(e) => {
-                          e.stopPropagation();
-                          setShowCompliance(!showCompliance);
-                        }}
+                  <div className="absolute left-1/2 -translate-x-1/2 md:left-0 md:-translate-x-0 mt-2 w-[800px] max-w-[90vw] bg-white rounded-2xl shadow-xl border border-lime-500/50 z-20 animate-fade-in block p-6">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="h-8 w-1 bg-gradient-to-b from-motee-green to-motee-orange rounded-full"></div>
+                      <h3 className="text-2xl font-bold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent">
+                        Key Benefits
+                      </h3>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div
+                        className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md cursor-pointer"
+                        onClick={() => handleNavigateToPage('/key-benefits/faster-onboarding')}
                       >
-                        <span>Reliable compliance</span>
-                        <ChevronRight className="ml-2 h-4 w-4 text-motee-green" />
-                        {/* Nested Dropdown */}
-                        {showCompliance && (
-                          <div className="absolute bottom-full md:top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 z-30 animate-fade-in block">
-                            <ul className="flex flex-col block divide-y divide-gray-100 py-2">
-                              {complianceDetails.map((detail, idx) => (
-                                <li
-                                  key={idx}
-                                  className="px-6 py-3 text-motee-gray-dark text-sm font-normal hover:bg-motee-green/10 transition-colors cursor-pointer text-left whitespace-normal"
-                                >
-                                  {detail}
-                                </li>
-                              ))}
-                            </ul>
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
+                            <svg className="w-6 h-6 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
                           </div>
-                        )}
-                      </li>
-                    </ul>
+                          <div className="space-y-2">
+                            <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">Faster Onboarding</h4>
+                            <p className="text-sm leading-relaxed text-gray-500 group-hover:text-motee-orange/70">Get your team up and running in minutes, not days</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md cursor-pointer"
+                        onClick={() => handleNavigateToPage('/key-benefits/accurate-payroll-processing')}
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
+                            <svg className="w-6 h-6 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <div className="space-y-2">
+                            <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">Accurate Payroll Processing</h4>
+                            <p className="text-sm leading-relaxed text-gray-500 group-hover:text-motee-orange/70">100% precision, every time — no missed hours or deductions</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md cursor-pointer"
+                        onClick={() => handleNavigateToPage('/key-benefits/reliable-compliance')}
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
+                            <svg className="w-6 h-6 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                          </div>
+                          <div className="space-y-2">
+                            <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">Reliable Compliance</h4>
+                            <p className="text-sm leading-relaxed text-gray-500 group-hover:text-motee-orange/70">Stay compliant with Nigerian regulations automatically</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>

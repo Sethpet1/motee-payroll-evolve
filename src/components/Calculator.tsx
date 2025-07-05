@@ -36,10 +36,10 @@ interface PayrollCalculation {
 const Calculator = () => {
   const [formData, setFormData] = useState({
     country: "Nigeria",
-    salary: 0,
-    basicSalary: 0,
-    housingAllowance: 0,
-    transportAllowance: 0,
+    salary: "",
+    basicSalary: "",
+    housingAllowance: "",
+    transportAllowance: "",
     deductPension: false,
     deductNHF: false,
     deductNHIS: false,
@@ -64,7 +64,7 @@ const Calculator = () => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : Number(value),
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -79,17 +79,23 @@ const Calculator = () => {
       deductPAYE,
     } = formData;
 
+    // Convert string values to numbers, defaulting to 0 if empty
+    const salaryNum = parseFloat(formData.salary) || 0;
+    const basicSalaryNum = parseFloat(basicSalary) || 0;
+    const housingAllowanceNum = parseFloat(housingAllowance) || 0;
+    const transportAllowanceNum = parseFloat(transportAllowance) || 0;
+
     // Calculate gross salary
     const grossSalary =
-      formData.salary > 0
-        ? formData.salary
-        : basicSalary + housingAllowance + transportAllowance;
+      salaryNum > 0
+        ? salaryNum
+        : basicSalaryNum + housingAllowanceNum + transportAllowanceNum;
 
     let totalDeductions = 0;
 
     // Calculate NHF (2.5% of basic salary)
     if (deductNHF) {
-      const nhf = basicSalary * 0.025;
+      const nhf = basicSalaryNum * 0.025;
       totalDeductions += nhf;
     }
 
@@ -97,10 +103,10 @@ const Calculator = () => {
     let employeePension = 0;
     if (
       deductPension &&
-      basicSalary + housingAllowance + transportAllowance > 0
+      basicSalaryNum + housingAllowanceNum + transportAllowanceNum > 0
     ) {
       employeePension =
-        (basicSalary + housingAllowance + transportAllowance) * 0.08;
+        (basicSalaryNum + housingAllowanceNum + transportAllowanceNum) * 0.08;
       totalDeductions += employeePension;
     }
 
@@ -108,10 +114,10 @@ const Calculator = () => {
     let employerPension = 0;
     if (
       deductPension &&
-      basicSalary + housingAllowance + transportAllowance > 0
+      basicSalaryNum + housingAllowanceNum + transportAllowanceNum > 0
     ) {
       employerPension =
-        (basicSalary + housingAllowance + transportAllowance) * 0.1;
+        (basicSalaryNum + housingAllowanceNum + transportAllowanceNum) * 0.1;
     }
 
     // Calculate NHIS costs
@@ -128,9 +134,9 @@ const Calculator = () => {
     if (deductPAYE) {
       // Step 1: Calculate annual figures
       const annualGrossSalary = grossSalary * 12;
-      const annualBasicSalary = basicSalary * 12;
-      const annualHousingAllowance = housingAllowance * 12;
-      const annualTransportAllowance = transportAllowance * 12;
+      const annualBasicSalary = basicSalaryNum * 12;
+      const annualHousingAllowance = housingAllowanceNum * 12;
+      const annualTransportAllowance = transportAllowanceNum * 12;
       
       // Step 2: Calculate BHT (Basic + Housing + Transport) for pension
       const annualBHT = annualBasicSalary + annualHousingAllowance + annualTransportAllowance;
@@ -179,7 +185,7 @@ const Calculator = () => {
     const totalCost = grossSalary + employerPension + employerNhis;
 
     // Calculate NHF for display if needed
-    const nhf = deductNHF ? basicSalary * 0.025 : 0;
+    const nhf = deductNHF ? basicSalaryNum * 0.025 : 0;
 
     setResult({
       netSalary,
@@ -238,7 +244,7 @@ const Calculator = () => {
                   value={formData.salary}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-motee-green focus:ring-2 focus:ring-motee-green/30 outline-none bg-white text-gray-900"
-                  placeholder="0"
+                  placeholder="Enter value"
                 />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -252,7 +258,7 @@ const Calculator = () => {
                     value={formData.basicSalary}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-motee-green focus:ring-2 focus:ring-motee-green/30 outline-none bg-white text-gray-900"
-                    placeholder="0"
+                    placeholder="Enter value"
                   />
                 </div>
                 <div>
@@ -265,7 +271,7 @@ const Calculator = () => {
                     value={formData.housingAllowance}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-motee-green focus:ring-2 focus:ring-motee-green/30 outline-none bg-white text-gray-900"
-                    placeholder="0"
+                    placeholder="Enter value"
                   />
                 </div>
               </div>
@@ -279,7 +285,7 @@ const Calculator = () => {
                   value={formData.transportAllowance}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-motee-green focus:ring-2 focus:ring-motee-green/30 outline-none bg-white text-gray-900"
-                  placeholder="0"
+                  placeholder="Enter value"
                 />
               </div>
             </div>

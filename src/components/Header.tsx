@@ -185,7 +185,7 @@ const Header = () => {
                         >
                           <div className="p-3 rounded-xl bg-motee-blue/10 group-hover:bg-motee-blue/20 transition-colors duration-300 mb-3">
                             <Building2 className="w-7 h-7 text-motee-blue" />
-                          </div>
+                      </div>
                           <h4 className="font-semibold text-gray-900 group-hover:text-motee-blue transition-colors duration-300 mb-1">Enterprise</h4>
                           <p className="text-sm text-gray-500 group-hover:text-motee-orange/70 text-center">Medium & Large Enterprise</p>
                         </Link>
@@ -195,7 +195,7 @@ const Header = () => {
                         >
                           <div className="p-3 rounded-xl bg-motee-orange/10 group-hover:bg-motee-orange/20 transition-colors duration-300 mb-3">
                             <Users className="w-7 h-7 text-motee-orange" />
-                          </div>
+                      </div>
                           <h4 className="font-semibold text-gray-900 group-hover:text-motee-orange transition-colors duration-300 mb-1">Public Sector</h4>
                           <p className="text-sm text-gray-500 group-hover:text-motee-orange/70 text-center">Government & Institutions</p>
                         </Link>

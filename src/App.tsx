@@ -21,6 +21,9 @@ import SMEs from './pages/SMEs';
 import Enterprise from './pages/Enterprise';
 import PublicSector from './pages/PublicSector';
 import WhyMSL from './pages/WhyMSL';
+import FasterOnboarding from './pages/FasterOnboarding';
+import AccuratePayrollProcessing from './pages/AccuratePayrollProcessing';
+import ReliableCompliance from './pages/ReliableCompliance';
 
 // Create a QueryClient instance
 const queryClient = new QueryClient({
@@ -144,6 +147,9 @@ const App = () => {
                 <Route path="/who-we-help/enterprise" element={<Enterprise />} />
                 <Route path="/who-we-help/public-sector" element={<PublicSector />} />
                 <Route path="/why-msl" element={<WhyMSL />} />
+                <Route path="/key-benefits/faster-onboarding" element={<FasterOnboarding />} />
+                <Route path="/key-benefits/accurate-payroll-processing" element={<AccuratePayrollProcessing />} />
+                <Route path="/key-benefits/reliable-compliance" element={<ReliableCompliance />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
               </Routes>
             </Suspense>
