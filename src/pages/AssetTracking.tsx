@@ -223,7 +223,7 @@ const AssetTracking = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {clearanceSteps.map((step, index) => (
               <div key={index} className="relative">
-                <div className="bg-motee-blue text-white p-8 rounded-xl text-center">
+                <div className="bg-gray-100 text-black p-8 rounded-xl text-center">
                   <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     {step.icon}
                   </div>
