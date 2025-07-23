@@ -104,7 +104,7 @@ const WhyMSL = () => {
                   <img 
                     src="/assets/images/de1aa0e5-e778-4c59-8524-f2c840e3b0ff.jpg" 
                     alt="Why MOTEE Solutions Ltd?" 
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-fill object-[100%_100%] rounded-2xl"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 </div>

@@ -134,7 +134,7 @@ const AboutMSL = () => {
               <img
                 src="/assets/images/ChatGPT Image Jun 22, 2025, 04_20_15 PM copy.png"
                 alt="Switching payroll provider"
-                className="w-full h-full object-cover object-top h-96 mb-20"
+                className="w-full h-full object-fill object-[100%_100%] mb-20"
               />
             </div>
           </div>

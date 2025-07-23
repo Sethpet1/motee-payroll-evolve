@@ -14,11 +14,11 @@ const PayrollSmilingSection = () => {
           </h2>
           <p className="text-gray-700 text-base lg:text-md mb-8 justify-center">
           We understand the complexities of managing people and staying compliant while trying to grow. That's why we built MSL Payroll — a smart, intuitive solution that goes beyond simply paying employees. <br /> <br />
-          MSL Payroll automates tedious admin tasks, integrates seamlessly with your HR tools, and supports your team every step of the way. Whether you're onboarding your first hire or managing a distributed workforce, MSL Payroll scales with you
+          MSL Payroll simplifies administrative tasks, integrates seamlessly with your HR tools, and supports your team every step of the way. Whether you're onboarding your first hire or managing a distributed workforce, MSL Payroll scales with you.
           </p>
           <Link to="/book-demo">
             <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg font-semibold rounded-lg shadow">
-              Experience it
+            See It in Action
             </Button>
           </Link>
         </div>
@@ -68,7 +68,7 @@ const PayrollSmilingSection = () => {
                 </div>
                 {/* Profile Card */}
                 <div className="absolute right-0 top-16 bg-white rounded-xl shadow-lg p-4 flex items-center gap-3 w-64 border z-20" style={{transform: 'translateX(40%)'}}>
-                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ann Omare" className="w-12 h-12 rounded-full object-cover" />
+                  <img src="/assets/images/de1aa0e5-e778-4c59-8524-f2c840e3b0ff.jpg" alt="Ann Omare" className="w-12 h-12 rounded-full object-fill object-[100%_100%]" />
                   <div>
                     <div className="font-semibold text-gray-800">Mr Henry</div>
                     <div className="text-xs text-gray-500">Employee ID: 8123457</div>

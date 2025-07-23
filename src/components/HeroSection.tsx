@@ -61,11 +61,10 @@ const HeroSection = () => {
               className="font-14px text-gray-600 mb-8 mt-5 animate-slide-up justify-center"
               style={{ animationDelay: "0.1s" }}
             >
-              Payroll is not just about numbers — it is about trust. <br /> Mistakes in
+              Payroll is more than numbers — it's about trust, accuracy, and peace of mind. <br /> Mistakes in
               payroll do not just cause frustration; they make employees feel
               undervalued. <br />
-              <br /> At MSL, we have built a payroll system that puts your
-              people first. With reliability, security, and care at its core,
+              <br /> MSL delivers a people-first payroll platform built for speed, compliance, and fraud prevention. With reliability, security, and care at its core,
               our solution ensures your employees are always paid accurately —
               and on time.
             </p>
@@ -84,7 +83,7 @@ const HeroSection = () => {
               >
                 <Button
                   size="lg"
-                  className="bg-motee-green hover:bg-motee-green-dark text-white px-6 py-4 text-sm font-semibold w-full sm:w-auto"
+                  className="bg-[#8dca02] hover:bg-[#8dca02] text-black px-6 py-4 text-sm font-semibold w-full sm:w-auto transition-colors duration-200"
                 >
                   Key Benefits
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

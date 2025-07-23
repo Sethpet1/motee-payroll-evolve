@@ -15,7 +15,6 @@ import BookDemoButton from '@/components/ui/BookDemoButton';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [hrSubmenuOpen, setHrSubmenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -54,31 +53,23 @@ const Header = () => {
     { name: "Public Sector", href: "/who-we-help/public-sector" },
   ];
 
-  const hrManagementSubmenu = [
-    { name: "Cup", href: "/hr-management/cup" },
-    { name: "Stick", href: "/hr-management/stick" },
-    { name: "Time", href: "/hr-management/time" },
-    { name: "Money", href: "/hr-management/money" },
-    { name: "Bad", href: "/hr-management/bad" },
-    { name: "Perform", href: "/hr-management/perform" },
-    { name: "Candy", href: "/hr-management/candy" },
-    { name: "Asset", href: "/hr-management/asset" },
-  ];
-
+ 
   return (
     <>
       <header className="sticky top-0 z-50 bg-white shadow-1px shadow-gray-200 ">
         <div className="container mx-auto px-6 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-motee-green to-motee-orange rounded-lg flex items-center justify-center">
-                <img src="/logos/ChatGPT Image Jun 18, 2025, 08_30_37 PM.png" alt="MSL Logo" className="w-100 h-10" />
+              <div className="w-10 h-10 bg-gradient-to-r from-motee-green to-motee-orange rounded-lg flex items-center justify-center shadow-md">
+                <img src="/logos/ChatGPT Image Jul 23, 2025, 12_55_40 PM.png" alt="MSL Logo" className="w-8 h-8 object-contain" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold font-poppins bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent tracking-tight">
+              <div className="flex flex-col justify-center ml-2">
+                <span className="lemon-regular text-2xl font-extrabold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent tracking-tight drop-shadow-sm leading-tight" style={{ letterSpacing: '-0.5px' }}>
                   MOTEE Solutions Ltd (MSL)
                 </span>
-                <span className="text-xs text-gray-500">One Stop Shop for Your Payroll Solutions</span>
+                <span className="text-xs font-medium text-gray-400 mt-0.5 tracking-wide" style={{ letterSpacing: '0.5px' }}>
+                  One Stop Shop for Your Payroll Solutions
+                </span>
               </div>
             </Link>
 
@@ -107,8 +98,6 @@ const Header = () => {
                                 key={item.name}
                                 to={item.href}
                                 className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md"
-                                onMouseEnter={item.name === "HR Management" ? () => setHrSubmenuOpen(true) : undefined}
-                                onMouseLeave={item.name === "HR Management" ? () => setHrSubmenuOpen(false) : undefined}
                               >
                                 <div className="flex items-start gap-4">
                                   <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
@@ -131,36 +120,7 @@ const Header = () => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                {/* HR Management Submenu - Floating */}
-                {hrSubmenuOpen && (
-                  <div 
-                    className="fixed right-55 top-20 w-56 bg-white border-2 border-motee-green/20 rounded-xl shadow-2xl py-3 z-[70] backdrop-blur-sm animate-in slide-in-from-left-2 duration-200"
-                    onMouseEnter={() => setHrSubmenuOpen(true)}
-                    onMouseLeave={() => setHrSubmenuOpen(false)}
-                    style={{ marginLeft: '100px' }}
-                  >
-                    <div className="px-3 py-2 border-b border-motee-green/10 mb-2">
-                      <h5 className="text-sm font-semibold text-motee-green flex items-center gap-2">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                        HR Management
-                      </h5>
-                    </div>
-                    {hrManagementSubmenu.map((item, index) => (
-                      <Link
-                        key={index}
-                        to={item.href}
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-motee-green/10 hover:to-motee-orange/10 hover:text-motee-green transition-all duration-200 border-l-2 border-transparent hover:border-motee-green/30"
-                      >
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 rounded-full bg-motee-green/30 group-hover:bg-motee-green transition-colors duration-200"></div>
-                          {item.name}
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
+              
 
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="h-12 px-4 font-bold text-black hover:text-motee-green transition-colors duration-300 bg-transparent hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-motee-orange rounded-none focus:outline-none focus:ring-0">
