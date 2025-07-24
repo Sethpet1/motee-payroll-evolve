@@ -59,10 +59,12 @@ const Header = () => {
       <header className="sticky top-0 z-50 bg-white shadow-1px shadow-gray-200 ">
         <div className="container mx-auto px-6 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-motee-green to-motee-orange rounded-lg flex items-center justify-center shadow-md">
-                <img src="/logos/ChatGPT Image Jul 23, 2025, 12_55_40 PM.png" alt="MSL Logo" className="w-8 h-8 object-contain" />
-              </div>
+            <Link to="/" className="flex items-center space-x-0">
+              <img
+                src="/logos/ChatGPT Image Jul 23, 2025, 12_55_40 PM.png"
+                alt="MSL Logo"
+                className="h-12 w-auto object-contain drop-shadow-lg"
+              />
               <div className="flex flex-col justify-center ml-2">
                 <span className="lemon-regular text-2xl font-extrabold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent tracking-tight drop-shadow-sm leading-tight" style={{ letterSpacing: '-0.5px' }}>
                   MOTEE Solutions Ltd (MSL)

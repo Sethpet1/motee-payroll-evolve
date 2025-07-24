@@ -17,7 +17,7 @@ const PayrollSmilingSection = () => {
           MSL Payroll simplifies administrative tasks, integrates seamlessly with your HR tools, and supports your team every step of the way. Whether you're onboarding your first hire or managing a distributed workforce, MSL Payroll scales with you.
           </p>
           <Link to="/book-demo">
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg font-semibold rounded-lg shadow">
+            <Button className="bg-motee-green hover:bg-motee-green text-white px-8 py-3 text-lg font-semibold rounded-lg shadow">
             See It in Action
             </Button>
           </Link>
@@ -34,7 +34,7 @@ const PayrollSmilingSection = () => {
           <div className="relative z-10 w-[420px] max-w-full bg-white rounded-2xl shadow-xl p-6 flex flex-col gap-4">
             <div className="flex gap-4">
               <div className="w-32 min-w-[120px]">
-                <span className="text-lg font-bold text-green-700">MSL Software</span>
+                <span className="text-lg font-bold text-motee-green">MSL Software</span>
                 <ul className="mt-6 space-y-2 text-gray-500 text-sm">
                   <li className="font-medium text-gray-700">Dashboard</li>
                   <li>Payroll</li>
