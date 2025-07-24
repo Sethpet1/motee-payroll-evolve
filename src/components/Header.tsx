@@ -81,7 +81,7 @@ const Header = () => {
                     Solutions
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <WavyBackground />
+                   
                     <div className="w-[1000px] max-w-[60vw] p-8 bg-white rounded-2xl shadow-lg border border-lime-500/50">
                       <div className="grid grid-cols-2 gap-8">
                         <div className="col-span-3">
@@ -91,7 +91,7 @@ const Header = () => {
                               What Sets Us Apart
                             </h3>
                           </div>
-                          <WavyBackground />
+                          
                           <div className="grid grid-cols-3 gap-6">
                             {solutionsMenu.map((item) => (
                               <Link

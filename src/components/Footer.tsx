@@ -1,5 +1,8 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import {  } from '../pages/AboutMSL';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -50,7 +53,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Company</h4>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="#mission" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="/AboutMSL" className="hover:text-white transition-colors">About Us</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-white transition-colors">News</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Partners</a></li>

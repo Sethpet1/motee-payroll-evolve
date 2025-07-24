@@ -76,7 +76,7 @@ const PricingPage = () => {
         <section className="py-24 text-center bg-gradient-to-b from-white to-site-bg">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="mb-8">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-motee-blue via-motee-green to-motee-orange bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-4xl font-semibold mb-6 bg-gradient-to-r from-motee-blue via-motee-green to-motee-orange bg-clip-text text-transparent">
                 Simple, Transparent Pricing
               </h1>
               <p className="text-xl text-motee-gray max-w-3xl mx-auto leading-relaxed">

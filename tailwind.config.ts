@@ -60,9 +60,9 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				'site-bg': '#FFFDF6',
-				'motee-green': '#059669',
-				'motee-green-light': '#10B981',
-				'motee-green-dark': '#047857',
+				'motee-green': '#8dca02',
+				'motee-green-light': '#8dca02',
+				'motee-green-dark': '#8dca02',
 				'motee-orange': '#FF7D29',
 				'motee-orange-light': '#F97316',
 				'motee-orange-dark': '#C2410C',

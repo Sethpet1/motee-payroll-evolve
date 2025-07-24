@@ -69,7 +69,7 @@ const PerformanceManagement = () => {
                 <img 
                   src="/assets/images/74EE20A7-5A2A-42E9-84AE-49B4A797BCF9.PNG" 
                   alt="Performance Management" 
-                  className="w-full h-50 sm:h-59 md:h-96 lg:h-96 object-cover rounded-lg shadow" 
+                  className="w-full h-50 sm:h-59 md:h-98 lg:h-98 object-cover rounded-lg shadow" 
                 />
               </div>
             </div>

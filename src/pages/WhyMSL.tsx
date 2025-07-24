@@ -55,7 +55,7 @@ const WhyMSL = () => {
                   In a small but bustling corner of Lagos, Nathan, a diligent administrative officer at a mid-sized logistics company, spent his days juggling emails, coordinating meetings, and managing the chaos that came with serving multiple departments. He was the backbone of the office — the kind of employee who always stayed late to make sure things ran smoothly the next day.
                 </p>
                 <p className="text-md leading-relaxed mb-6">
-                  But behind his quiet competence, there was a recurring burden: salary delays, unexplained deductions, and inconsistent payroll practices. Every month was a guessing game — would her pay come on time? Would it be complete?
+                  But behind his quiet competence, there was a recurring burden: salary delays, unexplained deductions, and inconsistent payroll practices. Every month was a guessing game — would his pay come on time? Would it be complete?
                 </p>
                 <p className="text-md leading-relaxed mb-6 font-medium">
                   Then, in December — just before the holidays — the worst happened: his salary never came at all.
@@ -137,7 +137,7 @@ const WhyMSL = () => {
           </div>
         </div>
       </main>
-      <PayrollSmilingSection />
+    
       <Footer />
     </div>
   );
