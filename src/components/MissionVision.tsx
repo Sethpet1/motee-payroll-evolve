@@ -66,7 +66,7 @@ const MissionVision = () => {
           <Card className="group hover:shadow-xl transition-all duration-300 hover:scale-102 bg-white border-0 shadow-md animate-slide-in-right max-w-md mx-auto">
             <CardHeader className="text-center pb-3">
               <div className="w-12 h-12 bg-gradient-to-r from-motee-green to-motee-green-light rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:animate-pulse">
-                <Eye className="h-6 w-6 text-white" />
+                <img src="/assets/icon/image.png" alt="Our Vision" className="h-12 w-12 text-white" />
               </div>
               <CardTitle className="text-2xl font-bold text-gray-800">Our Vision</CardTitle>
             </CardHeader>
@@ -121,7 +121,7 @@ const MissionVision = () => {
           <Card className="group hover:shadow-xl transition-all duration-300 hover:scale-102 bg-white border-0 shadow-md animate-slide-in-right max-w-md mx-auto">
             <CardHeader className="text-center pb-3">
               <div className="w-12 h-12 bg-gradient-to-r from-motee-orange to-motee-green-light rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:animate-pulse">
-                <Eye className="h-6 w-6 text-white" />
+                <img src="/assets/icon/image copy.png" alt="Our Purpose" className="h-12 w-12 text-white" />
               </div>
               <CardTitle className="text-2xl font-bold text-gray-800">Our Purpose</CardTitle>
             </CardHeader>

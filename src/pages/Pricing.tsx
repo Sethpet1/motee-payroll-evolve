@@ -60,7 +60,7 @@ const pricingTiers: PricingTier[] = [
     isPopular: true,
     buttonText: "Start Free Trial",
     buttonLink: "/contact",
-    icon: <Zap className="w-6 h-6" />,
+    icon: <img src="/assets/icon/image copy 2.png" alt="Standard Package" className="w-12 h-12" />,
     color: "motee-blue"
   },
 ];

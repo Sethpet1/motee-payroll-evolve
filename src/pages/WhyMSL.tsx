@@ -20,7 +20,16 @@ const WhyMSL = () => {
   const handleBookDemo = () => {
     navigate('/book-demo');
   };
-
+const description = [
+  "Ensure only legitimate employees are paid with biometric verification.",
+  "Empower employees to manage their payroll information anytime.",
+  "Make data-driven decisions with instant, clear payroll reports.",
+  "Stay effortlessly compliant with local tax laws and regulations, avoiding penalties and ensuring peace of mind.",
+  "Eliminate errors and save time with automatic, accurate payroll calculations for all your employees.",
+  "Ensure timely and accurate tax deductions and filings, reducing the risk of compliance issues.",
+  "Eliminate manual errors and save time with automatic, accurate payroll calculations for all your employees.",
+  "Streamline payroll payments directly to employees' bank accounts, ensuring quick and secure disbursements."
+]
   const features = [
     { title: "Biometric Validation Payroll", icon: <Fingerprint className="w-6 h-6 text-motee-green" /> },
     { title: "Employee Self-Service Access", icon: <UserCog className="w-6 h-6 text-motee-green" /> },
@@ -72,12 +81,12 @@ const WhyMSL = () => {
                   He wasn't alone. In offices across Nigeria, similar stories played out every month. Employees who worked hard, but were let down by unreliable payroll systems, opaque deductions, and systems prone to fraud.
                 </p>
                 <div className="bg-gradient-to-r from-motee-green/10 to-motee-orange/10 p-8 rounded-xl mb-8">
-                  <h2 className="text-2xl font-bold mb-4 text-motee-green">That is when MOTEE Solutions Ltd. was born.</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-motee-green">MOTEE Solutions: Empowering Employees, Protecting Businesses</h2>
                   <p className="text-lg leading-relaxed mb-6">
-                    Created by a global payroll expert who returned home after years of witnessing how modern payroll systems empower workers abroad, MOTEE was launched not just as a company, but as a mission:
+                    With MOTEE Solutions, Nathan's story would have been different. Our transparent payroll system ensures on-time, accurate payments, with clear deductions and full accountability.
                   </p>
                   <p className="text-xl font-semibold text-motee-gray-dark italic mb-8">
-                    To ensure no office worker in Nigeria ever had to wonder if their salary would come, or if it would be correct.
+                    Empower your employees, eliminate fraud, and take control of your payroll today.
                   </p>
                 </div>
               </div>
@@ -117,6 +126,7 @@ const WhyMSL = () => {
                   {feature.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-motee-gray-dark flex-1">{feature.title}</h3>
+                <p className="text-motee-gray-dark">{description[index]}</p>
               </div>
             ))}
           </div>
@@ -125,10 +135,10 @@ const WhyMSL = () => {
           <div className="max-w-4xl mx-auto bg-gradient-to-br from-motee-green/5 to-motee-orange/5 p-8 rounded-2xl mb-16">
             <h2 className="text-2xl font-bold mb-6 text-motee-gray-dark">The Impact Today</h2>
             <p className="text-lg leading-relaxed mb-6">
-              Today, Nathan works for a tech company that uses MOTEE. His salary arrives on time — down to the last naira. He checks his payslip from his phone. His brother is back in school. He pays his rent with confidence.
+            Today, Nathan works for a tech company that uses MOTEE. His salary arrives on time thanks to automated payroll calculations and bank-integrated disbursements. He checks his payslip from his phone with 24/7 access and complete transparency. His brother is back in school, and Nathan pays his rent with confidence, secure in the knowledge that his payroll is compliant, accurate, and protected.
             </p>
             <p className="text-xl font-bold text-motee-green">
-              MOTEE isn't just fixing payroll. It's restoring trust.
+            MOTEE isn't just fixing payroll. It's restoring trust, giving businesses and employees peace of mind.
             </p>
            
           </div>
