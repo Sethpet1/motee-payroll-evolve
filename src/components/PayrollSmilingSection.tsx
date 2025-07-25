@@ -68,9 +68,9 @@ const PayrollSmilingSection = () => {
                 </div>
                 {/* Profile Card */}
                 <div className="absolute right-0 top-16 bg-white rounded-xl shadow-lg p-4 flex items-center gap-3 w-64 border z-20" style={{transform: 'translateX(40%)'}}>
-                  <img src="/assets/images/de1aa0e5-e778-4c59-8524-f2c840e3b0ff.jpg" alt="Ann Omare" className="w-12 h-12 rounded-full object-fill object-[100%_100%]" />
+                  <img src="/assets/images/IMG_6214.PNG" alt="Ann Omare" className="w-12 h-12 rounded-full object-fill object-[100%_100%]" />
                   <div>
-                    <div className="font-semibold text-gray-800">Mr Henry</div>
+                    <div className="font-semibold text-gray-800">Henry Nathan</div>
                     <div className="text-xs text-gray-500">Employee ID: 8123457</div>
                     <div className="text-xs text-green-700 font-medium">Operations</div>
                     <div className="text-xs text-gray-400">Chief Accountant</div>
@@ -80,7 +80,7 @@ const PayrollSmilingSection = () => {
                 <div className="absolute right-0 top-40 bg-white rounded-xl shadow-lg p-4 w-72 border z-20" style={{transform: 'translateX(30%)'}}>
                   <div className="text-xs text-gray-500 mb-1">Work Email <span className="text-green-700 ml-2">enquiry@moteesolution.com</span></div>
                   <div className="text-xs text-gray-500 mb-1">Phone <span className="text-green-700 ml-2">+234 812 345 678</span></div>
-                  <div className="text-xs text-gray-500 mb-1">Date of Birth <span className="ml-2">23rd October</span></div>
+                  <div className="text-xs text-gray-500 mb-1">Date of Birth <span className="ml-2">23rd October, 1980</span></div>
                   <div className="text-xs text-gray-500 mb-1">Address <span className="ml-2">75,Aminu crescent, Abuja, Nigeria</span></div>
                   <div className="text-xs text-gray-500">Reports to <span className="ml-2 font-semibold text-green-700">Kunle Ajayi</span></div>
                 </div>

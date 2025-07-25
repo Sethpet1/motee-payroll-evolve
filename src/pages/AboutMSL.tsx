@@ -12,7 +12,7 @@ const AboutMSLPage = () => {
       <MSLBackground />
       <Header />
         <AboutMSL />
-        <MissionVision />
+        {/* <MissionVision /> */}
         <Testimonials />
       <Footer />
     </div>

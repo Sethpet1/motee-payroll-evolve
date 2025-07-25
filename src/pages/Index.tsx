@@ -54,7 +54,7 @@ const Index = () => {
         <Team />
         {/* <ProblemStatement /> */}
         {/* <Solutions /> */}
-        <EmployeeExperience />
+       {/* <EmployeeExperience /> */}
         <CallToAction />
       </main>
       

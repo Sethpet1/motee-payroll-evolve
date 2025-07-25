@@ -61,7 +61,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center space-x-0">
               <img
-                src="/logos/ChatGPT Image Jul 23, 2025, 12_55_40 PM.png"
+                src="/logos/9C510464-D0E0-4D60-8E01-C70F1D98AB41.PNG"
                 alt="MSL Logo"
                 className="h-12 w-auto object-contain drop-shadow-lg"
               />

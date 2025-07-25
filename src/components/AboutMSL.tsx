@@ -50,7 +50,7 @@ const AboutMSL = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-motee-green/20 to-motee-orange/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
             <div className="relative w-full max-w-lg h-96 bg-white rounded-2xl shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-500">
               <img
-                src="/Images/3.jpg"
+                src="/assets/images/IMG_6213.PNG"
                 alt="Happy employees"
                 className="w-full h-full object-cover"
               />

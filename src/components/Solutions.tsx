@@ -10,7 +10,7 @@ const Solutions = () => {
       icon: Fingerprint,
       title: "Biometric Fraud Protection",
       description: "Advanced fingerprint and facial recognition technology ensures only verified employees can access payroll systems.",
-      features: ["Real-time identity verification", "Anti-spoofing algorithms", "Multi-factor biometric auth", "Audit trail tracking"],
+      features: ["**Real-time** identity verification", "**Anti-spoofing** algorithms", "**Multi-factor** biometric auth", "**Audit trail** tracking", "Eliminate **fictitious/Phantom** employees"],
       color: "motee-blue",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
     },
@@ -18,7 +18,7 @@ const Solutions = () => {
       icon: Calculator,
       title: "Simple Tax Tools",
       description: "Automated tax calculations, deductions, and compliance reporting that eliminates errors and ensures regulatory adherence.",
-      features: ["Auto tax calculations", "Real-time compliance checks", "Regulatory updates", "Penalty prevention"],
+      features: ["**Auto** tax calculations", "**Real-time** compliance checks", "**Regulatory** updates", "**Penalty** prevention"],
       color: "motee-green",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&q=80"
     },
@@ -26,7 +26,7 @@ const Solutions = () => {
       icon: Zap,
       title: "Scalable Enterprise Systems",
       description: "Cloud-based infrastructure that grows with your business, handling everything from startups to enterprise corporations.",
-      features: ["Cloud-native architecture", "Auto-scaling capability", "Enterprise-grade security", "24/7 monitoring"],
+      features: ["**Cloud-native** architecture", "**Auto-scaling** capability", "**Enterprise-grade** security", "**24/7** monitoring"],
       color: "motee-orange",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
     }
@@ -75,7 +75,15 @@ const Solutions = () => {
                       {solution.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-3">
                           <CheckCircle className={`h-5 w-5 text-${solution.color} flex-shrink-0`} />
-                          <span className="text-sm text-motee-gray">{feature}</span>
+                          <span className="text-2xl text-motee-gray">
+                            {feature.split('**').map((part, partIdx) => 
+                              partIdx % 2 === 1 ? (
+                                <strong key={partIdx} className="font-bold text-motee-gray-dark">{part}</strong>
+                              ) : (
+                                <span key={partIdx}>{part}</span>
+                              )
+                            )}
+                          </span>
                         </div>
                       ))}
                     </div>

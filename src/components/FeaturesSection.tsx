@@ -43,7 +43,7 @@ const features = [
     ],
     color: "orange",
     learnMore: true,
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+    image: "/assets/images/25774A78-DD7C-48C3-8323-20824EAC1715.PNG",
     status: "System Active"
   }
 ];

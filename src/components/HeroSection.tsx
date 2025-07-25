@@ -191,7 +191,7 @@ const HeroSection = () => {
               <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500 mb-12">
                 <div className="rounded-xl shadow-lg overflow-hidden aspect-square">
                   <img
-                    src="/assets/images/ChatGPT Image Jun 21, 2025, 10_31_39 PM.png"
+                    src="/assets/images/IMG_6210.PNG"
                     alt="MOTEE Solutions Dashboard"
                     className="w-full h-full object-cover object-top"
                   />

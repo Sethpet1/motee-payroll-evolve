@@ -52,27 +52,24 @@ const WhyMSL = () => {
               </h1>
               <div className="prose prose-lg max-w-none text-motee-gray-dark">
                 <p className="text-md leading-relaxed mb-6">
-                  In a small but bustling corner of Lagos, Nathan, a diligent administrative officer at a mid-sized logistics company, spent his days juggling emails, coordinating meetings, and managing the chaos that came with serving multiple departments. He was the backbone of the office — the kind of employee who always stayed late to make sure things ran smoothly the next day.
+                  Nathan, an administrative officer at a mid-sized logistics company in Lagos, worked tirelessly every day. He was the backbone of the office—always staying late to ensure things ran smoothly. But behind his quiet competence, there was a recurring burden: uncertain salary payments, unexplained deductions, and inconsistent payroll practices.
                 </p>
                 <p className="text-md leading-relaxed mb-6">
-                  But behind his quiet competence, there was a recurring burden: salary delays, unexplained deductions, and inconsistent payroll practices. Every month was a guessing game — would his pay come on time? Would it be complete?
-                </p>
-                <p className="text-md leading-relaxed mb-6 font-medium">
-                  Then, in December — just before the holidays — the worst happened: his salary never came at all.
+                  Every month felt like a guessing game—would his salary come on time? Would it be complete? Then, in December—just before the holidays—the worst happened: his salary never came at all.
                 </p>
                 <div className="bg-gray-50 p-6 rounded-xl mb-8 shadow-inner">
                   <p className="text-md leading-relaxed mb-4">
-                    He waited. He emailed. He called HR. They apologized and blamed "technical issues" and "banking delays." Weeks passed. His rent was overdue. His mother's medication ran out. His electricity was disconnected. His younger brother dropped out of school because He could not pay his fees.
+                    He waited. He emailed. He called HR. They apologized, blaming "technical issues" and "banking delays." Weeks passed. His rent was overdue. His mother's medication ran out. His electricity was disconnected. His younger brother dropped out of school because he couldn't pay his fees.
                   </p>
                   <p className="text-md leading-relaxed">
-                    To make matters worse, his colleague, Femi, confessed that he had accidentally been paid twice. Meanwhile, their former supervisor — who resigned months ago — was still receiving a salary. The payroll system was broken. There were ghost workers, manual errors, and no accountability.
+                    Meanwhile, his colleague, Femi, confessed that he had been paid twice. Their former supervisor, who had resigned months ago, was still receiving a salary. The payroll system was broken. There were ghost workers, manual errors, and no accountability.
                   </p>
                 </div>
                 <p className="text-l font-semibold mb-6 text-motee-orange">
                   Nathan felt invisible. Disposable. Cheated.
                 </p>
                 <p className="text-lg leading-relaxed mb-8">
-                  He was not alone. In offices across Nigeria, similar stories played out every month. Employees who worked hard, but were let down by unreliable payroll systems, opaque deductions, and systems prone to fraud.
+                  He wasn't alone. In offices across Nigeria, similar stories played out every month. Employees who worked hard, but were let down by unreliable payroll systems, opaque deductions, and systems prone to fraud.
                 </p>
                 <div className="bg-gradient-to-r from-motee-green/10 to-motee-orange/10 p-8 rounded-xl mb-8">
                   <h2 className="text-2xl font-bold mb-4 text-motee-green">That is when MOTEE Solutions Ltd. was born.</h2>
