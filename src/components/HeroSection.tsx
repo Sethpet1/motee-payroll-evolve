@@ -79,7 +79,13 @@ const HeroSection = () => {
                 onMouseLeave={() => {
                   setShowDropdown(false);
                 }}
-                onTouchStart={() => setShowDropdown(!showDropdown)}
+                onTouchStart={(e) => {
+                  e.preventDefault();
+                  setShowDropdown(!showDropdown);
+                }}
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                }}
               >
                 <Button
                   size="lg"
@@ -101,6 +107,10 @@ const HeroSection = () => {
                       <div
                         className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md cursor-pointer"
                         onClick={() => handleNavigateToPage('/key-benefits/faster-onboarding')}
+                        onTouchEnd={(e) => {
+                          e.preventDefault();
+                          handleNavigateToPage('/key-benefits/faster-onboarding');
+                        }}
                       >
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
@@ -117,6 +127,10 @@ const HeroSection = () => {
                       <div
                         className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md cursor-pointer"
                         onClick={() => handleNavigateToPage('/key-benefits/accurate-payroll-processing')}
+                        onTouchEnd={(e) => {
+                          e.preventDefault();
+                          handleNavigateToPage('/key-benefits/accurate-payroll-processing');
+                        }}
                       >
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
@@ -133,6 +147,10 @@ const HeroSection = () => {
                       <div
                         className="group relative p-5 rounded-xl hover:bg-gradient-to-r hover:from-motee-green/5 hover:to-motee-orange/5 transition-all duration-300 hover:shadow-md cursor-pointer"
                         onClick={() => handleNavigateToPage('/key-benefits/reliable-compliance')}
+                        onTouchEnd={(e) => {
+                          e.preventDefault();
+                          handleNavigateToPage('/key-benefits/reliable-compliance');
+                        }}
                       >
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
