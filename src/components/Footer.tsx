@@ -14,9 +14,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6 sm:col-span-2 md:col-span-1">
             <div className="flex items-center space-x-2 justify-center sm:justify-start">
-              <div className="w-10 h-10 bg-gradient-to-r from-motee-blue to-motee-green rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M</span>
-              </div>
+              <img src="/logos/9C510464-D0E0-4D60-8E01-C70F1D98AB41.PNG" alt="MOTEE Logo" className="w-10 h-10" />
               <span className="text-2xl font-bold">MOTEE</span>
             </div>
             
@@ -53,7 +51,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Company</h4>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="/AboutMSL" className="hover:text-white transition-colors">About Us</a></li>
+              <li><Link to="/about-msl" className="hover:text-white transition-colors">About Us</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-white transition-colors">News</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Partners</a></li>

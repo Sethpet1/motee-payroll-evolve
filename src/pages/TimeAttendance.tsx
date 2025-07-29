@@ -5,17 +5,30 @@ import Header from '@/components/Header';
 
 const TimeAttendance = () => {
   const whyItMatters = [
-    "Accuracy",
-    "Compliance with labour laws", 
-    "Informed decision-making",
-    "Improved workforce productivity"
+    {
+      title: "Accuracy",
+      description: "Track work hours with exact timestamps to avoid manual errors."
+    },
+    {
+      title: "Compliance with labour laws", 
+      description: "Ensure working hours align with labour regulations."
+    },
+    {
+      title: "Informed decision-making",
+      description: "Use attendance data to make smarter staffing choices."
+    },
+    {
+      title: "Improved workforce productivity",
+      description: "Identify trends and reduce time wastage."
+    }
   ];
+  
 
   const keyBenefits = [
     {
       icon: <Shield className="w-8 h-8 text-motee-green" />,
       title: "Reduce Manual Errors",
-      description: "Automate time capture to eliminate mistakes from manual input and reduce time fraud."
+      description: "With MOTEE, you can clearly see how your team is working — helping you cut costs, boost efficiency, and make better decisions about your workforce."
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-motee-green" />,
@@ -25,7 +38,7 @@ const TimeAttendance = () => {
     {
       icon: <FileText className="w-8 h-8 text-motee-green" />,
       title: "Ensure Compliance",
-      description: "Stay aligned with Nigerian labour laws and your internal policies through automated reporting and audit-ready records."
+      description: "Follow Nigerian labour laws easily with automatic reports and records ready for audits."
     },
     {
       icon: <Target className="w-8 h-8 text-motee-green" />,
@@ -35,11 +48,26 @@ const TimeAttendance = () => {
   ];
 
   const advancedFeatures = [
-    "Optimised shift scheduling",
-    "Labour forecasting and budgeting",
-    "Attendance policy enforcement",
-    "Leave case management",
-    "Real-time workforce analytics"
+    {
+      title: "Optimised Shift Scheduling",
+      description: "Create smarter, fairer staff schedules that match your business needs."
+    },
+    {
+      title: "Staff Planning & Budgeting",
+      description: "Predict workforce needs and plan payroll costs ahead of time."
+    },
+    {
+      title: "Enforce attendance rules automatically",
+      description: "Automatically apply rules for lateness, absenteeism, and time-off limits."
+    },
+    {
+      title: "Leave Case Management",
+      description: "Handle time-off requests, approvals, and records in one place."
+    },
+    {
+      title: "Real-time Workforce Analytics",
+      description: "Get instant insights into hours worked, attendance trends, and productivity."
+    }
   ];
 
   const systemFeatures = [
@@ -66,12 +94,12 @@ const TimeAttendance = () => {
     {
       icon: <Users className="w-8 h-8 text-motee-green" />,
       title: "Employee Self-Service (ESS)",
-      description: "Employees can request time off, check schedules, or clock in using a secure mobile app—enhancing transparency and engagement."
+      description: "Employees can easily request time off, view schedules, or clock in/out using a secure mobile app—improving transparency and engagement."
     },
     {
       icon: <Award className="w-8 h-8 text-motee-green" />,
       title: "Compliance-Ready Reporting",
-      description: "Meet Nigerian Labour Law requirements with audit-friendly, exportable reports—safeguarding your business from legal risks."
+      description: "Stay compliant with Nigerian Labour Laws using audit-ready, exportable reports—protecting your business from legal risks."
     }
   ];
 
@@ -79,20 +107,20 @@ const TimeAttendance = () => {
     {
       icon: <Smartphone className="w-8 h-8 text-motee-green" />,
       title: "Biometric & Mobile-First Tech",
-      description: "From facial recognition to mobile geo-tagging, MOTEE uses the latest in attendance verification to ensure accuracy—anywhere your employees work."
+      description: "From facial recognition to mobile geo-tagging, MOTEE leverages the latest tech to verify attendance accurately—wherever your employees are."
     },
     {
       icon: <Building2 className="w-8 h-8 text-motee-green" />,
       title: "Centralised Control, Local Flexibility",
-      description: "Whether you manage a single office or multiple sites across Nigeria and West Africa, MOTEE adapts to your business structure—supporting remote teams, field staff, and multi-location enterprises."
+      description: "Whether you're managing a single office or multiple sites across Nigeria and West Africa, MOTEE scales with your business—supporting remote teams, field staff, and multi-location operations."
     }
   ];
 
   const idealFor = [
-    "SMEs managing shift workers or mobile teams",
-    "Large enterprises automating HR and payroll",
-    "Government bodies and educational institutions",
-    "Staff outsourcing (EOR) clients using MOTEE's HR services"
+    " Small and medium-sized enterprises (SMEs) with mobile or shift-based teams.",
+    " Large enterprises optimizing HR and payroll operations.",
+    " Government bodies and educational institutions.",
+    " EOR clients using MOTEE's HR outsourcing services."
   ];
 
   return (
@@ -102,25 +130,57 @@ const TimeAttendance = () => {
       {/* Hero Section */}
       <section className="relative z-10 pt-20 pb-16 bg-gradient-to-br from-motee-green/10 to-blue-500/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-gray-900">
-              Time & Attendance
-            </h1>
-            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-motee-green">
-              Every Second Counts
-            </h2>
-            <p className="text-l text-gray-600 mb-8 leading-relaxed">
-              Every second counts—for your people, your operations, and your bottom line. 
-              MOTEE's smart Time & Attendance system empowers Nigerian businesses to track, 
-              manage, and optimise employee work hours with precision, ease, and compliance.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-              {whyItMatters.map((matter, index) => (
-                <div key={index} className="flex items-start space-x-3 p-4 bg-white rounded-lg shadow-sm">
-                  <Check className="w-5 h-5 text-motee-green mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-600">{matter}</span>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Text Content */}
+              <div className="text-center lg:text-left">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-gray-900">
+                  Time & Attendance
+                </h1>
+                <h2 className="text-xl md:text-2xl font-semibold mb-4 text-motee-green">
+                  Every Second Counts
+                </h2>
+                <p className="text-l text-gray-600 mb-8 leading-relaxed">
+                  Every second counts—for your people, your operations, and your bottom line. 
+                  MOTEE's smart Time & Attendance system empowers Nigerian businesses to track, 
+                  manage, and optimise employee work hours with precision, ease, and compliance.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                  {whyItMatters.map((matter, index) => (
+                    <div key={index} className="flex items-start space-x-3 p-4 bg-white rounded-lg shadow-sm">
+                      <Check className="w-5 h-5 text-motee-green mt-0.5 flex-shrink-0" />
+                      <div className="flex-1">
+                        <h4 className="text-sm font-semibold text-gray-900 mb-1">{matter.title}</h4>
+                        <p className="text-xs text-gray-600">{matter.description}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              
+              {/* Hero Image */}
+              <div className="relative">
+                <div className="bg-gradient-to-br from-motee-green/20 to-blue-500/20 rounded-2xl p-8">
+                  <img 
+                    src="/assets/images/image 2.png" 
+                    alt="Time and Attendance Management System"
+                    className="w-full h-80 object-fill rounded-xl shadow-lg"
+                    onError={(e) => {
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div className="hidden w-full h-80 bg-gradient-to-br from-motee-green/10 to-blue-500/10 rounded-xl border-2 border-dashed border-motee-green/30 items-center justify-center">
+                    <div className="text-center">
+                      <Clock className="w-16 h-16 text-motee-green/50 mx-auto mb-4" />
+                      <p className="text-motee-green/70 font-medium">Time & Attendance Hero Image</p>
+                      <p className="text-sm text-gray-500 mt-2">Add your image here</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -135,16 +195,15 @@ const TimeAttendance = () => {
                 Why Time & Attendance Matters
               </h2>
               <p className="text-l text-gray-600 mb-8">
-                Tracking employee hours is about more than just logging time—it's about accuracy, 
-                compliance with labour laws, informed decision-making, and improved workforce productivity.
+              Tracking work hours isn't just about logging time — it's about staying accurate, following labour laws, making smart decisions, and helping your team be more productive.
+
               </p>
             </div>
             
             <div className="bg-motee-green/10 p-8 rounded-xl">
               <h3 className="text-l font-semibold mb-4 text-motee-green">Full Visibility</h3>
               <p className="text-gray-600">
-                With MOTEE, you gain full visibility into how your organisation is performing—so you can 
-                control costs, increase efficiency, and make smarter workforce decisions.
+              With MOTEE, you can clearly see how your team is working — helping you cut costs, boost efficiency, and make better decisions about your workforce.
               </p>
             </div>
           </div>
@@ -195,10 +254,11 @@ const TimeAttendance = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {advancedFeatures.map((feature, index) => (
                 <div key={index} className="bg-gray-50 p-6 rounded-xl">
-                  <div className="flex items-start space-x-3">
+                  <div className="flex items-start space-x-3 mb-3">
                     <Check className="w-5 h-5 text-motee-green mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-600">{feature}</span>
+                    <h4 className="text-sm font-semibold text-gray-900">{feature.title}</h4>
                   </div>
+                  <p className="text-xs text-gray-600 ml-8">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -247,7 +307,7 @@ const TimeAttendance = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
               {techFeatures.map((feature, index) => (
                 <div key={index} className="bg-motee-green/5 p-8 rounded-xl border border-motee-green/20">
                   <div className="flex items-center mb-6">
@@ -257,6 +317,28 @@ const TimeAttendance = () => {
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
               ))}
+            </div>
+            
+            {/* Technology Showcase Image */}
+            <div className="relative">
+              <img 
+                src="/public/assets/images/modern-workforce-tech.jpg" 
+                alt="Modern Workforce Technology"
+                className="w-full h-64 object-cover rounded-xl shadow-lg"
+                onError={(e) => {
+                  const target = e.currentTarget as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              <div className="hidden w-full h-64 bg-gradient-to-br from-motee-green/5 to-blue-500/5 rounded-xl border-2 border-dashed border-motee-green/30 items-center justify-center">
+                <div className="text-center">
+                  <Smartphone className="w-16 h-16 text-motee-green/50 mx-auto mb-4" />
+                  <p className="text-motee-green/70 font-medium">Modern Workforce Technology</p>
+                  <p className="text-sm text-gray-500 mt-2">Add your technology showcase image here</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -271,7 +353,7 @@ const TimeAttendance = () => {
                 Who Is It For?
               </h2>
               <p className="text-l text-gray-600 mb-8">
-                Our Time & Attendance system is ideal for organizations of all sizes across various sectors
+              MOTEE's Time & Attendance system is built for organizations of all sizes—across every industry. Whether you're managing shift workers or automating enterprise payroll, MOTEE adapts to your needs.
               </p>
             </div>
 
@@ -294,11 +376,10 @@ const TimeAttendance = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-1xl md:text-2xl font-bold mb-6 text-white">
-              Ready to Streamline Your Workforce?
+            Streamline Your Workforce with Confidence.
             </h2>
             <p className="text-l text-white/90 mb-8 leading-relaxed">
-              Let MOTEE help you unlock operational efficiency, build employee trust, and ensure payroll accuracy. 
-              Say goodbye to manual tracking—and hello to the future of work in Africa.
+            MOTEE helps you boost operational efficiency, build employee trust, and ensure accurate payroll—so you can leave manual tracking behind and embrace the future of work in Africa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-motee-green font-semibold rounded-lg hover:bg-gray-100 transition-colors">

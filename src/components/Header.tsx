@@ -37,6 +37,9 @@ const Header = () => {
     return () => document.removeEventListener('mousedown', handleClick);
   }, [mobileMenuOpen]);
 
+  const hrManagementIcon = <img src="/assets/icon/image copy 3.png" alt="HR Management" className="w-10 h-10" />
+  const leaveAbsenceIcon = <img src="/assets/icon/image copy 4.png" alt="Leave and Absence" className="w-10 h-10" />
+
   const solutionsMenu = [
     { name: "HR Management", href: "/solutions/hr-management", desc: "Centralize employee data and HR processes." },
     { name: "Leave and Absence", href: "/solutions/leave-absence", desc: "Automate leave requests and approvals." },
@@ -104,9 +107,7 @@ const Header = () => {
                                 <div className="flex items-start gap-4">
                                   <div className="p-3 rounded-xl bg-motee-green/10 group-hover:bg-motee-green/20 transition-colors duration-300">
                                     {/* You can add icons here based on item.name or another property */}
-                                    <svg className="w-6 h-6 text-motee-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                    </svg>
+                                    {item.name === "HR Management" ? hrManagementIcon : item.name === "Leave and Absence" ? leaveAbsenceIcon : null}
                                   </div>
                                   <div className="space-y-2">
                                     <h4 className="font-semibold text-gray-900 group-hover:text-motee-green transition-colors duration-300">{item.name}</h4>

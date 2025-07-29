@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const AboutMSL = () => {
   return (
@@ -31,10 +32,13 @@ const AboutMSL = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <p className="text-l text-gray-700 leading-relaxed">
-                The true measure of a company is not just in the profits it generates, but in the value it places on the people who make those profits possible. When employees are happy, business thrives. And at the heart of that happiness is a reliable payroll system.
+                The true measure of a company isn't just in the profits it generates, but in the value, it places on the people who make those profits possible. When employees are happy, businesses thrive. At MSL, we believe a reliable payroll system is key to that happiness.
               </p>
               <p className="text-l text-gray-600 leading-relaxed">
-                When payroll works effortlessly, your people feel safe. They can focus on what they do best, and you can focus on what you do best.
+                With MSL, your payroll works effortlessly. Employees are paid on time, taxes are calculated automatically, and you remain fully compliant—all while your employees have access to their payslips and details whenever they need it. <strong>When payroll is seamless, your people feel safe, and you can focus on what you do best.</strong>
+              </p>
+              <p className="text-l text-gray-600 leading-relaxed">
+                MSL delivers reliable, secure payroll solutions, ensuring your team stays happy, engaged, and focused.
               </p>
             </div>
             <div className="flex items-center gap-4 pt-4">
@@ -148,17 +152,17 @@ const AboutMSL = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Transform Your Payroll?</h3>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-              Running a business is demanding, especially when it comes to managing payroll and HR tasks. Whether you're juggling payroll on your own or overseeing an HR team, our managed payroll services and integrated payroll and HR software solutions make it easy to keep on top of compliance with an accurate and stress-free solution.
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Fix Payroll for Good?</h3>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-6">
+            Stop wasting time on payroll errors and outdated systems. Whether you're running HR or managing it all yourself, our automated solution keeps you compliant, accurate, and stress-free — all from one simple platform.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-gradient-to-r from-motee-green to-motee-orange text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                Get Started Today
-              </button>
-              <button className="px-8 py-3 border-2 border-motee-green text-motee-green font-semibold rounded-xl hover:bg-motee-green hover:text-white transition-all duration-300">
-                Learn More
-              </button>
+              <Link to="/book-demo" className="px-8 py-3 bg-gradient-to-r from-motee-green to-motee-orange text-white font-semibold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                Start Your Free Payroll Assessment
+              </Link>
+              <Link to="/solutions/payroll" className="px-8 py-3 border-2 border-motee-green text-motee-green font-semibold rounded-xl hover:bg-motee-green hover:text-white transition-all duration-300">
+                See How It Works
+              </Link>
             </div>
           </div>
         </div>

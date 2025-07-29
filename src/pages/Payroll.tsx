@@ -194,7 +194,7 @@ const Payroll = () => {
               <div className="flex justify-center lg:justify-end">
                 <div className="aspect-square bg-gradient-to-br from-motee-green/20 to-orange-500/20 rounded-xl overflow-hidden w-full max-w-md shadow-xl">
                   <img 
-                    src="/assets/images/F72D3C75-C61D-475D-8A4D-05CC1DBC1EEC.PNG" 
+                    src="/assets/images/IMG-20250728-WA0010.jpg" 
                     alt="MSL Payroll Dashboard"
                     className="w-full h-full object-cover"
                   />
