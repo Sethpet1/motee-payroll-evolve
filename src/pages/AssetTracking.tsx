@@ -9,31 +9,31 @@ const AssetTracking = () => {
     {
       icon: <Eye className="w-8 h-8 text-motee-green" />,
       title: 'Real-Time Visibility',
-      description: 'Know what assets you own, who is using them, and where they are at any time.',
+      description: 'Know exactly what assets you own, who is using them, and where they are at any time.',
       color: 'text-motee-green'
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-motee-blue" />,
       title: 'Informed Decision-Making',
-      description: 'Data-driven insights allow better planning for repairs, replacements, or reallocations.',
+      description: 'Make smarter business decisions with data-driven insights that improve planning for repairs, replacements, or reallocations.',
       color: 'text-motee-blue'
     },
     {
       icon: <Clock className="w-8 h-8 text-motee-orange" />,
       title: 'Streamlined Offboarding',
-      description: 'Ensure all assets are returned before final clearance.',
+      description: 'Ensure all company assets are returned before employees leave, preventing lost or unaccounted-for equipment.',
       color: 'text-motee-orange'
     },
     {
       icon: <Shield className="w-8 h-8 text-motee-green" />,
       title: 'Reduced Loss & Theft',
-      description: 'Minimize asset leakage with accountability and automated tracking logs.',
+      description: 'Minimize asset leakage by automatically logging movements and receiving alerts for unauthorized access or misplaced items.',
       color: 'text-motee-green'
     },
     {
       icon: <CheckCircle className="w-8 h-8 text-motee-blue" />,
       title: 'Improved Productivity',
-      description: 'Save time and effort otherwise spent on manual checks or misplaced equipment.',
+      description: 'Eliminate time spent on manual checks by automating asset tracking and ensuring assets are easy to locate.',
       color: 'text-motee-blue'
     }
   ];
@@ -70,28 +70,40 @@ const AssetTracking = () => {
     {
       step: '1',
       title: 'Verification',
-      description: 'Verified by your department or IT administrator',
+      description: 'Ensure all assigned items are confirmed by IT or your department, ensuring accountability for every asset.',
       icon: <CheckCircle className="w-6 h-6" />
     },
     {
       step: '2',
       title: 'Return',
-      description: 'Physically returned or digitally cleared',
+      description: 'Return all physical items in good condition and clear any software or digital assets to complete the return.',
       icon: <ArrowRight className="w-6 h-6" />
     },
     {
       step: '3',
       title: 'Logging',
-      description: 'Logged as "Returned" in the ESS Portal',
+      description: 'Once returned, the asset is logged as "Returned" in the ESS portal to finalize your exit clearance.',
       icon: <FileText className="w-6 h-6" />
     }
   ];
 
   const problemsWithoutTracking = [
-    'Wasted resources',
-    'Increased operational costs',
-    'Compliance and audit risks',
-    'Reduced productivity'
+    {
+      title: 'Eliminate Wasted Resources',
+      description: 'Save time and money by ensuring that assets are always accounted for.'
+    },
+    {
+      title: 'Reduced Operational Costs',
+      description: 'Reduce costs associated with misplaced or underutilized assets.'
+    },
+    {
+      title: 'Compliance Assurance',
+      description: 'Stay compliant with regulatory requirements and avoid costly penalties.'
+    },
+    {
+      title: 'Improved Productivity',
+      description: 'Enhance efficiency by knowing exactly where your assets are and how they are being used.'
+    }
   ];
 
   return (
@@ -107,10 +119,10 @@ const AssetTracking = () => {
                 Asset Tracking & Clearance
               </h1>
               <p className="text-l opacity-90 leading-relaxed">
-                In today's increasingly competitive and fast-paced business environment, organisations must harness every available tool to enhance operational efficiency, reduce costs, and optimise resource utilisation.
+              In today's competitive business environment, every organization needs tools to enhance efficiency, reduce costs, and optimize resource utilization.
               </p>
               <p className="text-l opacity-90 mt-4">
-                Yet, one often overlooked — but mission-critical — element in this equation is effective asset tracking.
+              Yet, one often overlooked but mission-critical element is effective asset tracking.
               </p>
             </div>
             <div className="animate-slide-in-right">
@@ -135,7 +147,8 @@ const AssetTracking = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {problemsWithoutTracking.map((problem, index) => (
                 <div key={index} className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
-                  <p className="text-gray-700 font-semibold">{problem}</p>
+                  <h3 className="text-gray-900 font-bold mb-2">{problem.title}</h3>
+                  <p className="text-gray-600 text-sm">{problem.description}</p>
                 </div>
               ))}
             </div>
@@ -148,7 +161,7 @@ const AssetTracking = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-1xl md:text-2xl font-bold text-gray-900 mb-6">
-              By implementing a strategic, technology-driven asset tracking solution, organisations gain:
+            By implementing a strategic, technology-driven asset tracking solution, organisations gain:
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -170,10 +183,10 @@ const AssetTracking = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-1xl md:text-2xl font-bold mb-6">
-              At MOTEE Solutions, we ensure accountability and transparency in asset management.
+            At Motee Solutions, we ensure accountability and transparency in asset management.
             </h2>
             <p className="text-l opacity-90">
-              Every employee is responsible for returning all company-assigned items during the offboarding process.
+            With our robust system, we help you track and manage all company assets in real-time, giving you the confidence that everything is where it should be.
             </p>
           </div>
         </div>
@@ -189,7 +202,10 @@ const AssetTracking = () => {
                 Asset Tracking is the process of monitoring and recording all company-owned items that are in an employee's possession during their employment.
               </p>
               <p className="text-l text-gray-600 mb-8">
-                As part of the employee offboarding process, all assigned assets must be accounted for and returned. Clearance of these items is a mandatory step before an employee can be fully exited from the company.
+              Asset tracking is the process of monitoring and recording all company-owned items that are in an employee's possession during their employment. It ensures that all assets are accounted for throughout their lifecycle, from assignment to return.
+              </p>
+              <p className="text-l text-gray-600 mb-8">
+              As part of the employee offboarding process, all assigned assets must be returned and cleared. This is a mandatory step before an employee can fully exit the company.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6">
@@ -217,7 +233,16 @@ const AssetTracking = () => {
               Clearance Process
             </h2>
             <p className="text-l text-gray-600 max-w-3xl mx-auto">
-              Before your exit can be finalized, all assigned assets must be properly cleared through our systematic process.
+            Before an employee's exit can be finalized, all assigned assets must be properly cleared through our systematic and automated process.
+            </p>
+            <p className="text-l text-gray-600 mt-4 max-w-3xl mx-auto">
+            Our solution ensures seamless clearance by tracking and managing all assets during offboarding, preventing loss and reducing the risk of unaccounted equipment.
+            </p>
+            <p className="text-l text-gray-600 mt-4 max-w-3xl mx-auto">
+            Start Your Asset Tracking Journey Today
+            </p>
+            <p className="text-semibold font-bold text-gray-600 mt-4 max-w-4xl mx-auto">
+            Contact us for a free demo and see how our asset tracking system can improve your efficiency and reduce costs.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">

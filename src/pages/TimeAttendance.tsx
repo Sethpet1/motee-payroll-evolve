@@ -28,7 +28,7 @@ const TimeAttendance = () => {
     {
       icon: <Shield className="w-8 h-8 text-motee-green" />,
       title: "Reduce Manual Errors",
-      description: "With MOTEE, you can clearly see how your team is working — helping you cut costs, boost efficiency, and make better decisions about your workforce."
+      description: "Automatically track time to avoid typing errors and stop time theft."
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-motee-green" />,
@@ -49,8 +49,8 @@ const TimeAttendance = () => {
 
   const advancedFeatures = [
     {
-      title: "Optimised Shift Scheduling",
-      description: "Create smarter, fairer staff schedules that match your business needs."
+      title: "Smart Shift Scheduling",
+      description: "Easily assign custom shifts, manage flexible shift patterns, and accommodate flexible or fixed work hours."
     },
     {
       title: "Staff Planning & Budgeting",
@@ -74,7 +74,7 @@ const TimeAttendance = () => {
     {
       icon: <Clock className="w-8 h-8 text-motee-green" />,
       title: "Accurate Time Tracking",
-      description: "Biometric verification, geo-fencing, and secure digital clock-ins eliminate buddy punching and fraud."
+      description: "Biometric verification, location-based check-ins, secure digital clock-ins eliminate when one employee clocks in for another."
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-motee-green" />,

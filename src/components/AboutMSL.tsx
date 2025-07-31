@@ -77,14 +77,15 @@ const AboutMSL = () => {
                 </div>
                 <div className="space-y-4">
                   <p className="text-l text-gray-700 leading-relaxed">
-                  Nigeria businesses have reported losing as much as ₦220 billion per year as a result of payroll errors. And it's linked to the continuing use of traditional payroll methods.
+                  Nigeria businesses have reported losing as much as ₦220 billion per year due to payroll errors.
+                  This is a direct result of continuing reliance on traditional payroll methods that are prone to mistakes, inefficiencies, and compliance issues.
                   </p>
                   <p className="text-l text-gray-700 leading-relaxed">
-                  Thankfully, there is a payroll solution that can help you avoid finance-related headaches—payroll software. Our online payroll offers benefits such as streamlining the payment process,improving accuracy, and saving costs.
+                  Thankfully, there’s a better way. MSL offers a solution that eliminates payroll headaches by automating calculations, improving accuracy, and ensuring full compliance—saving you both time and money.
                   </p>
                   <div className="bg-gradient-to-r from-motee-green/10 to-motee-orange/10 rounded-xl p-4">
                     <p className="text-l text-gray-700">
-                      <span className="font-semibold text-motee-green">No more spending hours on payroll calculations or dealing with costly mistakes.</span>We streamline the process, so you can invest your resources where they matter most
+                      <span className="font-semibold text-motee-green">No more spending hours on payroll calculations or dealing with costly mistakes. We streamline the process, so you can invest your resources where they matter most.</span>
                     </p>
                   </div>
                 </div>

@@ -9,7 +9,7 @@ const PayrollSmilingSection = () => {
         {/* Left: Text Content */}
         <div className="max-w-xl w-full text-center lg:text-left">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-gray-900">
-          Stress-Free Global Payroll <br className="hidden lg:block" />
+          Stress-Free Payroll Solutions<br className="hidden lg:block" />
           That Leaves You Smiling
           </h2>
           <p className="text-gray-700 text-sm md:text-base lg:text-md mb-6 md:mb-8 justify-center">
@@ -46,7 +46,6 @@ const PayrollSmilingSection = () => {
                   <li className="mt-3 md:mt-4 font-medium text-gray-700">People</li>
                   <li>Job Profile</li>
                 </ul>
-                <div className="mt-4 md:mt-6 text-xs text-gray-400">Kelvin N'Gage</div>
               </div>
               <div className="flex-1 pl-3 md:pl-6">
                 <div className="flex items-center justify-between mb-2">
