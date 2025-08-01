@@ -127,7 +127,7 @@ const AssetTracking = () => {
             </div>
             <div className="animate-slide-in-right">
               <div className="rounded-xl shadow-2xl overflow-hidden aspect-video bg-white/10 backdrop-blur-sm">
-                <img src="/assets/images/clock-5848454_1280.jpg" alt="Asset Tracking" className="w-full h-full object-cover" />
+                <img src="/assets/images/ChatGPT Image Aug 1, 2025, 11_29_16 PM.png" alt="Asset Tracking" className="w-full h-full object-fit" />
               </div>
             </div>
           </div>
