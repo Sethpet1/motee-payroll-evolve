@@ -137,7 +137,7 @@ const AboutMSL = () => {
             <div className="absolute -inset-4 bg-gradient-to-r from-motee-green/20 to-motee-orange/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
             <div className="relative w-full max-w-lg h-96 bg-white rounded-2xl shadow-2xl overflow-hidden transform group-hover:scale-105 transition-all duration-500">
               <img
-                src="/assets/images/ChatGPT Image Jun 22, 2025, 04_20_15 PM copy.png"
+                src="/assets/images/image 3.png"
                 alt="Switching payroll provider"
                 className="w-full h-full object-fill object-[100%_100%] mb-20"
               />
