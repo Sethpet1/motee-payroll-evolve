@@ -104,11 +104,11 @@ const HrManagement = () => {
             <div className="flex justify-center lg:justify-end">
               <div className="relative w-full max-w-md lg:max-w-lg">
                 <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500">
-                  <div className="aspect-square bg-gradient-to-br from-motee-green/20 to-blue-500/20 rounded-xl overflow-hidden mb-6">
+                  <div className="bg-gradient-to-br from-motee-green/20 to-blue-500/20 rounded-xl overflow-hidden mb-6">
                     <img 
-                      src="/Images/group.jpg" 
+                      src="/assets/images/image 4.png" 
                       alt="HR Management Team"
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto object-contain"
                     />
                   </div>
                   <div className="space-y-3">

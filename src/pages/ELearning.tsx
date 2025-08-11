@@ -24,12 +24,12 @@ const ELearning = () => {
     {
       icon: <Layers className="w-8 h-8 text-motee-green" />,
       title: 'Access to a Universe of Content',
-      description: 'From interactive simulations to live webinars, your team can explore industry best practices, compliance essentials, and more.',
+      description: 'From immersive simulations to expert-led webinars, your team gains access to targeted learning on compliance, leadership, and digital transformation.',
     },
     {
       icon: <BarChart className="w-8 h-8 text-motee-orange" />,
-      title: 'Real-Time Impact, Measurable Progress',
-      description: 'Built-in analytics and dashboards allow you to track completion rates, performance, and knowledge gaps to measure ROI.',
+      title: 'Measure Impact in Real Time',
+      description: 'Use built-in analytics to track learner progress, close knowledge gaps, and prove ROI with real-time dashboards.',
     },
   ];
 
@@ -37,22 +37,22 @@ const ELearning = () => {
     {
       icon: <Tv className="w-6 h-6 text-white" />,
       title: 'Modern Learning Management System (LMS)',
-      description: 'Clean, intuitive, and mobile-ready for a seamless user experience.',
+      description: 'A user-friendly, mobile-optimized platform designed for effortless navigation and seamless learning—anytime, anywhere.',
     },
     {
       icon: <CheckSquare className="w-6 h-6 text-white" />,
       title: 'Interactive, Multimedia Content',
-      description: 'Engaging videos, quizzes, animations, and gamification to keep learners motivated.',
+      description: 'Engaging videos, scenario-based quizzes, and gamified challenges that keep learners involved and retention high.',
     },
     {
       icon: <Users className="w-6 h-6 text-white" />,
       title: 'Blended Learning Support',
-      description: 'Combine online modules with face-to-face workshops for a holistic approach.',
+      description: 'Integrates self-paced digital modules with live workshops to provide a well-rounded, flexible learning experience.',
     },
     {
       icon: <MessageCircle className="w-6 h-6 text-white" />,
       title: 'Mentor & Peer Learning Channels',
-      description: 'Encourage collaboration, knowledge sharing, and shared growth.',
+      description: 'Built-in spaces for learners to connect, share knowledge, and collaborate through guided mentoring and peer discussions.',
     },
   ];
   
@@ -60,22 +60,22 @@ const ELearning = () => {
       {
           icon: <Award className="w-8 h-8 text-motee-blue" />,
           title: "Leadership Buy-In",
-          description: "We help align e-learning with your strategic goals."
+          description: "Align e-learning initiatives with your organization’s strategic goals to ensure leadership support."
       },
       {
           icon: <Lightbulb className="w-8 h-8 text-motee-green" />,
           title: "Skill Gap Analysis",
-          description: "Custom content that meets your real needs."
+          description: "Develop tailored content that addresses your team’s specific skill gaps."
       },
       {
           icon: <TrendingUp className="w-8 h-8 text-motee-orange" />,
           title: "Pilot & Scale",
-          description: "Start small, test feedback, and expand with confidence."
+          description: "Start small, gather feedback, and confidently expand your e-learning program."
       },
       {
           icon: <Users className="w-8 h-8 text-motee-blue" />,
           title: "Engagement Culture",
-          description: "Celebrate learners, share success stories, reward growth."
+          description: "Celebrate learners’ achievements, share success stories, and reward growth to sustain momentum."
       }
   ];
 
@@ -98,8 +98,33 @@ const ELearning = () => {
             </div>
             <div className="animate-slide-in-right">
               <div className="rounded-xl shadow-2xl overflow-hidden aspect-video bg-gray-200">
-                <img src="/assets/images/11A4C99B-D8D8-4B80-B176-0A745362A13F.PNG" alt="E-Learning in action" className="w-full h-96 object-cover object-center" />
+                <img src="/assets/images/image.png" alt="E-Learning in action" className="w-full h-96 object-cover object-fill" />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why We Built This Platform Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-1xl md:text-2xl font-bold text-gray-900 mb-8">Why We Built This Platform</h2>
+            <div className="space-y-6 text-gray-600 leading-relaxed">
+              <p>
+                At MSL, we believe that every employee deserves the opportunity to grow—not just in their job, 
+                but in their confidence, their skills, and their future. Too many talented people are held back 
+                by lack of access to quality training or the fear of being left behind in a changing world.
+              </p>
+              <p>
+                That's why we created our e-learning platform—to unlock potential, build brighter careers, 
+                and give businesses the power to thrive through empowered people. Whether you're learning to 
+                run payroll, lead a team, or master digital tools, this platform is your stepping stone to a 
+                more confident, capable, and connected workforce.
+              </p>
+              <p className="text-motee-green font-semibold">
+                Because when people grow, businesses grow. And together, we build a better tomorrow.
+              </p>
             </div>
           </div>
         </div>
@@ -172,11 +197,10 @@ const ELearning = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-1xl md:text-2xl font-bold text-gray-900 mb-6">
-              Ready to Transform Your Learning Experience?
+            Ready to Transform How Your Team Learns?
             </h2>
             <p className="text-l text-gray-600 mb-8">
-              Join organizations that have revolutionized their training programs with our comprehensive 
-              e-learning platform.
+            Join leading organizations that boost productivity and engagement with our results-driven e-learning platform.
             </p>
             <Button size="lg" className="bg-motee-green hover:bg-motee-green-dark">
               Invest in Your Team Today

@@ -34,17 +34,17 @@ const PerformanceManagement = () => {
     {
       value: '2x',
       label: 'Better Performance',
-      description: 'Engaged employees perform 2x better than their disengaged peers.',
+      description: 'Engaged employees are twice as productive as disengaged employees.',
     },
     {
       value: '94%',
       label: 'Stay Longer',
-      description: 'of employees would stay longer at a company that invests in their development.',
+      description: '94% of employees say they would stay longer at a company that invests in their growth and development.',
     },
     {
       value: '#3',
       label: 'Reason Employees Quit',
-      description: 'Poor performance management is a top 3 reason employees leave their jobs.',
+      description: 'Ineffective performance management is one of the top three reasons employees leave their jobs.',
     },
   ];
 
