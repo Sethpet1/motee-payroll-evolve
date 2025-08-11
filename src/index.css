@@ -149,9 +149,9 @@
     position: absolute;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-    opacity: 0.03;
+    opacity: var(--msl-opacity, 0.03);
     color: #059669;
-    text-shadow: 0 0 50px rgba(5, 150, 105, 0.3);
+    text-shadow: 0 0 50px rgba(5, 150, 105, var(--msl-shadow, 0.3));
     animation: mslFloat 25s infinite linear;
     user-select: none;
   }
@@ -366,7 +366,7 @@
   /* Responsive Adjustments */
   @media (max-width: 768px) {
     .msl-text {
-      opacity: 0.02;
+      opacity: var(--msl-opacity, 0.02);
     }
 
     .msl-text:nth-child(1) { font-size: 80px; }
@@ -383,7 +383,7 @@
 
   @media (max-width: 480px) {
     .msl-text {
-      opacity: 0.015;
+      opacity: var(--msl-opacity, 0.015);
     }
 
     .msl-text:nth-child(1) { font-size: 60px; }
