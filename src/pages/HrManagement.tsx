@@ -5,10 +5,10 @@ import Header from '@/components/Header';
 
 const HrManagement = () => {
   const challenges = [
-    "Rising Workforce Expectations: Today's employees want more than a paycheck—they want purpose, clarity, and respect.",
-    "Compliance Challenges: With constantly evolving labour laws and regional requirements, businesses need expert guidance to stay protected.",
-    "High Turnover & Low Morale: Many companies lose great talent due to unclear roles, poor onboarding, or lack of engagement.",
-    "Limited Access to Expertise: SMEs often can't afford full-time HR teams. We bring professional HR support to businesses of all sizes."
+    "Payroll delays and inconsistencies: We streamline payroll with automated, compliant systems that pay employees accurately and on time.",
+    "Unclear or outdated HR policies: We develop clear, current policies aligned with Nigerian labour laws to protect your business and employees.",
+    "Insufficient employee engagement and support: We introduce self-service portals, training programs, and feedback systems that keep employees motivated.",
+    "High turnover and recruitment costs: We implement talent retention strategies that reduce turnover and keep your best people on board."
   ];
 
   const hrServices = [
@@ -86,9 +86,9 @@ const HrManagement = () => {
                 That Powers Business Growth
               </h2>
               <p className="text-l text-gray-600 mb-8 leading-relaxed">
-                In Nigeria today, businesses are evolving—but the way we manage people hasn't always kept pace. 
-                From inconsistent labour practices to employee dissatisfaction, many organizations struggle to 
-                build trust, retain talent, and stay compliant. That's where Motee Solutions comes in.
+              While Nigerian businesses are evolving rapidly, HR practices often lag behind — leading to compliance risks and talent challenges.  Payroll delays, unclear policies, low employee engagement, and high turnover costs can drain productivity, damage trust, and limit growth.
+<br></br>At Motee Solutions, we tackle these barriers head-on with technology-driven, people-focused HR services that help your business thrive.
+
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
                 {businessRealities.map((reality, index) => (

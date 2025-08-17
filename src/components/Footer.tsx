@@ -1,55 +1,62 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import {  } from '../pages/AboutMSL';
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-800 text-white">
+    <footer className="bg-gradient-to-b from-gray-900 via-gray-900 to-gray-800 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-center sm:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 mb-12 text-center sm:text-left">
           {/* Company Info */}
-          <div className="space-y-6 sm:col-span-2 md:col-span-1">
+          <div className="space-y-6 sm:col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 justify-center sm:justify-start">
               <img src="/logos/9C510464-D0E0-4D60-8E01-C70F1D98AB41.PNG" alt="MOTEE Logo" className="w-10 h-10" />
-              <span className="text-2xl font-bold">MOTEE</span>
+              <div className="flex flex-col justify-center ml-2">
+                <span className="lemon-regular text-2xl font-extrabold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent tracking-tight drop-shadow-sm leading-tight" style={{ letterSpacing: '-0.5px' }}>
+                  MOTEE Solutions Ltd (MSL)
+                </span>
+                <span className="text-xs font-medium text-gray-400 mt-0.5 justify-center tracking-wide" style={{ letterSpacing: '0.2px' }}>
+                  One Stop Shop for Your Payroll Solutions
+                </span>
+              </div>
             </div>
-            
+            {/*
             <p className="text-gray-300 leading-relaxed max-w-sm mx-auto sm:mx-0">
               The true measure of a company is not just in the profits it generates, but in the value it places on the people who make those profits possible.
             </p>
+            */}
             
-            <div className="flex space-x-4 justify-center sm:justify-start">
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-            </div>
+            
           </div>
           
-          {/* Services */}
+          {/* Solutions */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Services</h4>
+            <h4 className="text-xs font-semibold tracking-widest text-white/80 mb-2 uppercase"> Services</h4>
+            <div className="w-10 h-1 bg-gradient-to-r from-motee-green to-motee-orange rounded-full mb-4 mx-auto sm:mx-0"></div>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="#" className="hover:text-white transition-colors">Biometric Payroll</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Tax Compliance</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Enterprise Solutions</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Fraud Detection</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">HR Integration</a></li>
+              <li><Link to="/solutions/hr-management" className="hover:text-white transition-colors">HR Management</Link></li>
+              <li><Link to="/solutions/leave-absence" className="hover:text-white transition-colors">Leave and Absences</Link></li>
+              <li><Link to="/solutions/payroll" className="hover:text-white transition-colors">Payroll Solution</Link></li>
+              <li><Link to="/solutions/time-attendance" className="hover:text-white transition-colors">Time & Attendance</Link></li>
+              <li><Link to="/solutions/performance" className="hover:text-white transition-colors">Performance Management</Link></li>
+              <li><Link to="/solutions/e-learning" className="hover:text-white transition-colors">E-learning</Link></li>
+              <li><Link to="/solutions/asset-tracking" className="hover:text-white transition-colors">Asset Tracking</Link></li>
+              <li><Link to="/solutions/eor" className="hover:text-white transition-colors">Employer of Record (EOR)</Link></li>
+              <li><Link to="/solutions/talent-search" className="hover:text-white transition-colors">Talent Search</Link></li>
+              <li><Link to="/solutions/verification" className="hover:text-white transition-colors">Verification & Background Checks</Link></li>
+              <li><Link to="/solutions/pre-assessment" className="hover:text-white transition-colors">Pre-Assessment Testing</Link></li>
             </ul>
           </div>
           
           {/* Company */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Company</h4>
+            <h4 className="text-xs font-semibold tracking-widest text-white/80 mb-2 uppercase">Company</h4>
+            <div className="w-10 h-1 bg-gradient-to-r from-motee-green to-motee-orange rounded-full mb-4 mx-auto sm:mx-0"></div>
             <ul className="space-y-3 text-gray-300">
               <li><Link to="/about-msl" className="hover:text-white transition-colors">About Us</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
@@ -60,7 +67,8 @@ const Footer = () => {
           
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Contact</h4>
+            <h4 className="text-xs font-semibold tracking-widest text-white/80 mb-2 uppercase">Contact</h4>
+            <div className="w-10 h-1 bg-gradient-to-r from-motee-green to-motee-orange rounded-full mb-4 mx-auto sm:mx-0"></div>
             <div className="space-y-4 text-gray-300">
               <div className="flex items-start space-x-3 justify-center sm:justify-start">
                 <MapPin className="h-5 w-5 mt-1 text-white flex-shrink-0" />
@@ -80,6 +88,28 @@ const Footer = () => {
                 <span>hello@motee.com</span>
               </div>
             </div>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="text-xs font-semibold tracking-widest text-white/80 mb-2 uppercase">Stay Updated</h4>
+            <div className="w-10 h-1 bg-gradient-to-r from-motee-green to-motee-orange rounded-full mb-4 mx-auto sm:mx-0"></div>
+            <p className="text-gray-400 text-sm mb-4">Subscribe for product updates and insights.</p>
+            <form
+              onSubmit={(e) => { e.preventDefault(); }}
+              className="flex items-center gap-2 max-w-sm mx-auto sm:mx-0"
+            >
+              <Input
+                type="email"
+                placeholder="Your email"
+                className="bg-white/10 border-white/20 placeholder:text-gray-400 text-white"
+                aria-label="Email address"
+                required
+              />
+              <Button type="submit" className="bg-motee-green hover:bg-motee-green-dark">
+                Subscribe
+              </Button>
+            </form>
           </div>
         </div>
         
@@ -107,15 +137,28 @@ const Footer = () => {
         </div>
         
         {/* Bottom Section */}
-        <div className="border-t border-white/20 pt-8 mt-8">
-          <div className="flex flex-col-reverse sm:flex-row justify-between items-center space-y-4 space-y-reverse sm:space-y-0">
+        <div className="border-t border-white/10 pt-8 mt-8">
+          <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
             <div className="text-gray-400 text-sm pt-4 sm:pt-0">
               &copy; {currentYear} MOTEE Solutions Ltd. All rights reserved.
             </div>
             
-            <div className="flex space-x-6 text-sm text-gray-300">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <div className="flex items-center gap-6">
+              <div className="flex space-x-6 text-sm text-gray-300">
+                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              </div>
+              <div className="flex space-x-4">
+                <a aria-label="LinkedIn" href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a aria-label="Twitter" href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                  <Twitter className="h-5 w-5" />
+                </a>
+                <a aria-label="Facebook" href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors">
+                  <Facebook className="h-5 w-5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

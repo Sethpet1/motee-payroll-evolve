@@ -42,12 +42,16 @@ const Header = () => {
 
   const solutionsMenu = [
     { name: "HR Management", href: "/solutions/hr-management", desc: "Centralize employee data and HR processes." },
-    { name: "Leave and Absence", href: "/solutions/leave-absence", desc: "Automate leave requests and approvals." },
-    { name: "Payroll", href: "/solutions/payroll", desc: "Streamline payroll processing and compliance." },
+    { name: "Leave and Absences", href: "/solutions/leave-absence", desc: "Automate leave requests and approvals." },
+    { name: "Payroll Solution", href: "/solutions/payroll", desc: "Streamline payroll processing and compliance." },
     { name: "Time & Attendance", href: "/solutions/time-attendance", desc: "Track time and attendance efficiently." },
-    { name: "Performance Management", href: "/solutions/performance", desc: "Track and improve employee performance." },
-    { name: "E-Learning", href: "/solutions/e-learning", desc: "Empower employees with online training." },
-    { name: "Asset Tracking", href: "/hr-pages", desc: "Manage and track company assets." },
+    { name: "Performance Management", href: "/solutions/performance", desc: "Continuously measure and improve performance." },
+    { name: "E-learning", href: "/solutions/e-learning", desc: "Empower employees with modern online learning." },
+    { name: "Asset Tracking", href: "/solutions/asset-tracking", desc: "Monitor and manage company assets in real time." },
+    { name: "Employer of Record (EOR)", href: "/solutions/eor", desc: "Hire globally while we handle local compliance." },
+    { name: "Talent Search", href: "/solutions/talent-search", desc: "Find and place top talent quickly and reliably." },
+    { name: "Verification & Background Checks", href: "/solutions/verification", desc: "Verify identities, credentials, and histories with confidence." },
+    { name: "Pre-Assessment Testing", href: "/solutions/pre-assessment", desc: "Evaluate candidate skills before interviews." },
   ];
 
   const whoWeHelpMenu = [
@@ -70,10 +74,7 @@ const Header = () => {
               />
               <div className="flex flex-col justify-center ml-2">
                 <span className="lemon-regular text-2xl font-extrabold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent tracking-tight drop-shadow-sm leading-tight" style={{ letterSpacing: '-0.5px' }}>
-                  MOTEE Solutions Ltd (MSL)
-                </span>
-                <span className="text-xs font-medium text-gray-400 mt-0.5 tracking-wide" style={{ letterSpacing: '0.5px' }}>
-                  One Stop Shop for Your Payroll Solutions
+                  MOTEE Solutions
                 </span>
               </div>
             </Link>
