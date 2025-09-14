@@ -24,6 +24,8 @@ import WhyMSL from './pages/WhyMSL';
 import FasterOnboarding from './pages/FasterOnboarding';
 import AccuratePayrollProcessing from './pages/AccuratePayrollProcessing';
 import ReliableCompliance from './pages/ReliableCompliance';
+import EOR from './pages/EOR';
+import Verification from './pages/Verification';
 
 // Create a QueryClient instance
 const queryClient = new QueryClient({
@@ -150,6 +152,8 @@ const App = () => {
                 <Route path="/key-benefits/faster-onboarding" element={<FasterOnboarding />} />
                 <Route path="/key-benefits/accurate-payroll-processing" element={<AccuratePayrollProcessing />} />
                 <Route path="/key-benefits/reliable-compliance" element={<ReliableCompliance />} />
+                <Route path="/solutions/eor" element={<EOR />} />
+                <Route path="/solutions/verification" element={<Verification />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
               </Routes>
             </Suspense>

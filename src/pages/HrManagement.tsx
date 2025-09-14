@@ -82,8 +82,8 @@ const HrManagement = () => {
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-gray-900">
                 Human Resource Management
               </h1>
-              <h2 className="text-xl md:text-2xl font-semibold mb-4 text-motee-green">
-                That Powers Business Growth
+              <h2 className="text-xl md:text-1xl font-semibold mb-4 text-motee-green">
+              Smart HR Solutions That Drive Growth in Nigerian Businesses
               </h2>
               <p className="text-l text-gray-600 mb-8 leading-relaxed">
               While Nigerian businesses are evolving rapidly, HR practices often lag behind — leading to compliance risks and talent challenges.  Payroll delays, unclear policies, low employee engagement, and high turnover costs can drain productivity, damage trust, and limit growth.
