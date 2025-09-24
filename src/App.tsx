@@ -26,6 +26,8 @@ import AccuratePayrollProcessing from './pages/AccuratePayrollProcessing';
 import ReliableCompliance from './pages/ReliableCompliance';
 import EOR from './pages/EOR';
 import Verification from './pages/Verification';
+import PreAssessmentTesting from './pages/PreAssessmentTesting';
+import TalentSearch from './pages/TalentSearch';
 
 // Create a QueryClient instance
 const queryClient = new QueryClient({
@@ -144,7 +146,7 @@ const App = () => {
                 <Route path="/solutions/time-attendance" element={<TimeAttendance />} />
                 <Route path="/solutions/performance" element={<PerformanceManagement />} />
                 <Route path="/solutions/e-learning" element={<ELearning />} />
-                <Route path="/hr-pages" element={<AssetTracking />} />
+                <Route path="/solutions/asset-tracking" element={<AssetTracking />} />
                 <Route path="/who-we-help/smes" element={<SMEs />} />
                 <Route path="/who-we-help/enterprise" element={<Enterprise />} />
                 <Route path="/who-we-help/public-sector" element={<PublicSector />} />
@@ -154,6 +156,8 @@ const App = () => {
                 <Route path="/key-benefits/reliable-compliance" element={<ReliableCompliance />} />
                 <Route path="/solutions/eor" element={<EOR />} />
                 <Route path="/solutions/verification" element={<Verification />} />
+                <Route path="/solutions/pre-assessment" element={<PreAssessmentTesting />} />
+                <Route path="/solutions/talent-search" element={<TalentSearch />} />
                 <Route path="*" element={<Navigate to="/404" replace />} />
               </Routes>
             </Suspense>
