@@ -89,16 +89,7 @@ const Header = () => {
                   <NavigationMenuContent>
                    
                     <div className="w-[1000px] max-w-[60vw] p-8 bg-white rounded-2xl shadow-lg border border-lime-500/50">
-                      <div className="grid grid-cols-2 gap-8">
-                        <div className="col-span-3">
-                          <div className="flex items-center gap-3 mb-8">
-                            <div className="h-8 w-1 bg-gradient-to-b from-motee-green to-motee-orange rounded-full"></div>
-                            <h3 className="text-2xl font-bold bg-gradient-to-r from-motee-green to-motee-orange bg-clip-text text-transparent">
-                              What Sets Us Apart
-                            </h3>
-                          </div>
-                          
-                          <div className="grid grid-cols-3 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {solutionsMenu.map((item) => (
                               <Link
                                 key={item.name}
@@ -117,8 +108,6 @@ const Header = () => {
                                 </div>
                               </Link>
                             ))}
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </NavigationMenuContent>
